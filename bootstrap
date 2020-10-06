@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+set -e
+
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+# install rust
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# install vim plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# install vscode extensions
+code --install-extension akamud.vscode-theme-onedark
+code --install-extension bungcip.better-toml
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension eamodio.gitlens
+code --install-extension matklad.rust-analyzer
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-mssql.mssql
+code --install-extension ms-python.python
+code --install-extension ms-vscode.atom-keybindings
+code --install-extension richie5um2.vscode-sort-json
+code --install-extension rust-lang.rust
+code --install-extension streetsidesoftware.code-spell-checker
+
+# symlink
+stow -v alacritty
+stow -v brew
+stow -v git
+stow -v karabiner
+stow -v vim
+stow -v vscode
+stow -v yarn
+stow -v zsh

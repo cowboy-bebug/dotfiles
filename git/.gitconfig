@@ -1,0 +1,20 @@
+[pager]
+	branch = false
+[pull]
+	rebase = true
+[core]
+	pager = less -F -X
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[commit]
+	gpgsign = true
+[user]
+	email = <EMAIL>
+	name = <NAME>
+	signingkey = <SIGNING_KEY>
+[gpg]
+	program = /usr/local/bin/gpg
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
