@@ -1,0 +1,98 @@
+
+# tap repositories and their packages
+
+tap homebrew/core
+brew adns
+brew antibody
+brew autoconf
+brew automake
+brew azure-cli
+brew bdw-gc
+brew cmake
+brew docutils
+brew gdbm
+brew gettext
+brew git
+brew gmp
+brew gnupg
+brew gnutls
+brew guile
+brew htop
+brew icu4c
+brew jq
+brew kubernetes-cli
+brew libassuan
+brew libevent
+brew libffi
+brew libgcrypt
+brew libgpg-error
+brew libidn2
+brew libksba
+brew libtasn1
+brew libtool
+brew libunistring
+brew libusb
+brew libyaml
+brew llvm
+brew lua
+brew mas
+brew ncurses
+brew nettle
+brew node
+brew npth
+brew oniguruma
+brew openssl@1.1
+brew p11-kit
+brew pcre
+brew pcre2
+brew perl
+brew pinentry
+brew pkg-config
+brew python@3.8
+brew readline
+brew ripgrep
+brew ruby
+brew sqlite
+brew stow
+brew telnet
+brew tmux
+brew tree
+brew unbound
+brew utf8proc
+brew vim
+brew xz
+brew yarn
+brew zsh
+brew zsh-syntax-highlighting
+
+tap homebrew/bundle
+
+tap homebrew/cask-fonts
+cask font-hack-nerd-font
+
+tap homebrew/cask-versions
+
+tap homebrew/cask
+cask alacritty
+cask amethyst
+cask docker
+cask firefox
+cask jiggler
+cask karabiner-elements
+cask mutespotifyads
+cask slack
+cask spotify
+cask visual-studio-code
+
+tap getantibody/tap
+
+tap rcmdnk/file
+brew brew-file
+
+tap universal-ctags/universal-ctags
+brew universal-ctags --HEAD
+
+# App Store applications
+appstore 869223134 KakaoTalk (2.8.0)
+appstore 1147396723 WhatsApp (2.2039.9)
+appstore 497799835 Xcode (12.0.1)

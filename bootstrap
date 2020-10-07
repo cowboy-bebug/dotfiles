@@ -5,6 +5,9 @@ set -e
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+# install homebrew formulae
+brew bundle install --file ./brew/Brewfile
+
 # install rust
 # curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 

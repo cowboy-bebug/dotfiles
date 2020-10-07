@@ -14,3 +14,8 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+# brew-file
+if [ -f $(brew --prefix)/etc/brew-wrap ]; then
+  source $(brew --prefix)/etc/brew-wrap
+fi
