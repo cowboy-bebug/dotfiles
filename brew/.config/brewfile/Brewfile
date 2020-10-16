@@ -6,10 +6,7 @@ brew adns
 brew antibody
 brew autoconf
 brew automake
-brew azure-cli
 brew bdw-gc
-brew cmake
-brew docutils
 brew gdbm
 brew gettext
 brew git
@@ -19,8 +16,6 @@ brew gnutls
 brew guile
 brew htop
 brew icu4c
-brew jq
-brew kubernetes-cli
 brew libassuan
 brew libevent
 brew libffi
@@ -33,14 +28,12 @@ brew libtool
 brew libunistring
 brew libusb
 brew libyaml
-brew llvm
 brew lua
 brew mas
 brew ncurses
 brew nettle
 brew node
 brew npth
-brew oniguruma
 brew openssl@1.1
 brew p11-kit
 brew pcre
@@ -49,12 +42,12 @@ brew perl
 brew pinentry
 brew pkg-config
 brew python@3.8
+brew python@3.9
 brew readline
 brew ripgrep
 brew ruby
 brew sqlite
 brew stow
-brew telnet
 brew tmux
 brew tree
 brew unbound
@@ -91,8 +84,3 @@ brew brew-file
 
 tap universal-ctags/universal-ctags
 brew universal-ctags --HEAD
-
-# App Store applications
-appstore 869223134 KakaoTalk (2.8.0)
-appstore 1147396723 WhatsApp (2.2039.9)
-appstore 497799835 Xcode (12.0.1)

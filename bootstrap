@@ -6,10 +6,10 @@ set -e
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # install homebrew formulae
-brew bundle install --file ./brew/Brewfile
+brew bundle install --no-lock --file ./brew/Brewfile
 
 # install rust
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # install vim plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -30,11 +30,11 @@ code --install-extension rust-lang.rust
 code --install-extension streetsidesoftware.code-spell-checker
 
 # symlink
-stow -v alacritty
-stow -v brew
-stow -v git
-stow -v karabiner
-stow -v vim
-stow -v vscode
-stow -v yarn
-stow -v zsh
+stow -v --adopt alacritty
+stow -v --adopt brew
+stow -v --adopt git
+stow -v --adopt karabiner
+stow -v --adopt vim
+stow -v --adopt vscode
+stow -v --adopt yarn
+stow -v --adopt zsh
