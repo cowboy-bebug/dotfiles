@@ -15,6 +15,7 @@
     "editor.insertSpaces": true,
     "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderWhitespace": "all",
     "editor.rulers": [
         80,
         120
