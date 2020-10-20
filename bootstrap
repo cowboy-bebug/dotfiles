@@ -2,20 +2,57 @@
 
 set -e
 
-# install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+log() {
+  local green=$(tput setaf 2)
+  local reset=$(tput sgr0)
+  printf "${green}${1}${reset}\n"
+}
 
-# install homebrew formulae
-brew bundle install --no-lock --file ./brew/Brewfile
+# install homebrew and packages
+which brew > /dev/null \
+  && log "🍺 Homebrew already installed!" \
+  || (
+    log "🍺 Installing Homebrew..." \
+    && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" \
+    && log "🍺 Installed Homebrew!\n"
+  )
+
+log "📦 Installing packages..." \
+  && brew install rcmdnk/file/brew-file homebrew/core/stow \
+  && source $(brew --prefix)/etc/brew-wrap \
+  && stow -v --adopt brew \
+  && brew file install \
+  && log "📦 Installed packages!\n"
+
+# symlink
+log "🔗 Creating symlinks..."
+stow -v --adopt \
+  alacritty \
+  git \
+  karabiner \
+  vim \
+  vscode \
+  yarn \
+  zsh
+log "🔗 Created symlinks!\n"
 
 # install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+which rustup > /dev/null \
+  && log "🦀 Rust already installed!" \
+  || (
+    log "🦀 Installing Rust..." \
+    && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh \
+    && log "🦀 Installed Rust!\n"
+  )
 
 # install vim plug
+log "🔌 Installing Vim plug..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+log "🔌 Installed Vim plug!\n"
 
 # install vscode extensions
+log "📦 Installing VS Code extensions..."
 code --install-extension akamud.vscode-theme-onedark
 code --install-extension bungcip.better-toml
 code --install-extension dbaeumer.vscode-eslint
@@ -28,13 +65,5 @@ code --install-extension ms-vscode.atom-keybindings
 code --install-extension richie5um2.vscode-sort-json
 code --install-extension rust-lang.rust
 code --install-extension streetsidesoftware.code-spell-checker
-
-# symlink
-stow -v --adopt alacritty
-stow -v --adopt brew
-stow -v --adopt git
-stow -v --adopt karabiner
-stow -v --adopt vim
-stow -v --adopt vscode
-stow -v --adopt yarn
-stow -v --adopt zsh
+log "📦 Installed VS Code extensions..."
+linebreak
