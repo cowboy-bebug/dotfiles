@@ -50,20 +50,3 @@ log "🔌 Installing Vim plug..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 log "🔌 Installed Vim plug!\n"
-
-# install vscode extensions
-log "📦 Installing VS Code extensions..."
-code --install-extension akamud.vscode-theme-onedark
-code --install-extension bungcip.better-toml
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension eamodio.gitlens
-code --install-extension matklad.rust-analyzer
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension ms-mssql.mssql
-code --install-extension ms-python.python
-code --install-extension ms-vscode.atom-keybindings
-code --install-extension richie5um2.vscode-sort-json
-code --install-extension rust-lang.rust
-code --install-extension streetsidesoftware.code-spell-checker
-log "📦 Installed VS Code extensions..."
-linebreak
