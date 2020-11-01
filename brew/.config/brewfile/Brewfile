@@ -70,6 +70,7 @@ cask alacritty
 cask amethyst
 cask docker
 cask firefox
+cask google-chrome
 cask jiggler
 cask karabiner-elements
 cask mutespotifyads
