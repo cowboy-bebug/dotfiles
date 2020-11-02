@@ -15,6 +15,7 @@ brew git
 brew gmp
 brew gnupg
 brew gnutls
+brew go
 brew guile
 brew htop
 brew icu4c
