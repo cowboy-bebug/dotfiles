@@ -6,7 +6,6 @@ code --install-extension bungcip.better-toml
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension eamodio.gitlens
 code --install-extension ms-azuretools.vscode-docker
-code --install-extension ms-mssql.mssql
 code --install-extension ms-python.python
 code --install-extension ms-vscode.atom-keybindings
 code --install-extension richie5um2.vscode-sort-json
