@@ -19,3 +19,9 @@ source $ZSH/oh-my-zsh.sh
 if [ -f $(brew --prefix)/etc/brew-wrap ]; then
   source $(brew --prefix)/etc/brew-wrap
 fi
+
+# nvm
+export NVM_DIR=$HOME/.nvm
+if [ -f $(brew --prefix)/nvm.sh ]; then
+  source $(brew --prefix)/nvm.sh
+fi

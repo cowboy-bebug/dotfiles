@@ -45,6 +45,7 @@ brew ncurses
 brew nettle
 brew node
 brew npth
+brew nvm
 brew openblas
 brew openssl@1.1
 brew p11-kit
