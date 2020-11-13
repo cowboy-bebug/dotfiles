@@ -77,8 +77,10 @@ cask font-hack-nerd-font
 tap homebrew/cask-versions
 
 tap homebrew/cask
+cask adoptopenjdk
 cask alacritty
 cask amethyst
+cask dbeaver-community
 cask docker
 cask firefox
 cask google-chrome
