@@ -97,6 +97,9 @@ cask visual-studio-code
 
 tap getantibody/tap
 
+tap glassechidna/taps
+brew awsweb
+
 tap rcmdnk/file
 brew brew-file
 
