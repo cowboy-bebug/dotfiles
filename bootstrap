@@ -32,7 +32,6 @@ stow -v --adopt \
   karabiner \
   vim \
   vscode \
-  yarn \
   zsh
 log "🔗 Created symlinks!\n"
 
