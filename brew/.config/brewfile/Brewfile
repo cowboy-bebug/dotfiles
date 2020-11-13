@@ -13,6 +13,7 @@ brew gcc
 brew gdbm
 brew gettext
 brew git
+brew git-filter-repo
 brew gmp
 brew gnupg
 brew gnutls
