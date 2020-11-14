@@ -82,6 +82,7 @@ tap homebrew/cask
 cask adoptopenjdk
 cask alacritty
 cask amethyst
+cask battle-net
 cask dbeaver-community
 cask docker
 cask firefox
@@ -94,6 +95,7 @@ cask r
 cask rstudio
 cask slack
 cask spotify
+cask steam
 cask visual-studio-code
 
 tap getantibody/tap
