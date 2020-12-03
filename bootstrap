@@ -46,6 +46,6 @@ which rustup > /dev/null \
 
 # install vim plug
 log "🔌 Installing Vim plug..."
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+curl -fLo ./vim/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 log "🔌 Installed Vim plug!\n"
