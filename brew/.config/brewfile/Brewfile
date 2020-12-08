@@ -26,6 +26,7 @@ brew isl
 brew jansson
 brew jpeg
 brew kotlin
+brew ktlint
 brew libassuan
 brew libevent
 brew libffi
@@ -94,6 +95,7 @@ cask dotnet
 cask firefox
 cask google-chrome
 cask karabiner-elements
+cask keepingyouawake
 cask mutespotifyads
 cask oversight
 cask skitch
