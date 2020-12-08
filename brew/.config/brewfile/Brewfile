@@ -6,6 +6,7 @@ brew adns
 brew antibody
 brew autoconf
 brew automake
+brew awscli
 brew bdw-gc
 brew cask
 brew emacs
@@ -24,6 +25,7 @@ brew icu4c
 brew isl
 brew jansson
 brew jpeg
+brew kotlin
 brew libassuan
 brew libevent
 brew libffi
@@ -47,6 +49,7 @@ brew node
 brew npth
 brew nvm
 brew openblas
+brew openjdk
 brew openssl@1.1
 brew p11-kit
 brew pcre
@@ -61,6 +64,7 @@ brew ripgrep
 brew ruby
 brew sqlite
 brew stow
+brew terraform
 brew tmux
 brew tree
 brew unbound
@@ -77,6 +81,7 @@ tap homebrew/cask-fonts
 cask font-hack-nerd-font
 
 tap homebrew/cask-versions
+cask mono-mdk-for-visual-studio
 
 tap homebrew/cask
 cask adoptopenjdk
@@ -85,14 +90,13 @@ cask amethyst
 cask battle-net
 cask dbeaver-community
 cask docker
+cask dotnet
 cask firefox
 cask google-chrome
-cask jiggler
 cask karabiner-elements
 cask mutespotifyads
 cask oversight
-cask r
-cask rstudio
+cask skitch
 cask slack
 cask spotify
 cask steam
@@ -109,6 +113,8 @@ brew brew-file
 tap universal-ctags/universal-ctags
 brew universal-ctags --HEAD
 
-# Other Homebrew packages
-brew Warning: Treating r as a formula. For the cask use homebrew/cask/r
-brew skitch
+# App Store applications
+appstore 869223134 KakaoTalk (2.8.2)
+appstore 1295203466 Microsoft Remote Desktop (10.5.0)
+appstore 803453959 Slack (4.11.3)
+appstore 497799835 Xcode (12.2)
