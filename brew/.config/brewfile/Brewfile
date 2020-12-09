@@ -96,6 +96,7 @@ cask firefox
 cask google-chrome
 cask karabiner-elements
 cask keepingyouawake
+cask nordvpn
 cask oversight
 cask skitch
 cask slack
