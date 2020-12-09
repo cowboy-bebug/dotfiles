@@ -117,5 +117,4 @@ brew universal-ctags --HEAD
 # App Store applications
 appstore 869223134 KakaoTalk (2.8.2)
 appstore 1295203466 Microsoft Remote Desktop (10.5.0)
-appstore 803453959 Slack (4.11.3)
 appstore 497799835 Xcode (12.2)
