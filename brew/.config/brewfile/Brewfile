@@ -87,10 +87,7 @@ cask mono-mdk-for-visual-studio
 tap homebrew/cask
 cask adoptopenjdk
 cask alacritty
-cask amethyst
-cask battle-net
 cask brave-browser
-cask dbeaver-community
 cask docker
 cask dotnet
 cask firefox
@@ -101,11 +98,8 @@ cask nordvpn
 cask oversight
 cask skitch
 cask slack
-cask steam
 cask visual-studio-code
 cask vlc
-
-tap getantibody/tap
 
 tap glassechidna/taps
 brew awsweb
