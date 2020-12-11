@@ -89,6 +89,7 @@ cask adoptopenjdk
 cask alacritty
 cask amethyst
 cask battle-net
+cask brave-browser
 cask dbeaver-community
 cask docker
 cask dotnet
@@ -102,6 +103,7 @@ cask skitch
 cask slack
 cask steam
 cask visual-studio-code
+cask vlc
 
 tap getantibody/tap
 
