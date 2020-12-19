@@ -111,6 +111,6 @@ tap universal-ctags/universal-ctags
 brew universal-ctags --HEAD
 
 # App Store applications
-appstore 869223134 KakaoTalk (2.8.2)
+appstore 869223134 KakaoTalk (2.8.4)
 appstore 1295203466 Microsoft Remote Desktop (10.5.0)
-appstore 497799835 Xcode (12.2)
+appstore 497799835 Xcode (12.3)
