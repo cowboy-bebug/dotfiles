@@ -90,6 +90,7 @@ cask alacritty
 cask brave-browser
 cask docker
 cask dotnet
+cask elmedia-player
 cask firefox
 cask google-chrome
 cask karabiner-elements
@@ -99,7 +100,6 @@ cask oversight
 cask skitch
 cask slack
 cask visual-studio-code
-cask vlc
 
 tap glassechidna/taps
 brew awsweb
