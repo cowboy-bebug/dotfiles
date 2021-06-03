@@ -8,26 +8,11 @@ log() {
   printf "${green}${1}${reset}\n"
 }
 
-# install homebrew and packages
-which brew > /dev/null \
-  && log "🍺 Homebrew already installed!" \
-  || (
-    log "🍺 Installing Homebrew..." \
-    && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" \
-    && log "🍺 Installed Homebrew!\n"
-  )
-
-log "📦 Installing packages..." \
-  && brew install rcmdnk/file/brew-file homebrew/core/stow \
-  && source $(brew --prefix)/etc/brew-wrap \
-  && stow -v --adopt brew \
-  && brew file install \
-  && log "📦 Installed packages!\n"
-
 # symlink
 log "🔗 Creating symlinks..."
 stow -v --adopt \
   alacritty \
+  brew \
   git \
   karabiner \
   vim \
@@ -35,13 +20,14 @@ stow -v --adopt \
   zsh
 log "🔗 Created symlinks!\n"
 
-# install rust
-which rustup > /dev/null \
-  && log "🦀 Rust already installed!" \
+# install homebrew and packages
+which brew > /dev/null \
+  && log "🍺 Homebrew already installed!" \
   || (
-    log "🦀 Installing Rust..." \
-    && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh \
-    && log "🦀 Installed Rust!\n"
+    log "🍺 Installing Homebrew..." \
+    && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" \
+    && log "🍺 Installed Homebrew!\n"
+    && brew bundle --file brew/.config/brew/Brewfile
   )
 
 # install vim plug

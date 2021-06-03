@@ -2,6 +2,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/bin:/usr/local/sbin:$PATH
 
 export GPG_TTY=$(tty)
+export HOMEBREW_BUNDLE_FILE=$HOME/.config/brew/Brewfile
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
@@ -14,11 +15,6 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
-# brew-file
-if [ -f $(brew --prefix)/etc/brew-wrap ]; then
-  source $(brew --prefix)/etc/brew-wrap
-fi
 
 # nvm
 export NVM_DIR=$HOME/.nvm
