@@ -2,14 +2,11 @@
 
 set -e
 
-log() {
-  local green=$(tput setaf 2)
-  local reset=$(tput sgr0)
-  printf "${green}${1}${reset}\n"
-}
+echo "🍺 Installing Homebrew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" \
+  && brew bundle --file brew/.config/brew/Brewfile
 
-# symlink
-log "🔗 Creating symlinks..."
+echo "🔗 Creating symlinks..."
 stow -v --adopt \
   alacritty \
   brew \
@@ -18,20 +15,7 @@ stow -v --adopt \
   vim \
   vscode \
   zsh
-log "🔗 Created symlinks!\n"
 
-# install homebrew and packages
-which brew > /dev/null \
-  && log "🍺 Homebrew already installed!" \
-  || (
-    log "🍺 Installing Homebrew..." \
-    && /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" \
-    && log "🍺 Installed Homebrew!\n"
-    && brew bundle --file brew/.config/brew/Brewfile
-  )
-
-# install vim plug
-log "🔌 Installing Vim plug..."
-curl -fLo ./vim/.vim/autoload/plug.vim --create-dirs \
+echo "🔌 Installing Vim plug..."
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-log "🔌 Installed Vim plug!\n"
