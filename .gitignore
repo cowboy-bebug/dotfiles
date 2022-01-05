@@ -1,0 +1,10 @@
+git/*
+!git/.gitconfig
+
+karabiner/.config/karabiner/**/
+
+vim/.vim/autoload/plug.vim
+vim/.vim/plugged
+
+vscode/*
+!vscode/Library/Application Support/Code/User/settings.json
