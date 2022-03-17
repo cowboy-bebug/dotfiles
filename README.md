@@ -1,8 +1,7 @@
 ### Create symlinks:
 
 ```
-git clone --recurse-submodules git@github.com:cowboy-bebug/dotfiles.git
-git config submodule.ohmyzsh.active false
+git clone git@github.com:cowboy-bebug/dotfiles.git
 ./bootstrap
 ```
 
