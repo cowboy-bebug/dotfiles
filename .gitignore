@@ -1,8 +1,6 @@
 git/*
 !git/.gitconfig
 
-karabiner/.config/karabiner/**/
-
 vim/.vim/autoload/plug.vim
 vim/.vim/plugged
 

@@ -14,7 +14,6 @@ stow -v --adopt \
   alacritty \
   brew \
   git \
-  karabiner \
   starship \
   vim \
   vscode \
