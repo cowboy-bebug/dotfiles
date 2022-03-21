@@ -1,6 +1,7 @@
 brew "git"
 brew "gnupg"
 brew "htop"
+brew "neovim"
 brew "node"
 brew "starship"
 brew "stow"
