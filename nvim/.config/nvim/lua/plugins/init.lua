@@ -31,6 +31,7 @@ end)
 
 require("plugins/barbar")
 require("plugins/comment")
+require("plugins/gitsigns")
 require("plugins/lualine")
 require("plugins/null-ls")
 require("plugins/telescope")
