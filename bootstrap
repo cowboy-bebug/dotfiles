@@ -15,7 +15,6 @@ stow -v --adopt \
   brew \
   git \
   starship \
-  vim \
   vscode \
   zsh
 log "🔗 Created symlinks!\n"
