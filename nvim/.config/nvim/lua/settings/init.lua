@@ -27,3 +27,4 @@ set.backup = false
 set.swapfile = false
 
 set.mouse = "a"
+set.clipboard = "unnamedplus"
