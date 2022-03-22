@@ -15,6 +15,10 @@ require("packer").startup(function()
 
     use "nvim-lua/plenary.nvim"
     use "nvim-telescope/telescope.nvim"
+    use {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        run = "make",
+    }
     use "lewis6991/gitsigns.nvim"
 
     use "neovim/nvim-lspconfig" -- Collection of configurations for built-in LSP client
