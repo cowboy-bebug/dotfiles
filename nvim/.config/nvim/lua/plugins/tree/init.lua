@@ -18,7 +18,7 @@ vim.g.nvim_tree_icons = {
 }
 
 require("nvim-tree").setup({
-    auto_close = true,
+    auto_close = false,
     diagnostics = { enable = true },
     filters = {
         dotfiles = false,
@@ -26,7 +26,7 @@ require("nvim-tree").setup({
     },
     actions = {
         open_file = {
-            quit_on_open = true,
+            quit_on_open = false,
         },
     },
 })
