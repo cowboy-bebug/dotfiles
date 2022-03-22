@@ -8,7 +8,7 @@ null_ls.setup({
             extra_args = {
                 "--single-quote-to-double-quote",
                 "--column-limit=100",
-                "--column-table-limit=30",
+                "--column-table-limit=40",
                 "--chop-down-table",
                 "--extra-sep-at-table-end",
                 "--spaces-inside-table-braces",
