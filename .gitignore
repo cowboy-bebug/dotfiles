@@ -2,6 +2,3 @@ git/*
 !git/.gitconfig
 
 nvim/.config/nvim/plugin
-
-vscode/*
-!vscode/Library/Application Support/Code/User/settings.json
