@@ -6,6 +6,21 @@ alias {k,kube}="kubectl"
 export VISUAL="nvim"
 export EDITOR=$VISUAL
 
+# git
+export GPG_TTY=$(tty)
+local NAME="Eric"
+local EMAIL="cowboy-bebug@users.noreply.github.com"
+local SIGNING_KEY=$(gpg -K --keyid-format=long --with-colons $EMAIL | grep ^sec:u | cut -d":" -f5)
+git config --global core.pager "less -F -X"
+git config --global commit.gpgsign true
+git config --global format.pretty "oneline"
+git config --global gpg.program "/usr/local/bin/gpg"
+git config --global log.abbrevCommit true
+git config --global pull.rebase true
+git config --global user.name $NAME
+git config --global user.email $EMAIL
+git config --global user.signingkey $SIGNING_KEY
+
 # homebrew
 export HOMEBREW_BUNDLE_FILE=$HOME/.config/brew/Brewfile
 export PATH="/usr/local/sbin:$PATH"
@@ -27,7 +42,6 @@ eval "$(starship init zsh)"
 
 # extra
 export PATH="$PATH:$(go env GOPATH)/bin"
-export GPG_TTY=$(tty)
 
 bindkey "^[[1;3D" backward-word
 bindkey "^[[1;3C" forward-word

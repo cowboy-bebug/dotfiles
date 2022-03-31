@@ -13,7 +13,6 @@ log "🔗 Creating symlinks..."
 stow -v --adopt \
   alacritty \
   brew \
-  git \
   nvim \
   starship \
   zsh
