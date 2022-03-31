@@ -30,14 +30,6 @@ export PATH="/usr/local/sbin:$PATH"
 local ZSH_CACHE="$HOME/.cache/zsh" && mkdir -p $ZSH_CACHE
 export HISTFILE="$ZSH_CACHE/.zsh_history"
 
-# oh-my-zsh
-export ZSH_COMPDUMP="$HOME/.cache/zsh/.zcompdump-$HOST-$ZSH_VERSION"
-export ZSH="$HOME/.oh-my-zsh"
-zstyle ":omz:update" mode auto
-zstyle ":omz:update" frequecy 7
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
-
 # starship
 eval "$(starship init zsh)"
 
