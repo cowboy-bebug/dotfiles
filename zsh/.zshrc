@@ -13,6 +13,7 @@ local EMAIL="cowboy-bebug@users.noreply.github.com"
 local SIGNING_KEY=$(gpg -K --keyid-format=long --with-colons $EMAIL | grep ^sec:u | cut -d":" -f5)
 git config --global core.pager "less -F -X"
 git config --global commit.gpgsign true
+git config --global diff.wsErrorHighlight "all"
 git config --global format.pretty "oneline"
 git config --global gpg.program "/usr/local/bin/gpg"
 git config --global log.abbrevCommit true
