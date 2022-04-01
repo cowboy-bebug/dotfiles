@@ -1,3 +1,43 @@
+# colours
+autoload -U colors && colors
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# history
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE="$XDG_CACHE_HOME/zsh/history"
+
+# auto / tab complete
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots) # hidden files
+
+# vim mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# change cursor shape for different vi modes
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+
+# use beam shape cursor on startup
+echo -ne '\e[5 q'
+
+# use beam shape cursor for each new prompt
+precmd() { echo -ne '\e[5 q'; }
+
 # aliases
 alias {v,vi,vim}="nvim"
 alias {k,kube}="kubectl"
@@ -26,24 +66,15 @@ git config --global user.signingkey $SIGNING_KEY
 export HOMEBREW_BUNDLE_FILE=$HOME/.config/brew/Brewfile
 export PATH="/usr/local/sbin:$PATH"
 
-# zsh
-local ZSH_CACHE="$HOME/.cache/zsh" && mkdir -p $ZSH_CACHE
-export HISTFILE="$ZSH_CACHE/.zsh_history"
-
 # starship
 eval "$(starship init zsh)"
-
-# XDG Base Directory Specification
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_STATE_HOME="$HOME/.local/state"
 
 # extra
 export PATH="$PATH:$(go env GOPATH)/bin"
 
 bindkey "^[[1;3D" backward-word
 bindkey "^[[1;3C" forward-word
+bindkey "^R" history-incremental-search-backward
 
 # nvm
 export NVM_DIR=$HOME/.nvm

@@ -1,1 +1,4 @@
 nvim/.config/nvim/plugin
+
+zsh/.config/zsh/*
+!zsh/.config/zsh/.zshrc
