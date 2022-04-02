@@ -1,6 +1,5 @@
 # colours
 autoload -U colors && colors
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # history
 HISTSIZE=10000
@@ -66,19 +65,14 @@ git config --global user.signingkey $SIGNING_KEY
 export HOMEBREW_BUNDLE_FILE=$HOME/.config/brew/Brewfile
 export PATH="/usr/local/sbin:$PATH"
 
-# starship
-eval "$(starship init zsh)"
-
-# extra
-export PATH="$PATH:$(go env GOPATH)/bin"
-
+# key binds
 bindkey "^[[1;3D" backward-word
 bindkey "^[[1;3C" forward-word
 bindkey "^R" history-incremental-search-backward
 
-# nvm
-export NVM_DIR=$HOME/.nvm
-if [ -f $(brew --prefix)/nvm.sh ]; then
-  source $(brew --prefix)/nvm.sh
-fi
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+
+source "$XDG_CONFIG_HOME/fzf/fzf.zsh"
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+eval "$(starship init zsh)"
