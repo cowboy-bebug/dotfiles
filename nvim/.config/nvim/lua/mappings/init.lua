@@ -6,6 +6,7 @@ local opts = {
 
 vim.g.mapleader = " "
 
+map("i", "<C-s>", "<Esc>:w<CR>", opts)
 map("n", "<C-s>", ":w<CR>", opts)
 
 map("n", "<C-W>", "<C-W>w", opts)
