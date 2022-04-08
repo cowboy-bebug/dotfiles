@@ -74,5 +74,6 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 source "$XDG_CONFIG_HOME/fzf/fzf.zsh"
+source "$XDG_DATA_HOME/zsh/fzf-tab/fzf-tab.plugin.zsh"
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 eval "$(starship init zsh)"
