@@ -1,7 +1,9 @@
-function _G.trim_trailing_whitespaces()
-    if not vim.o.binary and vim.o.filetype ~= "diff" then
-        local current_view = vim.fn.winsaveview()
-        vim.cmd([[keeppatterns %s/\s\+$//e]])
-        vim.fn.winrestview(current_view)
-    end
+function _G.trim_trailing_whitespace()
+    local pos = vim.api.nvim_win_get_cursor(0)
+    vim.api.nvim_command("silent keepjumps keeppatterns %s/\\s\\+$//e")
+    vim.api.nvim_win_set_cursor(0, pos)
 end
+
+vim.api.nvim_exec([[
+    autocmd BufWritePre * lua trim_trailing_whitespace()
+]], false)
