@@ -59,3 +59,4 @@ for _, lsp in pairs({
 end
 
 require("lsp/cmp")
+require("lsp/installer")

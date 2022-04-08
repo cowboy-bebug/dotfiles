@@ -28,6 +28,7 @@ require("packer").startup(function()
     use "L3MON4D3/LuaSnip" -- Snippets plugin
     use "onsails/lspkind-nvim"
     use "jose-elias-alvarez/null-ls.nvim"
+    use "williamboman/nvim-lsp-installer"
 
     use "numToStr/Comment.nvim"
     use "towolf/vim-helm"
