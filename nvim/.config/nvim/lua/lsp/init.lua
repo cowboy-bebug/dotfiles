@@ -58,4 +58,4 @@ for _, lsp in pairs({
     })
 end
 
-require("lsp/nvim-cmp")
+require("lsp/cmp")
