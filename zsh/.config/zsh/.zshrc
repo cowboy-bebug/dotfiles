@@ -73,7 +73,15 @@ bindkey "^R" history-incremental-search-backward
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-source "$XDG_CONFIG_HOME/fzf/fzf.zsh"
-source "$XDG_DATA_HOME/zsh/fzf-tab/fzf-tab.plugin.zsh"
-source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-eval "$(starship init zsh)"
+# ZSH plugins
+ZSH_PLUGIN_DIR="$XDG_DATA_HOME/zsh"
+ZSH_PLUGINS=(
+  "$ZSH_PLUGIN_DIR/fzf/fzf.zsh"
+  "$ZSH_PLUGIN_DIR/fzf-tab/fzf-tab.plugin.zsh"
+  "$ZSH_PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+)
+for each in $ZSH_PLUGINS; do
+  [ -f $each ] && source $each
+done
+
+[ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
