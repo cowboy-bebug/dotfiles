@@ -40,6 +40,7 @@ precmd() { echo -ne '\e[5 q'; }
 # aliases
 alias {v,vi,vim}="nvim"
 alias {k,kube}="kubectl"
+alias vimdiff="nvim -d"
 
 # editor
 export VISUAL="nvim"
