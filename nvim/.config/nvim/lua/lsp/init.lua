@@ -49,6 +49,7 @@ for _, lsp in pairs({
     "pyright",
     "rust_analyzer",
     "terraformls",
+    "yamlls",
 }) do
     require("lspconfig")[lsp].setup({
         on_attach = on_attach,
