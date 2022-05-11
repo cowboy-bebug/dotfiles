@@ -1,6 +1,6 @@
 require("onedark").setup({
     style = "dark",
-    transparent = false,
+    transparent = true,
     code_style = {
         comment_style = "italic",
     },
