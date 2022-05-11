@@ -48,6 +48,7 @@ for _, lsp in pairs({
     "gopls",
     "pyright",
     "rust_analyzer",
+    "taplo",
     "terraformls",
     "yamlls",
 }) do
