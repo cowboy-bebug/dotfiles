@@ -18,16 +18,10 @@ vim.g.nvim_tree_icons = {
 }
 
 require("nvim-tree").setup({
-    auto_close = false,
     diagnostics = { enable = true },
     filters = {
         dotfiles = false,
-        custom = { ".git", "target" },
-        exclude = { "data" },
+        custom = { "^.git$" },
     },
-    actions = {
-        open_file = {
-            quit_on_open = false,
-        },
-    },
+    git = { ignore = false },
 })
