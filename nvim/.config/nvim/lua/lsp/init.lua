@@ -55,6 +55,13 @@ for _, lsp in pairs({
         flags = {
             debounce_text_changes = 150,
         },
+        settings = {
+            ["rust-analyzer"] = {
+                cargo = {
+                    allFeatures = true,
+                },
+            },
+        },
     })
 end
 
