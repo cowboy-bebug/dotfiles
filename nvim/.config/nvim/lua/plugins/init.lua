@@ -45,12 +45,14 @@ require("packer").startup(function(use)
 
     use "numToStr/Comment.nvim"
     use "towolf/vim-helm"
+    use "norcalli/nvim-colorizer.lua"
 
     if packer_bootstrap then require("packer").sync() end
 end)
 
 require("plugins/barbar")
 require("plugins/comment")
+require("plugins/colorizer")
 require("plugins/gitsigns")
 require("plugins/lualine")
 require("plugins/null-ls")
