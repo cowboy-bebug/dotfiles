@@ -4,7 +4,9 @@ autoload -U colors && colors
 # history
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE="$XDG_CACHE_HOME/zsh/history"
+HISTFILE_DIR="$XDG_CACHE_HOME/zsh"
+HISTFILE="$HISTFILE_DIR/history"
+[[ -f $HISTFILE ]] || mkdir -p $HISTFILE_DIR && touch $HISTFILE
 
 # auto / tab complete
 autoload -U compinit
@@ -13,40 +15,18 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots) # hidden files
 
-# vim mode
-bindkey -v
-export KEYTIMEOUT=1
-
-# change cursor shape for different vi modes
-function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
-}
-zle -N zle-keymap-select
-
-# use beam shape cursor on startup
-echo -ne '\e[5 q'
-
-# use beam shape cursor for each new prompt
-precmd() { echo -ne '\e[5 q'; }
-
 # aliases
 alias {v,vi,vim}="nvim"
-alias {k,kube}="kubectl"
-alias vimdiff="nvim -d"
+alias ls="ls --color=auto -v"
 
 # editor
 export VISUAL="nvim"
 export EDITOR=$VISUAL
 
 # git
+local GIT_CONFIG_DIR=$XDG_CONFIG_HOME/git
+local GIT_CONFIG=$GIT_CONFIG_DIR/config
+[[ -f $GIT_CONFIG ]] || mkdir -p $GIT_CONFIG_DIR && touch $GIT_CONFIG
 export GPG_TTY=$(tty)
 local NAME="Eric"
 local EMAIL="cowboy-bebug@users.noreply.github.com"
@@ -55,22 +35,13 @@ git config --global core.pager "less -F -X"
 git config --global commit.gpgsign true
 git config --global diff.wsErrorHighlight "all"
 git config --global format.pretty "oneline"
-git config --global gpg.program "/usr/local/bin/gpg"
+git config --global gpg.program "/usr/bin/gpg"
 git config --global log.abbrevCommit true
 git config --global pull.rebase true
 git config --global remote.upstream.tagOpt --no-tags
 git config --global user.name $NAME
 git config --global user.email $EMAIL
 git config --global user.signingkey $SIGNING_KEY
-
-# homebrew
-export HOMEBREW_BUNDLE_FILE=$HOME/.config/brew/Brewfile
-export PATH="/usr/local/sbin:$PATH"
-
-# key binds
-bindkey "^[[1;3D" backward-word
-bindkey "^[[1;3C" forward-word
-bindkey "^R" history-incremental-search-backward
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
@@ -81,9 +52,10 @@ ZSH_PLUGINS=(
   "$ZSH_PLUGIN_DIR/fzf/fzf.zsh"
   "$ZSH_PLUGIN_DIR/fzf-tab/fzf-tab.plugin.zsh"
   "$ZSH_PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  "$ZSH_PLUGIN_DIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 )
-for each in $ZSH_PLUGINS; do
-  [ -f $each ] && source $each
+for plugin in $ZSH_PLUGINS; do
+  [ -f $plugin ] && source $plugin
 done
 
 [ -x "$(command -v starship)" ] && eval "$(starship init zsh)"

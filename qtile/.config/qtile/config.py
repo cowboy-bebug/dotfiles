@@ -9,10 +9,12 @@ from libqtile.widget import (
     Memory,
     Net,
     Prompt,
+    PulseVolume,
     QuickExit,
     Spacer,
     Systray,
     TextBox,
+    ThermalSensor,
     WindowName,
 )
 
@@ -60,10 +62,10 @@ async def move_spotify(client):
 
 
 groups = [
-    Group("web", matches=[Match(wm_class="brave-browser")]),
-    Group("term", matches=[Match(wm_class="Alacritty")]),
-    Group("code", matches=[Match(wm_class="Code"), Match(wm_class="Alacritty")]),
-    Group("docs", matches=[Match(wm_class="obsidian")]),
+    Group("web", matches=[Match(wm_class="brave-browser")], spawn="brave"),
+    Group("term", matches=[Match(wm_class="Alacritty")], spawn="alacritty"),
+    Group("code", matches=[Match(wm_class="Code"), Match(wm_class="Alacritty")], spawn="code"),
+    Group("docs", matches=[Match(wm_class="obsidian")], spawn="obsidian"),
     Group("chat", matches=[Match(wm_class="Slack"), Match(wm_class="Element")], spawn=["slack", "element-desktop"]),
     Group("misc", matches=[Match(wm_class="Spotify")], spawn="spotify"),
 ]
@@ -92,6 +94,7 @@ for layout in layouts:
     layout.margin_on_single = 20
 
 widget_defaults = dict(
+    background="#00000000",
     font="Hack Nerd Font Bold",
     fontsize=14,
     padding=5,
@@ -113,6 +116,9 @@ screens = [
                 WindowName(foreground=one_dark["white"]),
                 Spacer(length=STRETCH),
                 Systray(),
+                PulseVolume(),
+                TextBox(foreground=one_dark["fg"], text="|"),
+                ThermalSensor(),
                 TextBox(foreground=one_dark["fg"], text="|"),
                 CPU(
                     foreground=one_dark["yellow"],
@@ -148,7 +154,7 @@ screens = [
                 one_dark["bg"],
             ],
         ),
-        wallpaper="~/.config/qtile/731749.jpg",
+        wallpaper="~/.local/share/Wallpaper/731749.jpeg",
         wallpaper_mode="fill",
     ),
 ]

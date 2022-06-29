@@ -6,7 +6,7 @@ window:
     x: 5
     y: 5
   dynamic_padding: false
-  decorations: buttonless
+  decorations: none
 
 scrolling:
   history: 10000
@@ -14,18 +14,18 @@ scrolling:
 
 font:
   normal:
-    family: "Hack Nerd Font"
+    family: Hack Nerd Font
     style: Regular
   bold:
-    family: "Hack Nerd Font"
+    family: Hack Nerd Font
     style: Bold
   italic:
-    family: "Hack Nerd Font"
+    family: Hack Nerd Font
     style: Italic
   bold_italic:
-    family: "Hack Nerd Font"
+    family: Hack Nerd Font
     style: Bold Italic
-  size: 14
+  size: 10
 
 draw_bold_text_with_bright_colors: true
 
@@ -55,4 +55,23 @@ colors:
 selection:
   save_to_clipboard: true
 
+cursor:
+  style:
+    shape: Underline
+    blink: on
+  vi_mode_style:
+    shape: Block
+
 live_config_reload: true
+
+shell:
+  program: /usr/bin/zsh
+  args:
+    - --login
+
+key_bindings:
+  - { key: Left, mods: Alt, chars: "\x1bb" }
+  - { key: Right, mods: Alt, chars: "\x1bf" }
+  - { key: Escape, mods: Super, mode: ~Search, action: ToggleViMode }
+  - { key: F, mods: Control|Shift, mode: ~Search, action: SearchForward }
+  - { key: F, mods: Control, mode: ~Search, action: SearchBackward }
