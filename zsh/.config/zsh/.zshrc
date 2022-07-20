@@ -38,6 +38,7 @@ git config --global format.pretty "oneline"
 git config --global gpg.program "/usr/bin/gpg"
 git config --global log.abbrevCommit true
 git config --global pull.rebase true
+git config --global push.autoSetupRemote true
 git config --global remote.upstream.tagOpt --no-tags
 git config --global user.name $NAME
 git config --global user.email $EMAIL
