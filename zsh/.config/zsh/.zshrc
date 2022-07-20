@@ -47,6 +47,9 @@ git config --global user.signingkey $SIGNING_KEY
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
+# load env
+source "$CARGO_HOME/env"
+
 # ZSH plugins
 ZSH_PLUGIN_DIR="$XDG_DATA_HOME/zsh"
 ZSH_PLUGINS=(

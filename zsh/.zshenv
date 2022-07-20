@@ -32,4 +32,3 @@ export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
 export PATH="$CARGO_HOME/bin:$PATH"
-. "/home/eric/.local/share/cargo/env"
