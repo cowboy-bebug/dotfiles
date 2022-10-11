@@ -1,0 +1,22 @@
+[core]
+	pager = less -F -X
+[commit]
+	gpgsign = true
+[diff]
+	wsErrorHighlight = all
+[format]
+	pretty = oneline
+[gpg]
+	program = /usr/bin/gpg
+[log]
+	abbrevCommit = true
+[pull]
+	rebase = true
+[remote "upstream"]
+	tagOpt = --no-tags
+[user]
+	name = Eric
+	email = cowboy-bebug@users.noreply.github.com
+	signingkey = 82DD8B4E8C62571B
+[push]
+	autoSetupRemote = true

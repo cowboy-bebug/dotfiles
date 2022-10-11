@@ -1,3 +1,5 @@
+# setxkbmap -layout us -variant intl
+
 # colours
 autoload -U colors && colors
 
@@ -24,25 +26,7 @@ export VISUAL="nvim"
 export EDITOR=$VISUAL
 
 # git
-local GIT_CONFIG_DIR=$XDG_CONFIG_HOME/git
-local GIT_CONFIG=$GIT_CONFIG_DIR/config
-[[ -f $GIT_CONFIG ]] || mkdir -p $GIT_CONFIG_DIR && touch $GIT_CONFIG
 export GPG_TTY=$(tty)
-local NAME="Eric"
-local EMAIL="cowboy-bebug@users.noreply.github.com"
-local SIGNING_KEY=$(gpg -K --keyid-format=long --with-colons $EMAIL | grep ^sec:u | cut -d":" -f5)
-git config --global core.pager "less -F -X"
-git config --global commit.gpgsign true
-git config --global diff.wsErrorHighlight "all"
-git config --global format.pretty "oneline"
-git config --global gpg.program "/usr/bin/gpg"
-git config --global log.abbrevCommit true
-git config --global pull.rebase true
-git config --global push.autoSetupRemote true
-git config --global remote.upstream.tagOpt --no-tags
-git config --global user.name $NAME
-git config --global user.email $EMAIL
-git config --global user.signingkey $SIGNING_KEY
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
