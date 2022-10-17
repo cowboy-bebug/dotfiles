@@ -2,6 +2,7 @@ nvim/.config/nvim/plugin
 nvim/.config/nvim/lua/**/.init.lua.swp
 
 zsh/.config/zsh/*
+!zsh/.config/zsh/.zprofile
 !zsh/.config/zsh/.zshrc
 
 .DS_Store
