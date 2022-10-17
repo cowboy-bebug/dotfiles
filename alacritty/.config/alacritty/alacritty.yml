@@ -1,12 +1,9 @@
 window:
   opacity: 0.7
-  dimensions:
-    columns: 180
   padding:
     x: 5
     y: 5
-  dynamic_padding: false
-  decorations: none
+  decorations: buttonless
 
 scrolling:
   history: 10000
@@ -25,7 +22,7 @@ font:
   bold_italic:
     family: Hack Nerd Font
     style: Bold Italic
-  size: 10
+  size: 14
 
 draw_bold_text_with_bright_colors: true
 
@@ -63,11 +60,6 @@ cursor:
     shape: Block
 
 live_config_reload: true
-
-shell:
-  program: /usr/bin/zsh
-  args:
-    - --login
 
 key_bindings:
   - { key: Left, mods: Alt, chars: "\x1bb" }

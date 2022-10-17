@@ -1,5 +1,3 @@
-# setxkbmap -layout us -variant intl
-
 # colours
 autoload -U colors && colors
 
@@ -37,10 +35,10 @@ source "$CARGO_HOME/env"
 # ZSH plugins
 ZSH_PLUGIN_DIR="$XDG_DATA_HOME/zsh"
 ZSH_PLUGINS=(
-  "$ZSH_PLUGIN_DIR/fzf/fzf.zsh"
-  "$ZSH_PLUGIN_DIR/fzf-tab/fzf-tab.plugin.zsh"
-  "$ZSH_PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-  "$ZSH_PLUGIN_DIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+  "$ZSH_PLUGIN_DIR/junegunn/fzf/fzf.zsh"
+  "$ZSH_PLUGIN_DIR/Aloxaf/fzf-tab/fzf-tab.plugin.zsh"
+  "$ZSH_PLUGIN_DIR/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  "$ZSH_PLUGIN_DIR/jeffreytse/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 )
 for plugin in $ZSH_PLUGINS; do
   [ -f $plugin ] && source $plugin
