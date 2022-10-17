@@ -3,5 +3,3 @@ nvim/.config/nvim/lua/**/.init.lua.swp
 
 zsh/.config/zsh/*
 !zsh/.config/zsh/.zshrc
-
-__pycache__
