@@ -6,8 +6,6 @@
 	wsErrorHighlight = all
 [format]
 	pretty = oneline
-[gpg]
-	program = /usr/bin/gpg
 [log]
 	abbrevCommit = true
 [pull]
