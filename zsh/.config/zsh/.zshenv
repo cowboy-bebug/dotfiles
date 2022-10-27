@@ -1,3 +1,6 @@
+# ~/.zshenv should source this file:
+# echo "source ~/.config/zsh/.zshenv" >> ~/.zshenv
+
 # XDG Base Directory Specification
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
