@@ -1,6 +1,10 @@
 # colours
 autoload -U colors && colors
 
+# options
+setopt INTERACTIVE_COMMENTS
+setopt SHARE_HISTORY
+
 # history
 HISTSIZE=10000
 SAVEHIST=10000
