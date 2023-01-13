@@ -1,0 +1,21 @@
+layouts:
+    - widescreen-tall
+    - column
+    - tall
+    - wide
+    - two-pane
+    - 3column-left
+    - middle-wide
+    - fullscreen
+    - bsp
+
+mod1:
+    - shift
+    - command
+mod2:
+    - shift
+    - control
+    - command
+
+window-margins: true
+window-margin-size: 8
