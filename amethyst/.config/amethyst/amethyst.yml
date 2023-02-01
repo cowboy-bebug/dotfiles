@@ -1,0 +1,53 @@
+layouts:
+    - widescreen-tall
+    - column
+    - tall
+    - wide
+    - two-pane
+    - 3column-left
+    - middle-wide
+
+mod1:
+    - shift
+    - command
+mod2:
+    - shift
+    - control
+    - command
+
+relaunch-amethyst:
+    mod: mod2
+    key: x
+
+focus-main:
+  mod: mod2
+  key: m
+
+focus-screen-ccw:
+  mod: mod2
+  key: p
+focus-screen-cw:
+  mod: mod2
+  key: n
+
+select-tall-layout:
+  mod: mod2
+  key: a
+select-wide-layout:
+  mod: mod2
+  key: s
+select-fullscreen-layout:
+  mod: mod2
+  key: d
+select-column-layout:
+  mod: mod2
+  key: f
+
+reevaluate-windows:
+  mod: mod2
+  key: z
+
+focus-follows-mouse: false
+
+window-margins: true
+window-margin-size: 8
