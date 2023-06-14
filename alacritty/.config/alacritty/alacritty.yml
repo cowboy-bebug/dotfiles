@@ -55,7 +55,7 @@ selection:
 cursor:
   style:
     shape: Underline
-    blink: on
+    blinking: On
   vi_mode_style:
     shape: Block
 
