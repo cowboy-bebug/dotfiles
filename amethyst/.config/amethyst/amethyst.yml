@@ -1,10 +1,10 @@
 layouts:
+    - two-pane
+    - 3column-left
     - widescreen-tall
     - column
     - tall
     - wide
-    - two-pane
-    - 3column-left
     - middle-wide
 
 mod1:
@@ -46,6 +46,14 @@ select-column-layout:
 reevaluate-windows:
   mod: mod2
   key: z
+
+toggle-focus-follows-mouse:
+  mod: mod1
+  key: x
+
+relaunch-amethyst:
+  mod: mod2
+  key: x
 
 focus-follows-mouse: false
 
