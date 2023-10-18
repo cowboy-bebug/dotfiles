@@ -41,17 +41,20 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-for _, lsp in pairs({
-  "ansiblels",
+local lsps = {
   "bashls",
   "dockerls",
   "gopls",
+  "lua_ls",
   "pyright",
-  "rust_analyzer",
-  "taplo",
-  "terraformls",
-  "yamlls",
-}) do
+}
+require("mason").setup()
+require("mason-lspconfig").setup {
+  ensure_installed = lsps,
+  automatic_installation = true,
+}
+
+for _, lsp in pairs(lsps) do
   require("lspconfig")[lsp].setup({
     on_attach = on_attach,
     capabilities = capabilities,
@@ -69,4 +72,3 @@ for _, lsp in pairs({
 end
 
 require("lsp/cmp")
-require("lsp/installer")
