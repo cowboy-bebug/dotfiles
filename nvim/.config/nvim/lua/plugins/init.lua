@@ -39,7 +39,6 @@ require("packer").startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- Snippets source for nvim-cmp
   use "L3MON4D3/LuaSnip" -- Snippets plugin
   use "onsails/lspkind-nvim"
-  use "jose-elias-alvarez/null-ls.nvim"
   use {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -58,7 +57,6 @@ require("plugins/comment")
 require("plugins/colorizer")
 require("plugins/gitsigns")
 require("plugins/lualine")
-require("plugins/null-ls")
 require("plugins/telescope")
 require("plugins/tree")
 require("plugins/treesitter")
