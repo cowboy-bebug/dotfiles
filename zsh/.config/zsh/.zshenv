@@ -35,3 +35,4 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
 # Other exports
 export LESSHISTFILE="-"
+export PATH="$XDG_CONFIG_HOME/emacs/bin:$PATH"
