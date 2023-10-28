@@ -33,6 +33,9 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
+# paths
+export PATH="$GOPATH/bin:$PATH"
+export PATH="$XDG_CONFIG_HOME/emacs/bin:$PATH"
+
 # Other exports
 export LESSHISTFILE="-"
-export PATH="$XDG_CONFIG_HOME/emacs/bin:$PATH"
