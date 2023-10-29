@@ -79,3 +79,26 @@
 (setq-hook! 'js-mode-hook +format-with-lsp nil)
 (setq-hook! 'js-mode-hook +format-with :none)
 (add-hook 'js-mode-hook 'prettier-js-mode)
+
+(use-package! wucuo
+  :ensure t
+
+  :config
+  (setq ispell-program-name "aspell")
+  (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US" "--run-together" "--run-together-limit=16"))
+  (setq wucuo-spell-check-buffer-predicate
+        (lambda ()
+          (not (memq major-mode
+                     '(dired-mode
+                       log-edit-mode
+                       compilation-mode
+                       help-mode
+                       profiler-report-mode
+                       speedbar-mode
+                       gud-mode
+                       calc-mode
+                       Info-mode)))))
+
+  :hook
+  (prog-mode . wucuo-start)
+  (text-mode . wucuo-start))

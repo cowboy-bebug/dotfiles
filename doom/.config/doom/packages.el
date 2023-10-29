@@ -50,3 +50,4 @@
 ;; (unpin! t)
 
 (package! prettier-js)
+(package! wucuo)
