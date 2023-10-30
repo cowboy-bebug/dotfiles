@@ -102,3 +102,18 @@
   :hook
   (prog-mode . wucuo-start)
   (text-mode . wucuo-start))
+
+(use-package! markdown-mode
+  :config
+  (setq markdown-command "markdown")
+  (add-hook 'markdown-mode-hook
+            (lambda()
+              (seq fill-column 80)
+              (prettier-js-mode 1)))
+  :mode
+  ("\\.mdx\\'" . markdown-mode))
+
+(use-package! typescript-mode
+  :config
+  (setq typescript-indent-level 2))
+
