@@ -48,7 +48,13 @@
   (setq org-support-shift-select t)
   (use-package! org-superstar
     :hook
-    (org-mode . org-superstar-mode)))
+    (org-mode . org-superstar-mode))
+  (use-package! org-auto-tangle
+    :defer t
+    :config
+    (setq org-auto-tangle-babel-safelist '("~/github.com/cowboy-bebug/dotfiles/README.org"))
+    :hook
+    (org-mode . org-auto-tangle-mode)))
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an

@@ -49,6 +49,7 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
+(package! org-auto-tangle)
 (package! org-superstar)
 (package! prettier-js)
 (package! wucuo)
