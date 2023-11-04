@@ -45,6 +45,9 @@
 (after! org
   (setq org-hide-emphasis-markers t)
   (setq org-support-shift-select t)
+  (use-package! org-superstar
+    :hook
+    (org-mode . org-superstar-mode)))
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
