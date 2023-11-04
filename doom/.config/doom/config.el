@@ -45,6 +45,7 @@
 (after! org
   (setq org-edit-src-content-indentation nil)
   (setq org-hide-emphasis-markers t)
+  (setq org-startup-folded t)
   (setq org-support-shift-select t)
   (use-package! org-superstar
     :hook
