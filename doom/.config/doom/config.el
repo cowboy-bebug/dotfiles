@@ -43,6 +43,7 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/github.com/cowboy-bebug/org")
 (after! org
+  (setq org-edit-src-content-indentation nil)
   (setq org-hide-emphasis-markers t)
   (setq org-support-shift-select t)
   (use-package! org-superstar
