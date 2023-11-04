@@ -45,13 +45,6 @@
 (after! org
   (setq org-hide-emphasis-markers t)
   (setq org-support-shift-select t)
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (add-hook 'before-save-hook
-                        (lambda()
-                          (setq fill-column 80)
-                          (fill-paragraph))
-                        nil 'local))))
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
