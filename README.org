@@ -1,0 +1,351 @@
+#+TITLE: Literate dotfiles
+#+AUTHOR: Eric Lim
+#+auto_tangle: t
+
+I use [[https://www.gnu.org/software/stow][stow ]]to manage my configuration files. Here's how it's run:
+#+begin_src sh :tangle no
+stow -Rv $(ls -d */ | tr "/\n" " ") --target=$HOME
+#+end_src
+
+* Table of Contents :TOC:
+- [[#alacritty][Alacritty]]
+- [[#amethyst][Amethyst]]
+- [[#aspell][Aspell]]
+- [[#doom-emacs][Doom Emacs]]
+- [[#git][Git]]
+- [[#neovim][Neovim]]
+- [[#python][Python]]
+- [[#starship][Starship]]
+- [[#zsh][Zsh]]
+
+* [[https://alacritty.org][Alacritty]]
+~alacritty/.config/alacritty/alacritty.yml~
+#+begin_src yaml :tangle ./alacritty/.config/alacritty/alacritty.yml
+window:
+  opacity: 0.7
+  padding:
+    x: 5
+    y: 5
+  decorations: buttonless
+
+scrolling:
+  history: 10000
+  multiplier: 10
+
+font:
+  normal:
+    family: Hack Nerd Font
+    style: Regular
+  bold:
+    family: Hack Nerd Font
+    style: Bold
+  italic:
+    family: Hack Nerd Font
+    style: Italic
+  bold_italic:
+    family: Hack Nerd Font
+    style: Bold Italic
+  size: 14
+
+draw_bold_text_with_bright_colors: true
+
+colors:
+  primary:
+    background: "#282c34"
+    foreground: "#abb2bf"
+  normal:
+    black: "#1e2127"
+    red: "#e06c75"
+    green: "#98c379"
+    yellow: "#d19a66"
+    blue: "#61afef"
+    magenta: "#c678dd"
+    cyan: "#56b6c2"
+    white: "#abb2bf"
+  bright:
+    black: "#5c6370"
+    red: "#e06c75"
+    green: "#98c379"
+    yellow: "#d19a66"
+    blue: "#61afef"
+    magenta: "#c678dd"
+    cyan: "#56b6c2"
+    white: "#ffffff"
+
+selection:
+  save_to_clipboard: true
+
+cursor:
+  style:
+    shape: Underline
+    blinking: On
+  vi_mode_style:
+    shape: Block
+
+live_config_reload: true
+
+key_bindings:
+  - { key: Left, mods: Alt, chars: "\x1bb" }
+  - { key: Right, mods: Alt, chars: "\x1bf" }
+  - { key: Escape, mods: Super, mode: ~Search, action: ToggleViMode }
+  - { key: F, mods: Control|Shift, mode: ~Search, action: SearchForward }
+  - { key: F, mods: Control, mode: ~Search, action: SearchBackward }
+#+end_src
+
+* [[https://ianyh.com/amethyst][Amethyst]]
+~amethyst/.config/amethyst/amethyst.yml~
+#+begin_src yaml :tangle ./amethyst/.config/amethyst/amethyst.yml
+layouts:
+    - two-pane
+    - 3column-left
+    - widescreen-tall
+    - column
+    - tall
+    - wide
+    - middle-wide
+
+mod1:
+    - shift
+    - command
+mod2:
+    - shift
+    - control
+    - command
+
+relaunch-amethyst:
+    mod: mod2
+    key: x
+
+focus-main:
+  mod: mod2
+  key: m
+
+focus-screen-ccw:
+  mod: mod2
+  key: p
+focus-screen-cw:
+  mod: mod2
+  key: n
+
+select-tall-layout:
+  mod: mod2
+  key: a
+select-wide-layout:
+  mod: mod2
+  key: s
+select-fullscreen-layout:
+  mod: mod2
+  key: d
+select-column-layout:
+  mod: mod2
+  key: f
+
+reevaluate-windows:
+  mod: mod2
+  key: z
+
+toggle-focus-follows-mouse:
+  mod: mod1
+  key: x
+
+relaunch-amethyst:
+  mod: mod2
+  key: x
+
+focus-follows-mouse: false
+
+window-margins: true
+window-margin-size: 8
+#+end_src
+
+* [[http://aspell.net][Aspell]]
+~aspell/.config/aspell/.aspell.en.pws~
+#+begin_src text :tangle ./aspell/.config/aspell/.aspell.en.pws
+personal_ws-1.1 en 0
+api
+etag
+href
+http
+isbn
+ok
+verifier
+url
+#+end_src
+
+* [[https://github.com/doomemacs/doomemacs][Doom Emacs]]
+In progress...
+
+* [[https://git-scm.com][Git]]
+~git/.config/git/config~
+#+begin_src toml :tangle ./git/.config/git/config
+[core]
+	pager = less -F -X
+[commit]
+	gpgsign = true
+[diff]
+	wsErrorHighlight = all
+[format]
+	pretty = oneline
+[log]
+	abbrevCommit = true
+[pull]
+	rebase = true
+[remote "upstream"]
+	tagOpt = --no-tags
+[user]
+	name = Eric
+	email = cowboy-bebug@users.noreply.github.com
+	signingkey = 3688DD084E73B55E
+[push]
+	autoSetupRemote = true
+#+end_src
+
+* [[https://neovim.io][Neovim]]
+In progress...
+
+* [[https://www.python.org][Python]]
+~python/.config/python/pythonrc~
+#+begin_src python :tangle ./python/.config/python/pythonrc
+import readline
+
+readline.write_history_file = lambda *args: None
+#+end_src
+
+* [[https://starship.rs][Starship]]
+~starship/.config/starship.toml~
+#+begin_src toml :tangle ./starship/.config/starship.toml
+format = """
+$directory\
+$git_branch $git_commit $git_state $git_metrics $git_status
+$cmd_duration
+$character
+"""
+
+add_newline = false
+
+[character]
+error_symbol = "[>](bold red)"
+success_symbol = "[>](bold green)"
+
+[cmd_duration]
+format = "[\\(took $duration\\)\n](bold yellow)"
+min_time = 500
+show_milliseconds = true
+
+[directory]
+home_symbol = ""
+
+[git_branch]
+format = "[{$symbol$branch}]($style)"
+only_attached = true
+symbol = ""
+style = "bold cyan"
+#+end_src
+
+* [[https://www.zsh.org][Zsh]]
+~zsh/.config/zsh/.zprofile~
+#+begin_src zsh :tangle ./zsh/.config/zsh/.zprofile
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+#+end_src
+
+~zsh/.config/zsh/.zshenv~
+#+begin_src zsh :tangle ./zsh/.config/zsh/.zshenv
+# ~/.zshenv should source this file:
+# echo "source ~/.config/zsh/.zshenv" >> ~/.zshenv
+
+# XDG Base Directory Specification
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+# XDG_CACHE_HOME
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
+export CP_HOME_DIR="$XDG_CACHE_HOME/cocoapod"
+
+# XDG_CONFIG_HOME
+export ASPELL_CONF="home-dir $XDG_CONFIG_HOME/aspell"
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME/bundle"
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+# XDG_DATA_HOME
+export AZURE_CONFIG_DIR="$XDG_DATA_HOME/azure"
+export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME/bundle"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export GEM_HOME="$XDG_DATA_HOME/gem"
+export GOPATH="$XDG_DATA_HOME/go"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export IPFS_PATH="$XDG_DATA_HOME/ipfs"
+export NVM_DIR="$XDG_DATA_HOME/nvm"
+export RBENV_ROOT="$XDG_DATA_HOME/rbenv"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export TERMINFO="$XDG_DATA_HOME/terminfo"
+export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
+
+# paths
+export PATH="$GOPATH/bin:$PATH"
+export PATH="$XDG_CONFIG_HOME/emacs/bin:$PATH"
+
+# Other exports
+export LESSHISTFILE="-"
+#+end_src
+
+~zsh/.config/zsh/.zshrc~
+#+begin_src zsh :tangle ./zsh/.config/zsh/.zshrc
+# colours
+autoload -U colors && colors
+
+# options
+setopt INTERACTIVE_COMMENTS
+setopt SHARE_HISTORY
+
+# history
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE_DIR="$XDG_CACHE_HOME/zsh"
+HISTFILE="$HISTFILE_DIR/history"
+[[ -f $HISTFILE ]] || mkdir -p $HISTFILE_DIR && touch $HISTFILE
+
+# auto / tab complete
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots) # hidden files
+
+# aliases
+alias {v,vi,vim}="nvim"
+alias ls="ls --color=auto -v"
+
+# editor
+export VISUAL="nvim"
+export EDITOR=$VISUAL
+
+# git
+export GPG_TTY=$(tty)
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+
+# load env
+source "$CARGO_HOME/env"
+
+# ZSH plugins
+ZSH_PLUGIN_DIR="$XDG_DATA_HOME/zsh"
+ZSH_PLUGINS=(
+  "$ZSH_PLUGIN_DIR/junegunn/fzf/fzf.zsh"
+  "$ZSH_PLUGIN_DIR/Aloxaf/fzf-tab/fzf-tab.plugin.zsh"
+  "$ZSH_PLUGIN_DIR/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  "$ZSH_PLUGIN_DIR/jeffreytse/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+)
+for plugin in $ZSH_PLUGINS; do
+  [ -f $plugin ] && source $plugin
+done
+
+[ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
+#+end_src
