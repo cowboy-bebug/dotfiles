@@ -1,5 +1,3 @@
-[alias]
-  adog = log --all --decorate --oneline --graph
 [core]
 	pager = less -F -X
 [commit]
