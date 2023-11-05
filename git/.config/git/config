@@ -13,7 +13,7 @@
 [remote "upstream"]
 	tagOpt = --no-tags
 [user]
-	name = Eric
+	name = Eric Lim
 	email = cowboy-bebug@users.noreply.github.com
 	signingkey = 3688DD084E73B55E
 [push]
