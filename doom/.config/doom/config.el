@@ -131,3 +131,6 @@
   :config
   (setq typescript-indent-level 2))
 
+(use-package! nov
+  :mode
+  ("\\.epub\\'" . nov-mode))
