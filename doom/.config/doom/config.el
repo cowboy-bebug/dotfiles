@@ -134,3 +134,13 @@
 (use-package! nov
   :mode
   ("\\.epub\\'" . nov-mode))
+
+(use-package! elfeed
+  :config
+  (setq elfeed-search-filter "@1-month-ago +unread")
+  (setq rmh-elfeed-org-files (list (expand-file-name "./elfeed.org" doom-user-dir)))
+  (setq browse-url-browser-function 'eww-browse-url)
+  (set-popup-rules!
+    '(("^\\*eww\\*"
+       ;; :side right :slot 1 :size 0.65 :select t))))
+       :side right :slot 1 :size #'+popup-shrink-to-fit :select t))))
