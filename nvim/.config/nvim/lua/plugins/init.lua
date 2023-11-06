@@ -15,10 +15,7 @@ require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
   use "navarasu/onedark.nvim"
 
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
   use "nvim-lualine/lualine.nvim"
-  use "romgrk/barbar.nvim"
 
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -26,18 +23,35 @@ require("packer").startup(function(use)
   }
   use "nvim-treesitter/nvim-treesitter-refactor"
 
-  use "nvim-lua/plenary.nvim"
-  use "nvim-telescope/telescope.nvim"
+  -- tree
   use {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    run = "make",
+    "nvim-tree/nvim-tree.lua",
+    requires = { "nvim-tree/nvim-web-devicons" }
   }
-  use "lewis6991/gitsigns.nvim"
 
-  use "hrsh7th/nvim-cmp" -- Autocompletion plugin
+  -- telescope
+  use {
+    "nvim-telescope/telescope.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+      "nvim-tree/nvim-web-devicons",
+    }
+  }
+
+  -- cmp
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets",
+    }
+  }
+
   use "hrsh7th/cmp-nvim-lsp" -- LSP source for nvim-cmp
-  use "saadparwaiz1/cmp_luasnip" -- Snippets source for nvim-cmp
-  use "L3MON4D3/LuaSnip" -- Snippets plugin
   use "onsails/lspkind-nvim"
   use {
     "williamboman/mason.nvim",
@@ -45,18 +59,16 @@ require("packer").startup(function(use)
     "neovim/nvim-lspconfig",
   }
 
+  use "lewis6991/gitsigns.nvim"
   use "numToStr/Comment.nvim"
-  use "towolf/vim-helm"
-  use "norcalli/nvim-colorizer.lua"
 
   if packer_bootstrap then require("packer").sync() end
 end)
 
-require("plugins/barbar")
-require("plugins/comment")
-require("plugins/colorizer")
+require("Comment").setup()
+require("lualine").setup()
+
 require("plugins/gitsigns")
-require("plugins/lualine")
 require("plugins/telescope")
 require("plugins/tree")
 require("plugins/treesitter")

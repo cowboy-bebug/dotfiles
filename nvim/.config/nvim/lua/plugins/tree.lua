@@ -13,3 +13,5 @@ require("nvim-tree").setup({
   },
   git = { ignore = false },
 })
+
+require("luasnip.loaders.from_vscode").lazy_load()
