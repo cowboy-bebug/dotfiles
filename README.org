@@ -18,8 +18,8 @@ stow -Rv $(ls -d */ | tr "/\n" " ") --target=$HOME
 - [[#starship][Starship]]
 - [[#zsh][Zsh]]
 
-* [[https://alacritty.org][Alacritty]]
-~alacritty/.config/alacritty/alacritty.yml~
+* Alacritty
+[[file:alacritty/.config/alacritty/alacritty.yml]]
 #+begin_src yaml :tangle ./alacritty/.config/alacritty/alacritty.yml
 window:
   opacity: 0.7
@@ -92,8 +92,8 @@ key_bindings:
   - { key: F, mods: Control, mode: ~Search, action: SearchBackward }
 #+end_src
 
-* [[https://ianyh.com/amethyst][Amethyst]]
-~amethyst/.config/amethyst/amethyst.yml~
+* Amethyst
+[[file:amethyst/.config/amethyst/amethyst.yml]]
 #+begin_src yaml :tangle ./amethyst/.config/amethyst/amethyst.yml
 layouts:
     - two-pane
@@ -158,8 +158,8 @@ window-margins: true
 window-margin-size: 8
 #+end_src
 
-* [[http://aspell.net][Aspell]]
-~aspell/.config/aspell/.aspell.en.pws~
+* Aspell
+[[file:aspell/.config/aspell/.aspell.en.pws]]
 #+begin_src text :tangle ./aspell/.config/aspell/.aspell.en.pws
 personal_ws-1.1 en 0
 api
@@ -172,11 +172,11 @@ verifier
 url
 #+end_src
 
-* [[https://github.com/doomemacs/doomemacs][Doom Emacs]]
+* Doom Emacs
 In progress...
 
-* [[https://git-scm.com][Git]]
-~git/.config/git/config~
+* Git
+[[file:git/.config/git/config]]
 #+begin_src toml :tangle ./git/.config/git/config
 [core]
 	pager = less -F -X
@@ -200,19 +200,19 @@ In progress...
 	autoSetupRemote = true
 #+end_src
 
-* [[https://neovim.io][Neovim]]
+* Neovim
 In progress...
 
-* [[https://www.python.org][Python]]
-~python/.config/python/pythonrc~
+* Python
+[[file:python/.config/python/pythonrc][python/.config/python/pythonrc]]
 #+begin_src python :tangle ./python/.config/python/pythonrc
 import readline
 
 readline.write_history_file = lambda *args: None
 #+end_src
 
-* [[https://starship.rs][Starship]]
-~starship/.config/starship.toml~
+* Starship
+[[file:starship/.config/starship.toml][starship/.config/starship.toml]]
 #+begin_src toml :tangle ./starship/.config/starship.toml
 format = """
 $directory\
@@ -242,14 +242,14 @@ symbol = ""
 style = "bold cyan"
 #+end_src
 
-* [[https://www.zsh.org][Zsh]]
-~zsh/.config/zsh/.zprofile~
+* Zsh
+[[file:zsh/.config/zsh/.zprofile][zsh/.config/zsh/.zprofile]]
 #+begin_src zsh :tangle ./zsh/.config/zsh/.zprofile
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 #+end_src
 
-~zsh/.config/zsh/.zshenv~
+[[file:zsh/.config/zsh/.zshenv][zsh/.config/zsh/.zshenv]]
 #+begin_src zsh :tangle ./zsh/.config/zsh/.zshenv
 # ~/.zshenv should source this file:
 # echo "source ~/.config/zsh/.zshenv" >> ~/.zshenv
@@ -295,7 +295,7 @@ export PATH="$XDG_CONFIG_HOME/emacs/bin:$PATH"
 export LESSHISTFILE="-"
 #+end_src
 
-~zsh/.config/zsh/.zshrc~
+[[file:zsh/.config/zsh/.zshrc][zsh/.config/zsh/.zshrc]]
 #+begin_src zsh :tangle ./zsh/.config/zsh/.zshrc
 # colours
 autoload -U colors && colors
