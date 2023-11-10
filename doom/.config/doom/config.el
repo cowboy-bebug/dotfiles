@@ -89,6 +89,10 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(use-package! projectile
+  :config
+  (setq projectile-track-known-projects-automatically nil))
+
 (setq-hook! 'js-mode-hook +format-with-lsp nil)
 (setq-hook! 'js-mode-hook +format-with :none)
 (add-hook 'js-mode-hook 'prettier-js-mode)
