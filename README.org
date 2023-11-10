@@ -10,7 +10,6 @@ stow -Rv $(ls -d */ | tr "/\n" " ") --target=$HOME
 * Table of Contents :TOC:
 - [[#alacritty][Alacritty]]
 - [[#amethyst][Amethyst]]
-- [[#aspell][Aspell]]
 - [[#doom-emacs][Doom Emacs]]
 - [[#git][Git]]
 - [[#neovim][Neovim]]
@@ -158,20 +157,6 @@ focus-follows-mouse: false
 
 window-margins: true
 window-margin-size: 8
-#+end_src
-
-* Aspell
-[[file:aspell/.config/aspell/.aspell.en.pws]]
-#+begin_src text :tangle ./aspell/.config/aspell/.aspell.en.pws
-personal_ws-1.1 en 0
-api
-etag
-href
-http
-isbn
-ok
-verifier
-url
 #+end_src
 
 * Doom Emacs

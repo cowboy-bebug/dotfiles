@@ -53,4 +53,3 @@
 (package! org-auto-tangle)
 (package! org-superstar)
 (package! prettier-js)
-(package! wucuo)
