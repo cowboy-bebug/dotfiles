@@ -1,9 +1,0 @@
-* Feeds :elfeed:
-** Programming :programming:
-*** https://feeds.feedburner.com/TheDailyWtf
-*** https://lobste.rs/rss
-*** https://www.news.ycombinator.com/rss
-*** https://www.reddit.com/r/programming/.rss
-** News :news:
-*** Tech news :tech:
-**** https://techcrunch.com/feed
