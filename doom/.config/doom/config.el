@@ -26,6 +26,10 @@
     :hook
     (org-mode . org-auto-tangle-mode)))
 
+(after! magit
+  :config
+  (setq magit-log-section-commit-count 30))
+
 (setq auto-mode-alist
       (append '(("\\.mdx\\'" . markdown-mode))
               auto-mode-alist))

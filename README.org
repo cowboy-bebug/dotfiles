@@ -390,6 +390,13 @@ window-margin-size: 8
     (org-mode . org-auto-tangle-mode)))
 #+end_src
 
+*** git
+#+begin_src emacs-lisp :tangle ./doom/.config/doom/config.el
+(after! magit
+  :config
+  (setq magit-log-section-commit-count 30))
+#+end_src
+
 *** file association
 #+begin_src emacs-lisp :tangle ./doom/.config/doom/config.el
 (setq auto-mode-alist
