@@ -43,7 +43,16 @@
           (expand-file-name ".aspell.en.pws"  aspell-personal-directory))))
 
 (use-package! nov
-  :mode ("\\.epub\\'" . nov-mode))
+  :mode
+  ("\\.epub\\'" . nov-mode)
+
+  :hook
+  (add-hook 'nov-mode-hook
+            (function lambda()
+                      (face-remap-add-relative
+                       'variable-pitch
+                       :family "Georgia"
+                       :height 1.0))))
 
 (after! elfeed
   :config
