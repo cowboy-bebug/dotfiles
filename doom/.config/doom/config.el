@@ -4,7 +4,7 @@
       (font-spec
        :family "Roboto Mono"
        :size 14
-       :weight 'medium))
+       :weight 'normal))
 (setq doom-variable-pitch-font
       (font-spec
        :family "Georgia"
