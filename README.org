@@ -404,6 +404,13 @@ window-margin-size: 8
               auto-mode-alist))
 #+end_src
 
+*** project
+#+begin_src emacs-lisp :tangle ./doom/.config/doom/config.el
+(after! projectile
+  :config
+  (setq projectile-track-known-projects-automatically nil))
+#+end_src
+
 *** spell checking
 #+begin_src emacs-lisp :tangle ./doom/.config/doom/config.el
 (after! flyspell

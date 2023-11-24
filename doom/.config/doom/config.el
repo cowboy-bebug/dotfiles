@@ -34,6 +34,10 @@
       (append '(("\\.mdx\\'" . markdown-mode))
               auto-mode-alist))
 
+(after! projectile
+  :config
+  (setq projectile-track-known-projects-automatically nil))
+
 (after! flyspell
   :config
   (let ((aspell-personal-directory
