@@ -12,6 +12,8 @@
 
 (setq display-line-numbers-type 'relative)
 
+(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
+
 (setq org-directory "~/github.com/cowboy-bebug/org")
 (after! org
   (setq org-edit-src-content-indentation nil)
