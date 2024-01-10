@@ -1,5 +1,6 @@
-personal_ws-1.1 en 17 
+personal_ws-1.1 en 20 
 api
+config
 dir
 elfeed
 epub
@@ -11,8 +12,10 @@ isbn
 ispell
 js
 mdx
+monorepo
 nov
 ok
 setq
+ui
 url
 verifier
