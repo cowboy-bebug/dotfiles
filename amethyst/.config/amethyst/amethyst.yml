@@ -1,23 +1,27 @@
+# Navigate to: https://github.com/ianyh/Amethyst/blob/development/docs/configuration-files.md
 layouts:
-    - two-pane
-    - 3column-left
-    - widescreen-tall
-    - column
-    - tall
-    - wide
-    - middle-wide
+  - two-pane
+  - 3column-left
+  - widescreen-tall
+  - column
+  - tall
+  - wide
 
 mod1:
-    - shift
-    - command
+  - shift
+  - command
 mod2:
-    - shift
-    - control
-    - command
+  - shift
+  - control
+  - command
 
-relaunch-amethyst:
-    mod: mod2
-    key: x
+window-margins: true
+window-margin-size: 8
+float-small-windows: true
+focus-follows-mouse: false
+enables-layout-hud: true
+enables-layout-hud-on-space-change: true
+follow-space-thrown-windows: true
 
 focus-main:
   mod: mod2
@@ -30,32 +34,52 @@ focus-screen-cw:
   mod: mod2
   key: n
 
+focus-screen-1:
+  mod: ""
+  key: ""
+focus-screen-2:
+  mod: ""
+  key: ""
+focus-screen-3:
+  mod: ""
+  key: ""
+focus-screen-4:
+  mod: ""
+  key: ""
+throw-screen-1:
+  mod: ""
+  key: ""
+throw-screen-2:
+  mod: ""
+  key: ""
+throw-screen-3:
+  mod: ""
+  key: ""
+throw-screen-4:
+  mod: ""
+  key: ""
+
 select-tall-layout:
-  mod: mod2
-  key: a
+  mod: ""
+  key: ""
 select-wide-layout:
-  mod: mod2
-  key: s
+  mod: ""
+  key: ""
 select-fullscreen-layout:
   mod: mod2
-  key: d
-select-column-layout:
-  mod: mod2
   key: f
+select-column-layout:
+  mod: ""
+  key: ""
+
+toggle-focus-follows-mouse:
+  mod: ""
+  key: ""
 
 reevaluate-windows:
   mod: mod2
   key: z
 
-toggle-focus-follows-mouse:
-  mod: mod1
-  key: x
-
 relaunch-amethyst:
   mod: mod2
   key: x
-
-focus-follows-mouse: false
-
-window-margins: true
-window-margin-size: 8
