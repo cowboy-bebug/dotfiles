@@ -1,8 +1,8 @@
 doom/**/flycheck_*.el
 
-zsh/.config/zsh
-!zsh/.config/zsh/.zprofile
-!zsh/.config/zsh/.zshenv
-!zsh/.config/zsh/.zshrc
+zsh
+!zsh/**/.zprofile
+!zsh/**/.zshenv
+!zsh/**/.zshrc
 
 .DS_Store

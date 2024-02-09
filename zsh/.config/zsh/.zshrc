@@ -49,3 +49,6 @@ for plugin in $ZSH_PLUGINS; do
 done
 
 [ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
+
+# nvm
+source "/opt/homebrew/opt/nvm/nvm.sh"

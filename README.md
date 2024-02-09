@@ -12,4 +12,5 @@ To install dependencies from Brew:
 
 ``` sh
 brew bundle install --file=doom.Brewfile --no-lock
+brew bundle install --file=zsh.Brewfile --no-lock
 ```
