@@ -1,3 +1,5 @@
+doom/**/flycheck_*.el
+
 zsh/.config/zsh
 !zsh/.config/zsh/.zprofile
 !zsh/.config/zsh/.zshenv
