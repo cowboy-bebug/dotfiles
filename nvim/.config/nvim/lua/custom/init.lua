@@ -6,6 +6,8 @@ autocmd("VimResized", {
 	command = "tabdo wincmd =",
 })
 
+vim.opt.swapfile = false
+
 vim.opt.relativenumber = true
 
 vim.opt.spell = true
