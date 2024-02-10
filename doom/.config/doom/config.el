@@ -2,12 +2,11 @@
 ;;; For more info, see `~/.config/emacs/templates/config.example.el'
 
 ;; ui
-(setq doom-theme 'doom-one
-      doom-font (font-spec :family "Menlo" :size 14)
+(setq doom-theme 'doom-earl-grey
+      doom-font (font-spec :family "Hack Nerd Font" :size 12)
       doom-variable-pitch-font (font-spec :family "Georgia" :size 20)
       doom-modeline-vcs-max-length 40 ;; to display branch name
       display-line-numbers-type 'relative)
-
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
 
 ;; spelling
