@@ -9,8 +9,8 @@ M.ui = {
 	------------------------------- base46 -------------------------------------
 	hl_add = highlights.add,
 	hl_override = highlights.override,
-	theme_toggle = { "onedark", "onenord" },
-	theme = "onenord",
+	theme_toggle = { "ayu_light", "ayu_dark" },
+	theme = "ayu_light",
 	transparency = false,
 
 	------------------------------- nvchad_ui modules -----------------------------
