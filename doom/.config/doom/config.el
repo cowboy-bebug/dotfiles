@@ -11,7 +11,8 @@
 
 ;; spelling
 (after! spell-fu
-  (setq ispell-dictionary "en"))
+  (setq ispell-dictionary "en"
+        spell-fu-word-delimit-camel-case t))
 
 ;; org
 (setq org-directory "~/org/")
