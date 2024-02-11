@@ -2,12 +2,22 @@
 ;;; For more info, see `~/.config/emacs/templates/config.example.el'
 
 ;; ui
-(setq doom-theme 'doom-earl-grey
-      doom-font (font-spec :family "Hack Nerd Font" :size 12)
-      doom-variable-pitch-font (font-spec :family "Georgia" :size 20)
+(setq doom-theme 'tango
+      doom-font                (font-spec :family "Hack Nerd Font" :size 12)
+      doom-variable-pitch-font (font-spec :family "Georgia"        :size 20)
       doom-modeline-vcs-max-length 40 ;; to display branch name
       display-line-numbers-type 'relative)
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
+
+(when (display-graphic-p)
+  (let ((current-line-background "#D6D6D6")
+        (comment-foreground      "#9E9A95"))
+    (custom-theme-set-faces! 'tango
+      `(hl-line                  :background ,current-line-background)
+      `(line-number-current-line :background ,current-line-background))
+    (custom-set-faces!
+      `(font-lock-comment-face :foreground ,comment-foreground)
+      `(font-lock-doc-face     :foreground ,comment-foreground))))
 
 ;; spelling
 (after! spell-fu
