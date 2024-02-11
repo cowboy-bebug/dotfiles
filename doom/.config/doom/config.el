@@ -10,14 +10,23 @@
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
 
 (when (display-graphic-p)
-  (let ((current-line-background "#D6D6D6")
-        (comment-foreground      "#9E9A95"))
-    (custom-theme-set-faces! 'tango
-      `(hl-line                  :background ,current-line-background)
-      `(line-number-current-line :background ,current-line-background))
-    (custom-set-faces!
-      `(font-lock-comment-face :foreground ,comment-foreground)
-      `(font-lock-doc-face     :foreground ,comment-foreground))))
+  (when (eq doom-theme 'tango)
+    (let ((current-line-background "#D6D6D6")
+          (comment-foreground      "#9E9A95")
+          (dired-dir-foreground    "#204A87"))
+      (custom-theme-set-faces! 'tango
+        `(hl-line                  :background ,current-line-background)
+        `(line-number-current-line :background ,current-line-background)
+        `(diredfl-dir-heading :background nil :foreground ,dired-dir-foreground :weight bold)
+        `(diredfl-dir-name    :background nil :foreground ,dired-dir-foreground)
+        `(diredfl-dir-priv    :background nil :foreground ,dired-dir-foreground)
+        '(diredfl-no-priv     :background nil)
+        '(diredfl-exec-priv   :background nil)
+        '(diredfl-read-priv   :background nil)
+        '(diredfl-write-priv  :background nil))
+      (custom-set-faces!
+        `(font-lock-comment-face :foreground ,comment-foreground)
+        `(font-lock-doc-face     :foreground ,comment-foreground)))))
 
 ;; spelling
 (after! spell-fu
