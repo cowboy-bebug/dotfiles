@@ -10,7 +10,7 @@
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
 
 (when (display-graphic-p)
-  (when (eq doom-theme 'doom-earl-grey)
+  (when (member doom-theme '(doom-earl-grey doom-plain))
     (custom-set-faces! '(font-lock-keyword-face :weight bold)))
 
   (when (eq doom-theme 'doom-homage-white)
