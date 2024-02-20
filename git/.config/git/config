@@ -10,8 +10,6 @@
 	abbrevCommit = true
 [pull]
 	rebase = true
-[remote "upstream"]
-	tagOpt = --no-tags
 [user]
 	name = Eric Lim
 	email = cowboy-bebug@users.noreply.github.com
