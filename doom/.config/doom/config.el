@@ -57,6 +57,6 @@
    ;; org-edit-src-content-indentation nil
    org-hide-emphasis-markers t))
 
-;; preloaded packages
+;; magit
 (after! magit
-  :config (setq magit-log-section-commit-count 30))
+  (setq magit-log-section-commit-count 30))
