@@ -60,3 +60,9 @@
 ;; magit
 (after! magit
   (setq magit-log-section-commit-count 30))
+
+;; formatter
+(after! format-all
+  (add-hook! 'markdown-mode-hook 'format-all-mode)
+  (setq format-all-formatters
+        '(("Markdown" (prettier "--proseWrap" "always")))))
