@@ -52,10 +52,12 @@
 ;; org / markdown
 (setq org-directory "~/org/")
 (after! org
-  (setq
-   markdown-hide-markup t
-   ;; org-edit-src-content-indentation nil
-   org-hide-emphasis-markers t))
+  (add-hook! 'org-mode-hook 'auto-fill-mode)
+  (setq fill-column 80
+        markdown-hide-markup t
+        org-blank-before-new-entry '((heading . t)
+                                     (plain-list-item . nil))
+        org-hide-emphasis-markers t))
 
 ;; magit
 (after! magit
