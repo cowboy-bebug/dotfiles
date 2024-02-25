@@ -1,6 +1,5 @@
 brew "aspell"
 brew "editorconfig"
-brew "grip"
 brew "markdown"
 brew "shfmt"
 brew "shellcheck"
