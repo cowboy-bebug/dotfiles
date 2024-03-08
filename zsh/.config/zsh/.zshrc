@@ -48,3 +48,4 @@ for plugin in $ZSH_PLUGINS; do
 done
 
 [ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
+[ -x "$(command -v neofetch)" ] && neofetch
