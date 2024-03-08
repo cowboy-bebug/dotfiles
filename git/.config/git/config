@@ -16,3 +16,7 @@
 	signingkey = 3688DD084E73B55E
 [push]
 	autoSetupRemote = true
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !gh auth git-credential
