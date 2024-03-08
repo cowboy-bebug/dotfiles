@@ -34,7 +34,7 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
 
 # load env
-source "$CARGO_HOME/env"
+[ -e "$CARGO_HOME/env" ] && source "$CARGO_HOME/env"
 
 # ZSH plugins
 ZSH_PLUGIN_DIR="$XDG_DATA_HOME/zsh"
