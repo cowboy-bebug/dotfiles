@@ -1,7 +1,11 @@
-[core]
-	pager = less -F -X
 [commit]
 	gpgsign = true
+[core]
+	pager = less -F -X
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !gh auth git-credential
 [diff]
 	wsErrorHighlight = all
 [format]
@@ -12,13 +16,9 @@
 	abbrevCommit = true
 [pull]
 	rebase = true
+[push]
+	autoSetupRemote = true
 [user]
 	name = Eric Lim
 	email = cowboy-bebug@users.noreply.github.com
 	signingkey = 3688DD084E73B55E
-[push]
-	autoSetupRemote = true
-[credential "https://github.com"]
-	helper = !gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = !gh auth git-credential
