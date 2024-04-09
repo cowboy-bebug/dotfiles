@@ -6,6 +6,8 @@
 	wsErrorHighlight = all
 [format]
 	pretty = oneline
+[init]
+	defaultBranch = main
 [log]
 	abbrevCommit = true
 [pull]
