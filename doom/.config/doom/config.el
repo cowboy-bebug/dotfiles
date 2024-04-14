@@ -2,7 +2,7 @@
 ;;; For more info, see `~/.config/emacs/templates/config.example.el'
 
 ;; ui
-(setq doom-theme 'doom-homage-white
+(setq doom-theme 'github-modern
       doom-font                (font-spec :family "Menlo" :size 14)
       doom-variable-pitch-font (font-spec :family "Georgia"        :size 20)
       doom-modeline-vcs-max-length 40 ;; to display branch name
