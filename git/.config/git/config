@@ -1,6 +1,7 @@
 [commit]
 	gpgsign = true
 [core]
+	ignorecase = false
 	pager = less -F -X
 [credential "https://github.com"]
 	helper = !gh auth git-credential
