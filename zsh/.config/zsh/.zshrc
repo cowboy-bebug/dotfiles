@@ -47,5 +47,6 @@ for plugin in $ZSH_PLUGINS; do
   [ -f $plugin ] && source $plugin
 done
 
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
 [ -x "$(command -v neofetch)" ] && neofetch
