@@ -49,12 +49,11 @@
   (setq ispell-dictionary "en"
         spell-fu-word-delimit-camel-case t))
 
-;; org / markdown
+;; org
 (setq org-directory "~/org/")
 (after! org
   (add-hook! 'org-mode-hook 'auto-fill-mode)
   (setq fill-column 80
-        markdown-hide-markup t
         org-blank-before-new-entry '((heading . t)
                                      (plain-list-item . nil))
         org-hide-emphasis-markers t))
