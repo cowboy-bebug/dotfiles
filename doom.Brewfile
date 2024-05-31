@@ -1,5 +1,0 @@
-brew "aspell"
-brew "editorconfig"
-brew "markdown"
-brew "shfmt"
-brew "shellcheck"
