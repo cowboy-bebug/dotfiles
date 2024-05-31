@@ -44,6 +44,10 @@
         `(font-lock-comment-face :foreground ,comment-foreground)
         `(font-lock-doc-face     :foreground ,comment-foreground)))))
 
+;; recent files
+(after! recentf
+  (add-to-list 'recentf-exclude (recentf-expand-file-name "~/.config/emacs/.local/.*")))
+
 ;; spelling
 (after! spell-fu
   (setq ispell-dictionary "en"
