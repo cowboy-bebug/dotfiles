@@ -54,13 +54,16 @@
         spell-fu-word-delimit-camel-case t))
 
 ;; org
-(setq org-directory "~/org/")
 (after! org
   (add-hook! 'org-mode-hook 'auto-fill-mode)
+  (setq org-agenda-files '("~/github.com/cowboy-bebug/org/agenda.org"
+                           "~/github.com/cowboy-bebug/org-work/agenda.org")
+        org-directory "~/github.com/cowboy-bebug/org")
   (setq fill-column 80
         org-blank-before-new-entry '((heading . t)
                                      (plain-list-item . nil))
-        org-hide-emphasis-markers t))
+        org-hide-emphasis-markers t
+        org-log-done 'time))
 
 ;; magit
 (after! magit
