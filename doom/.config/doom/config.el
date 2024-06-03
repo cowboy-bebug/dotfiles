@@ -82,7 +82,11 @@
            :unnarrowed t))
         org-roam-dailies-capture-templates
         '(("d" "default" entry "* %<%I:%M %p>: %?"
-           :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n#+startup: overview\n")))))
+           :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n#+startup: overview\n")))
+        org-roam-ui-follow t
+        org-roam-ui-open-on-start nil
+        org-roam-ui-sync-theme t
+        org-roam-ui-update-on-save t))
 
 ;; magit
 (after! magit

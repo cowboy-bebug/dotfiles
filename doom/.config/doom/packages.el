@@ -52,3 +52,4 @@
 
 (package! github-modern-theme)
 (package! ob-mermaid)
+(package! org-roam-ui)
