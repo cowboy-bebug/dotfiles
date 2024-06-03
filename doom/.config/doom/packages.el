@@ -51,3 +51,4 @@
 ;; (unpin! t)
 
 (package! github-modern-theme)
+(package! ob-mermaid)
