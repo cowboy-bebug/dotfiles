@@ -67,6 +67,23 @@
         org-log-into-drawer t
         org-tags-column 80))
 
+(after! org-roam
+  (setq org-roam-directory "~/github.com/cowboy-bebug/org/roam"
+        org-roam-completion-everywhere t
+        org-roam-capture-templates
+        '(("d" "Default" plain
+           "%?"
+           :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+           :unnarrowed t)
+          ("j" "Journal")
+          ("jb" "Book journal" plain
+           (file "~/github.com/cowboy-bebug/org-roam/templates/book-journal.org")
+           :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Book\n#+date:%u\n")
+           :unnarrowed t))
+        org-roam-dailies-capture-templates
+        '(("d" "default" entry "* %<%I:%M %p>: %?"
+           :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n#+startup: overview\n")))))
+
 ;; magit
 (after! magit
   (setq magit-log-section-commit-count 30))
