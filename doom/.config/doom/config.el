@@ -71,18 +71,26 @@
   (setq org-roam-directory "~/github.com/cowboy-bebug/org/roam"
         org-roam-completion-everywhere t
         org-roam-capture-templates
-        '(("d" "Default" plain
+        `(("d" "default" plain
            "%?"
-           :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+           :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                              "#+title: ${title}\n")
            :unnarrowed t)
-          ("j" "Journal")
-          ("jb" "Book journal" plain
-           (file "~/github.com/cowboy-bebug/org-roam/templates/book-journal.org")
-           :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Book\n#+date:%u\n")
+          ("m" "moc" plain "%?"
+           :if-new (file+head "moc/${slug}.org" "#+title: ${title}\n")
+           :immediate-finish t
+           :unnarrowed t)
+          ("b" "book journal" plain
+           (file ,(expand-file-name "templates/book-journal.org"
+                                    org-roam-directory))
+           :if-new (file+head "book/${slug}.org"
+                              "#+title: ${title}\n#+date:%u\n#+filetags: :Draft:")
+           :immediate-finish t
            :unnarrowed t))
         org-roam-dailies-capture-templates
         '(("d" "default" entry "* %<%I:%M %p>: %?"
-           :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n#+startup: overview\n")))
+           :if-new (file+head "%<%Y-%m-%d>.org"
+                              "#+title: %<%Y-%m-%d>\n")))
         org-roam-ui-follow t
         org-roam-ui-open-on-start nil
         org-roam-ui-sync-theme t
