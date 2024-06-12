@@ -55,6 +55,7 @@
 
 ;; org
 (after! org
+  (add-to-list 'org-todo-keyword-faces '("GOAL" . "DarkOliveGreen3") t)
   (add-hook! 'org-mode-hook 'auto-fill-mode)
   (setq org-agenda-files '("~/github.com/cowboy-bebug/org/todo.org"
                            "~/github.com/cowboy-bebug/org/work/todo.org")
