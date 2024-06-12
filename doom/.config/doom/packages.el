@@ -50,6 +50,5 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
-(package! github-modern-theme)
 (package! ob-mermaid)
 (package! org-roam-ui)
