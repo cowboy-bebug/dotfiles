@@ -3,10 +3,10 @@
 	url = https://github.com/alacritty/alacritty-theme
 [submodule "zsh/.local/share/zsh/zsh-syntax-highlighting"]
 	path = zsh/.local/share/zsh/zsh-syntax-highlighting
-	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "zsh/.local/share/zsh/zsh-vi-mode"]
 	path = zsh/.local/share/zsh/zsh-vi-mode
-	url = git@github.com:jeffreytse/zsh-vi-mode.git
+	url = https://github.com/jeffreytse/zsh-vi-mode.git
 [submodule "zsh/.local/share/zsh/fzf-tab"]
 	path = zsh/.local/share/zsh/fzf-tab
-	url = git@github.com:Aloxaf/fzf-tab.git
+	url = https://github.com/Aloxaf/fzf-tab.git
