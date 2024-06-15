@@ -23,6 +23,9 @@ _comp_options+=(globdots) # hidden files
 alias {v,vi,vim}="nvim"
 alias ls="ls --color=auto -v"
 
+# browser
+export BROWSER="brave"
+
 # editor
 export VISUAL="nvim"
 export EDITOR=$VISUAL
