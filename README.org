@@ -16,8 +16,5 @@ cd $XDG_DATA_HOME/zsh
 
 * Stow
 #+begin_src sh :results none
-stow -Rv $(ls -d */ | tr "/\n" " ") \
-    --target=$HOME \
-    --ignore='.zshcompdump' \
-    --ignore='.zsh_sessions'
+stow -Rv $(ls -d */ | tr "/\n" " ") --no-folding --target=$HOME
 #+end_src
