@@ -1,0 +1,10 @@
+#+title: dotfiles
+
+The repo uses [[https://www.gnu.org/software/stow][stow]] to symlink config files.
+
+#+begin_src sh :results none
+stow -Rv $(ls -d */ | tr "/\n" " ") \
+    --target=$HOME \
+    --ignore='.zshcompdump' \
+    --ignore='.zsh_sessions'
+#+end_src
