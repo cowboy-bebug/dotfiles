@@ -8,3 +8,8 @@ stow -Rv $(ls -d */ | tr "/\n" " ") \
     --ignore='.zshcompdump' \
     --ignore='.zsh_sessions'
 #+end_src
+
+* Prerequisites
+#+begin_src  sh :results none
+git clone https://github.com/alacritty/alacritty-theme $XDG_DATA_HOME/alacritty-theme
+#+end_src
