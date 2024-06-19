@@ -2,14 +2,22 @@
 
 The repo uses [[https://www.gnu.org/software/stow][stow]] to symlink config files.
 
+* Prerequisites
+#+begin_src  sh :results none
+cd $XDG_DATA_HOME
+[ ! -d alacritty-theme ] && git clone https://github.com/alacritty/alacritty-theme
+
+mkdir -p $XDG_DATA_HOME/zsh
+cd $XDG_DATA_HOME/zsh
+[ ! -d fzf-tab                 ] && git clone https://github.com/Aloxaf/fzf-tab
+[ ! -d zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting
+[ ! -d zsh-vi-mode             ] && git clone https://github.com/jeffreytse/zsh-vi-mode
+#+end_src
+
+* Stow
 #+begin_src sh :results none
 stow -Rv $(ls -d */ | tr "/\n" " ") \
     --target=$HOME \
     --ignore='.zshcompdump' \
     --ignore='.zsh_sessions'
-#+end_src
-
-* Prerequisites
-#+begin_src  sh :results none
-git clone https://github.com/alacritty/alacritty-theme $XDG_DATA_HOME/alacritty-theme
 #+end_src
