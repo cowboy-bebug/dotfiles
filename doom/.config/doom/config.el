@@ -3,8 +3,8 @@
 
 ;; ui
 (setq doom-theme 'doom-oksolar-light
-      doom-font                (font-spec :family "Menlo" :size 14)
-      doom-variable-pitch-font (font-spec :family "Georgia"        :size 20)
+      doom-font                (font-spec :family "Hack Nerd Font"  :size 14)
+      doom-variable-pitch-font (font-spec :family "Liberation Sans" :size 14)
       doom-modeline-vcs-max-length 40 ;; to display branch name
       display-line-numbers-type 'relative)
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
