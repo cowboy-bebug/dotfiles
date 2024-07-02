@@ -72,6 +72,7 @@
 
 ;; formatter
 (after! format-all
+  (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
   (add-hook! 'markdown-mode-hook 'format-all-mode)
   (setq format-all-formatters
         '(("Markdown" (prettier "--proseWrap" "always")))))
