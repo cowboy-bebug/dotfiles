@@ -66,6 +66,26 @@
         org-roam-ui-sync-theme t
         org-roam-ui-update-on-save t))
 
+(after! org-present
+  (add-hook 'org-present-mode-hook
+            (lambda ()
+              (org-display-inline-images)
+              (org-present-read-only)
+              (org-present-hide-cursor)
+              (writeroom-mode 1)
+              (display-line-numbers-mode 0)))
+  (add-hook 'org-present-mode-quit-hook
+            (lambda()
+              (org-remove-inline-images)
+              (org-present-read-write)
+              (org-present-show-cursor)
+              (visual-fill-column-mode 0)
+              (writeroom-mode 0)
+              (display-line-numbers-mode 1)))
+  (setq org-present-hide-stars-in-headings nil
+        org-present-one-big-page nil
+        org-present-startup-folded t))
+
 ;; magit
 (after! magit
   (setq magit-log-section-commit-count 30))
