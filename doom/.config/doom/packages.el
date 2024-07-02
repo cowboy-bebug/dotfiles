@@ -51,4 +51,5 @@
 ;; (unpin! t)
 
 (package! ob-mermaid)
+(package! org-present)
 (package! org-roam-ui)
