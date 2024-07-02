@@ -24,6 +24,11 @@
 (after! org
   (add-to-list 'org-todo-keyword-faces '("GOAL" . "DarkOliveGreen3") t)
   (add-hook! 'org-mode-hook 'auto-fill-mode)
+
+  (map! :leader
+        (:prefix-map ("t" . "toggle")
+         :desc "Present mode" "p" #'org-present))
+
   (setq org-agenda-files '("~/github.com/cowboy-bebug/org/todo.org"
                            "~/github.com/cowboy-bebug/org/work/todo.org")
         org-directory "~/github.com/cowboy-bebug/org"
