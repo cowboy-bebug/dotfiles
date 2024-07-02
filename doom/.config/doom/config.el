@@ -26,8 +26,8 @@
   (add-hook! 'org-mode-hook 'auto-fill-mode)
   (setq org-agenda-files '("~/github.com/cowboy-bebug/org/todo.org"
                            "~/github.com/cowboy-bebug/org/work/todo.org")
-        org-directory "~/github.com/cowboy-bebug/org")
-  (setq fill-column 80
+        org-directory "~/github.com/cowboy-bebug/org"
+        fill-column 80
         org-agenda-start-with-log-mode t
         org-blank-before-new-entry '((heading . t)
                                      (plain-list-item . nil))
