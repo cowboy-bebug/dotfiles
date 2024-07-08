@@ -11,6 +11,12 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(undecorated-round . t))
 
+;; project sidebar
+(after! treemacs
+  (map! :leader
+        (:prefix-map ("o" . "open")
+         :desc "Project sidebar" "p" #'treemacs)))
+
 ;; recent files
 (after! recentf
   (add-to-list 'recentf-exclude (recentf-expand-file-name "~/.config/emacs/.local/.*")))
