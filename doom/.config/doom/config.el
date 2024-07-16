@@ -23,8 +23,14 @@
 
 ;; spelling
 (after! spell-fu
-  (setq ispell-dictionary "en"
-        spell-fu-word-delimit-camel-case t))
+  ;; Initialise personal dictionary, if not exists
+  (let ((personal-dictionary (expand-file-name "ispell/.pws" doom-data-dir)))
+    (unless (file-exists-p personal-dictionary)
+      (make-directory (file-name-directory personal-dictionary) t)
+      (write-region "personal_ws-1.1 en 0\n" nil personal-dictionary))
+    (setq ispell-dictionary "en"
+          ispell-personal-dictionary personal-dictionary
+          spell-fu-word-delimit-camel-case t)))
 
 ;; org
 (after! org
