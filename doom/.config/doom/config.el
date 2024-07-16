@@ -37,6 +37,8 @@
 
   (setq org-agenda-files '("~/github.com/cowboy-bebug/org/todo.org"
                            "~/github.com/cowboy-bebug/org/work/todo.org")
+        org-babel-default-header-args (cons '(:results . "replace verbatim")
+                                            (assq-delete-all :results org-babel-default-header-args))
         org-directory "~/github.com/cowboy-bebug/org"
         fill-column 80
         org-agenda-start-with-log-mode t
