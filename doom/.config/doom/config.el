@@ -8,7 +8,6 @@
       doom-modeline-vcs-max-length 40 ;; to display branch name
       display-line-numbers-type 'relative)
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(undecorated-round . t))
 
 ;; project sidebar
