@@ -45,6 +45,7 @@
         org-babel-default-header-args (cons '(:results . "replace verbatim")
                                             (assq-delete-all :results org-babel-default-header-args))
         org-babel-results-keyword "results"
+        org-edit-src-content-indentation 0
         org-directory "~/github.com/cowboy-bebug/org"
         fill-column 80
         org-agenda-start-with-log-mode t
@@ -53,6 +54,7 @@
         org-hide-emphasis-markers t
         org-log-done 'time
         org-log-into-drawer t
+        org-src-preserve-indentation nil
         org-tags-column 80))
 
 (after! org-roam
