@@ -87,6 +87,12 @@
         org-roam-ui-sync-theme t
         org-roam-ui-update-on-save t))
 
+(after! org-superstar
+  (setq org-superstar-headline-bullets-list '(?● ?◉ ?◎ ?○)
+        org-superstar-item-bullet-alist '((?* . ?⁎)
+                                          (?+ . ?➤)
+                                          (?- . ?•))))
+
 (after! org-present
   (add-hook 'org-present-mode-hook
             (lambda ()
