@@ -57,6 +57,26 @@
         org-src-preserve-indentation nil
         org-tags-column 80))
 
+(after! org-present
+  (add-hook 'org-present-mode-hook
+            (lambda ()
+              (org-display-inline-images)
+              (org-present-read-only)
+              (org-present-hide-cursor)
+              (writeroom-mode 1)
+              (display-line-numbers-mode 0)))
+  (add-hook 'org-present-mode-quit-hook
+            (lambda()
+              (org-remove-inline-images)
+              (org-present-read-write)
+              (org-present-show-cursor)
+              (visual-fill-column-mode 0)
+              (writeroom-mode 0)
+              (display-line-numbers-mode 1)))
+  (setq org-present-hide-stars-in-headings nil
+        org-present-one-big-page nil
+        org-present-startup-folded t))
+
 (after! org-roam
   (setq org-roam-directory "~/github.com/cowboy-bebug/org/roam"
         org-roam-completion-everywhere t
@@ -92,26 +112,6 @@
         org-superstar-item-bullet-alist '((?* . ?⁎)
                                           (?+ . ?➤)
                                           (?- . ?•))))
-
-(after! org-present
-  (add-hook 'org-present-mode-hook
-            (lambda ()
-              (org-display-inline-images)
-              (org-present-read-only)
-              (org-present-hide-cursor)
-              (writeroom-mode 1)
-              (display-line-numbers-mode 0)))
-  (add-hook 'org-present-mode-quit-hook
-            (lambda()
-              (org-remove-inline-images)
-              (org-present-read-write)
-              (org-present-show-cursor)
-              (visual-fill-column-mode 0)
-              (writeroom-mode 0)
-              (display-line-numbers-mode 1)))
-  (setq org-present-hide-stars-in-headings nil
-        org-present-one-big-page nil
-        org-present-startup-folded t))
 
 ;; magit
 (after! magit
