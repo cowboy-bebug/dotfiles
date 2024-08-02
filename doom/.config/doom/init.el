@@ -154,7 +154,6 @@
        ;;ocaml             ; an objective camel
        (org              ; organize your plain life in plain text
         +pandoc
-        +pretty
         +roam2)
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more

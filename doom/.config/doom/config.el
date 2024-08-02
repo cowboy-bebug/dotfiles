@@ -35,6 +35,7 @@
 (after! org
   (add-to-list 'org-todo-keyword-faces '("GOAL" . "DarkOliveGreen3") t)
   (add-hook! 'org-mode-hook 'auto-fill-mode)
+  (add-hook! 'org-mode-hook #'org-modern-mode)
 
   (map! :leader
         (:prefix-map ("t" . "toggle")
@@ -56,6 +57,26 @@
         org-log-into-drawer t
         org-src-preserve-indentation nil
         org-tags-column 80))
+
+(after! org-modern
+  (setq org-modern-block-name '((t . ("▶ " "▶ "))
+                                ("src" . ("󰞷" "󰞷")))
+        org-modern-checkbox nil
+        org-modern-horizontal-rule t
+        org-modern-keyword t
+        org-modern-list '((?+ . "➤")
+                          (?- . "•")
+                          (?* . "◦"))
+        org-modern-priority nil
+        org-modern-progress nil
+        org-modern-table t
+        org-modern-tag nil
+        org-modern-timestamp nil
+        org-modern-todo nil
+
+        org-modern-star 'replace
+        org-modern-replace-stars "●◉◎○"
+        org-modern-fold-stars '(("▶" . "▼"))))
 
 (after! org-present
   (add-hook 'org-present-mode-hook
@@ -106,12 +127,6 @@
         org-roam-ui-open-on-start nil
         org-roam-ui-sync-theme t
         org-roam-ui-update-on-save t))
-
-(after! org-superstar
-  (setq org-superstar-headline-bullets-list '(?● ?◉ ?◎ ?○)
-        org-superstar-item-bullet-alist '((?* . ?⁎)
-                                          (?+ . ?➤)
-                                          (?- . ?•))))
 
 ;; magit
 (after! magit
