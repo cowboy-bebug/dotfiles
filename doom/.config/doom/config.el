@@ -102,21 +102,13 @@
   (setq org-roam-directory "~/github.com/cowboy-bebug/org/roam"
         org-roam-completion-everywhere t
         org-roam-capture-templates
-        `(("d" "default" plain
-           "%?"
+        `(("d" "default" plain "%?"
            :if-new (file+head "main/${slug}.org"
                               "#+title: ${title}\n#+date: %u\n#+filetags: :Draft:")
            :unnarrowed t)
           ("m" "moc" plain "%?"
            :if-new (file+head "moc/${slug}.org"
                               "#+title: ${title}\n#+date: %u")
-           :immediate-finish t
-           :unnarrowed t)
-          ("b" "book journal" plain
-           (file ,(expand-file-name "templates/book-journal.org"
-                                    org-roam-directory))
-           :if-new (file+head "book/${slug}.org"
-                              "#+title: ${title}\n#+date: %u\n#+filetags: :Draft:")
            :immediate-finish t
            :unnarrowed t))
         org-roam-dailies-capture-templates
