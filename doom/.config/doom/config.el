@@ -120,6 +120,10 @@
         org-roam-ui-sync-theme t
         org-roam-ui-update-on-save t))
 
+;; elfeed
+(after! elfeed
+  (setq elfeed-search-filter "@1-month-ago"))
+
 ;; magit
 (after! magit
   (setq magit-log-section-commit-count 30))
