@@ -131,6 +131,7 @@
 ;; formatter
 (after! format-all
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
+  (add-hook! 'before-save-hook 'delete-trailing-whitespace)
   (add-hook! 'json-mode-hook (setq! js-indent-level 2))
   (add-hook! 'typescript-mode-hook (setq! typescript-indent-level 2))
   (add-hook! 'markdown-mode-hook 'format-all-mode)
