@@ -20,6 +20,7 @@ compinit
 _comp_options+=(globdots) # hidden files
 
 # aliases
+alias diff="diff --color -y"
 alias {v,vi,vim}="nvim"
 alias ls="ls --color=auto -v"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
