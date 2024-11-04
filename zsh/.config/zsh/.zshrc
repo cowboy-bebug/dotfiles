@@ -55,3 +55,4 @@ done
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
 [ -x "$(command -v fastfetch)" ] && fastfetch
+[ -x "$(command fzf --version)" ] && eval "source <(fzf --zsh)"
