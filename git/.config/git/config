@@ -1,3 +1,8 @@
+[alias]
+	set-personal = !git config --local user.email "cowboy-bebug@users.noreply.github.com" && \
+	                git config --local user.signingkey "4E73B55E"
+	set-work = !git config --local user.email "eric.lim@onit.com" && \
+	            git config --local user.signingkey "1DD93DCE"
 [commit]
 	gpgsign = true
 [core]
@@ -21,5 +26,3 @@
 	autoSetupRemote = true
 [user]
 	name = Eric Lim
-	email = cowboy-bebug@users.noreply.github.com
-	signingkey = 3688DD084E73B55E
