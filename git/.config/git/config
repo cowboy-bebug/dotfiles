@@ -8,10 +8,8 @@
 [core]
 	ignorecase = false
 	pager = less -F -X
-[credential "https://github.com"]
-	helper = !gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = !gh auth git-credential
+[credential]
+	helper = /usr/local/bin/git-credential-manager
 [diff]
 	wsErrorHighlight = all
 [format]
