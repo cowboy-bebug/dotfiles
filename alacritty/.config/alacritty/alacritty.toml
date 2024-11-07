@@ -1,6 +1,6 @@
-live_config_reload = true
-
+[general]
 import = ["~/.local/share/alacritty-theme/themes/ayu_light.toml"]
+live_config_reload = true
 
 [cursor.style]
 blinking = "On"
