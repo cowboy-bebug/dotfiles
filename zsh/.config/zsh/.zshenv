@@ -37,10 +37,10 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 export DOTNET_ROOT=$HOME/.dotnet
 
 # paths
-export PATH="$CARGO_HOME/bin:$PATH"
-export PATH="$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH"
-export PATH="$GOPATH/bin:$PATH"
-export PATH="$XDG_CONFIG_HOME/emacs/bin:$PATH"
+export PATH="$PATH:$CARGO_HOME/bin"
+export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$XDG_CONFIG_HOME/emacs/bin"
 
 # Other exports
 export LESSHISTFILE="-"
