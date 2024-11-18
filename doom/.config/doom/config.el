@@ -137,3 +137,10 @@
   (add-hook! 'markdown-mode-hook 'format-all-mode)
   (setq format-all-formatters
         '(("Markdown" (prettier "--proseWrap" "always")))))
+
+;; language
+(add-to-list 'auto-mode-alist '("\\.jsonc\\'" . jsonc-mode))
+(after! lsp-mode
+  (setq lsp-rust-analyzer-binding-mode-hints nil
+        lsp-rust-analyzer-display-parameter-hints nil
+        lsp-rust-analyzer-closure-capture-hints nil))
