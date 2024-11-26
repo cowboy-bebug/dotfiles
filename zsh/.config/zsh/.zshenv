@@ -36,8 +36,6 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 # miscellaneous
 export ANDROID_HOME=$HOME/Android/Sdk
 export DOTNET_ROOT=$HOME/.dotnet
-export GCM_CREDENTIAL_CACHE_OPTIONS="--timeout 36000"
-export GCM_CREDENTIAL_STORE=cache
 
 # paths
 export PATH="$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools"

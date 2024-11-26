@@ -8,10 +8,6 @@
 [core]
 	ignorecase = false
 	pager = less -F -X
-[credential]
-	helper = /usr/local/bin/git-credential-manager
-[credential "https://dev.azure.com"]
-	useHttpPath = true
 [diff]
 	wsErrorHighlight = all
 [format]
