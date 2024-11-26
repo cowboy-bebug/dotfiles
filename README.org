@@ -18,3 +18,18 @@ cd $XDG_DATA_HOME/zsh
 #+begin_src sh :results none
 stow -Rv $(ls -d */ | tr "/\n" " ") --no-folding --target=$HOME
 #+end_src
+
+* Authentication
+Managing multiple accounts on a single machine has been a challenge. It works
+the best with SSH with alias:
+#+begin_src conf :eval no
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_work
+
+Host personal
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_personal
+#+end_src
