@@ -35,6 +35,7 @@
 (after! org
   (add-to-list 'org-todo-keyword-faces '("GOAL" . "DarkOliveGreen3") t)
   (add-hook! 'org-mode-hook 'auto-fill-mode)
+  (add-hook! 'org-mode-hook 'org-fragtog-mode)
   (add-hook! 'org-mode-hook #'org-modern-mode)
 
   (map! :leader
@@ -56,6 +57,7 @@
         org-log-done 'time
         org-log-into-drawer t
         org-src-preserve-indentation nil
+        org-startup-with-latex-preview t
         org-tags-column 80))
 
 (after! org-modern
