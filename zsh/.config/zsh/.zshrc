@@ -56,3 +56,4 @@ done
 [ -x "$(command -v starship)" ] && eval "$(starship init zsh)"
 [ -x "$(command -v fastfetch)" ] && fastfetch
 [ -x "$(command -v fzf)" ] && eval "source <(fzf --zsh)"
+[ -x "$(command -v pyenv)" ] && eval "$(pyenv init - zsh)"

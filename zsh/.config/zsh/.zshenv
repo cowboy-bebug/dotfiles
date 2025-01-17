@@ -36,12 +36,14 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 # miscellaneous
 export ANDROID_HOME=$HOME/Android/Sdk
 export DOTNET_ROOT=$HOME/.dotnet
+export PYENV_ROOT="$HOME/.pyenv"
 
 # paths
 export PATH="$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools"
 export PATH="$PATH:$CARGO_HOME/bin"
 export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PATH:$XDG_CONFIG_HOME/emacs/bin"
 
 # Other exports
