@@ -36,6 +36,7 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 # miscellaneous
 export ANDROID_HOME=$HOME/Android/Sdk
 export DOTNET_ROOT=$HOME/.dotnet
+export HOMEBREW_NO_AUTO_UPDATE=1
 export PYENV_ROOT="$HOME/.pyenv"
 
 # paths
