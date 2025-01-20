@@ -33,6 +33,7 @@
 
 ;; org
 (after! org
+  (add-to-list 'org-modules 'org-habit t)
   (add-to-list 'org-todo-keyword-faces '("GOAL" . "DarkOliveGreen3") t)
   (add-hook! 'org-mode-hook 'auto-fill-mode)
   (add-hook! 'org-mode-hook 'org-fragtog-mode)
@@ -60,6 +61,11 @@
         org-src-preserve-indentation nil
         org-startup-with-latex-preview t
         org-tags-column 80))
+
+(after! org-habit
+  (setq org-habit-show-habits-only-for-today nil
+        org-habit-today-glyph ?◦
+        org-habit-completed-glyph ?•))
 
 (after! org-modern
   (setq org-modern-block-name '((t . ("▶ " "▶ "))
