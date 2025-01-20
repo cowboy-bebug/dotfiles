@@ -132,7 +132,7 @@
   (setq magit-log-section-commit-count 30))
 
 ;; formatter
-(after! format-all
+(after! aphelelia
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
   (add-hook! 'before-save-hook 'delete-trailing-whitespace)
   (add-hook! 'json-mode-hook (setq! js-indent-level 2))
