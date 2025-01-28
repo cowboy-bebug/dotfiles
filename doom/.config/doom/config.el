@@ -59,6 +59,7 @@
         org-log-done 'time
         org-log-into-drawer t
         org-src-preserve-indentation nil
+        org-startup-with-inline-images t
         org-startup-with-latex-preview t
         org-tags-column 80))
 
