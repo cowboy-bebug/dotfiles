@@ -43,7 +43,6 @@
         (:prefix-map ("t" . "toggle")
          :desc "Present mode" "p" #'org-present))
 
-  (setq-default fill-column 100)
   (setq org-agenda-files '("~/github.com/cowboy-bebug/org/todo.org"
                            "~/github.com/cowboy-bebug/org/work/todo.org")
         org-babel-default-header-args (cons '(:results . "replace verbatim")
@@ -51,7 +50,7 @@
         org-babel-results-keyword "results"
         org-edit-src-content-indentation 0
         org-directory "~/github.com/cowboy-bebug/org"
-        fill-column 100
+        fill-column 80
         org-agenda-start-with-log-mode t
         org-blank-before-new-entry '((heading . t)
                                      (plain-list-item . nil))
