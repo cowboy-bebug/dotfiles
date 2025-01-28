@@ -49,6 +49,7 @@
                                             (assq-delete-all :results org-babel-default-header-args))
         org-babel-results-keyword "results"
         org-edit-src-content-indentation 0
+        org-id-locations-file "~/.config/emacs/.local/cache/.org-id-locations"
         org-directory "~/github.com/cowboy-bebug/org"
         fill-column 80
         org-agenda-start-with-log-mode t
