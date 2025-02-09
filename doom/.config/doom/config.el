@@ -81,7 +81,7 @@
                           (?* . "◦"))
         org-modern-priority nil
         org-modern-progress nil
-        org-modern-table t
+        org-modern-table nil
         org-modern-tag nil
         org-modern-timestamp nil
         org-modern-todo nil
