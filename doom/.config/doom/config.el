@@ -38,6 +38,8 @@
   (add-hook! 'org-mode-hook 'auto-fill-mode)
   (add-hook! 'org-mode-hook 'org-fragtog-mode)
   (add-hook! 'org-mode-hook #'org-modern-mode)
+  (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
+  (add-hook! 'before-save-hook 'delete-trailing-whitespace)
 
   (map! :leader
         (:prefix-map ("t" . "toggle")
