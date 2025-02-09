@@ -47,7 +47,7 @@ export PATH="$PATH:$CARGO_HOME/bin"
 export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$PNPM_HOME"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PATH:PYENV_ROOT/bin"
 export PATH="$PATH:$XDG_CONFIG_HOME/emacs/bin"
 
 # Other exports
