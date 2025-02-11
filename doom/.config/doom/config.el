@@ -138,7 +138,8 @@
 
 (after! denote-silo-extras
   (setq denote-silo-extras-directories
-        '("~/github.com/cowboy-bebug/org-work/note")))
+        '("~/github.com/cowboy-bebug/org-work/note"
+          "~/github.com/cowboy-bebug/org/note")))
 
 ;; elfeed
 (after! elfeed
