@@ -132,6 +132,14 @@
         org-roam-ui-sync-theme t
         org-roam-ui-update-on-save t))
 
+;; denote
+(after! denote
+  (setq denote-directory "~/github.com/cowboy-bebug/org-work/note"))
+
+(after! denote-silo-extras
+  (setq denote-silo-extras-directories
+        '("~/github.com/cowboy-bebug/org-work/note")))
+
 ;; elfeed
 (after! elfeed
   (setq elfeed-search-filter "@1-month-ago"))

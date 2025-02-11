@@ -50,6 +50,7 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
+(package! denote)
 (package! ef-themes)
 (package! org-fragtog)
 (package! org-modern)
