@@ -23,12 +23,12 @@ stow -Rv $(ls -d */ | tr "/\n" " ") --no-folding --target=$HOME
 Managing multiple accounts on a single machine has been a challenge. It works
 the best with SSH with alias:
 #+begin_src conf :eval no
-Host github.com
+Host work.github.com
   HostName github.com
   User git
   IdentityFile ~/.ssh/id_rsa_work
 
-Host personal
+Host personal.github.com
   HostName github.com
   User git
   IdentityFile ~/.ssh/id_rsa_personal
