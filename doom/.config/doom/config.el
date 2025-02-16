@@ -134,12 +134,12 @@
 
 ;; denote
 (after! denote
-  (setq denote-directory "~/github.com/cowboy-bebug/org-work/note"))
+  (setq denote-directory "~/github.com/cowboy-bebug/org-work/notes"))
 
 (after! denote-silo-extras
   (setq denote-silo-extras-directories
-        '("~/github.com/cowboy-bebug/org-work/note"
-          "~/github.com/cowboy-bebug/org/note")))
+        '("~/github.com/cowboy-bebug/org-work/notes"
+          "~/github.com/cowboy-bebug/org/notes")))
 
 ;; elfeed
 (after! elfeed
