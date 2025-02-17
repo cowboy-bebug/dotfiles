@@ -46,7 +46,7 @@
          :desc "Present mode" "p" #'org-present))
 
   (setq org-agenda-files '("~/github.com/cowboy-bebug/org/todo.org"
-                           "~/github.com/cowboy-bebug/org/work/todo.org")
+                           "~/github.com/cowboy-bebug/org-work/20241104_*_onit/todo.org")
         org-babel-default-header-args (cons '(:results . "replace verbatim")
                                             (assq-delete-all :results org-babel-default-header-args))
         org-babel-results-keyword "results"
