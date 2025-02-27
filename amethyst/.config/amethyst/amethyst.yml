@@ -1,9 +1,8 @@
 # Navigate to: https://github.com/ianyh/Amethyst/blob/development/docs/configuration-files.md
 layouts:
   - two-pane
-  - 3column-left
-  - widescreen-tall
   - column
+  - 3column-left
   - tall
   - wide
 
