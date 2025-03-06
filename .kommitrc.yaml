@@ -1,0 +1,26 @@
+llm:
+  model: gpt-4o
+commit:
+  types:
+    - build
+    - chore
+    - docs
+    - feat
+    - fix
+    - refactor
+    - revert
+  scopes:
+    - alacritty
+    - amethyst
+    - bat
+    - curl
+    - doom
+    - git
+    - gpg
+    - helix
+    - nvim
+    - python
+    - starship
+    - systemd
+    - tmux
+    - zsh
