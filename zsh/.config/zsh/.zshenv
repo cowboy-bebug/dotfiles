@@ -49,6 +49,7 @@ export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$PNPM_HOME"
 export PATH="$PATH:PYENV_ROOT/bin"
 export PATH="$PATH:$XDG_CONFIG_HOME/emacs/bin"
+export PATH="$PATH:/opt/homebrew/bin:/usr/local/bin"
 
 # Other exports
 export LESSHISTFILE="-"
