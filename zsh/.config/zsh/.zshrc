@@ -4,6 +4,7 @@ autoload -U colors && colors
 # options
 setopt INTERACTIVE_COMMENTS
 setopt SHARE_HISTORY
+setopt globdots
 
 # history
 HISTSIZE=10000
@@ -13,11 +14,12 @@ HISTFILE="$HISTFILE_DIR/history"
 [[ -f $HISTFILE ]] || mkdir -p $HISTFILE_DIR && touch $HISTFILE
 
 # auto / tab complete
-autoload -U compinit
+fpath+=("$HOME/.docker/completions")
+fpath+=("$XDG_DATA_HOME/zsh/completions")
+autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
-_comp_options+=(globdots) # hidden files
+compinit -C
 
 # aliases
 alias diff="diff --color -y"
