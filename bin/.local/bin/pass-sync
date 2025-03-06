@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+# Usage: script.sh [--edit] <pass_entry>
+
+# Ensure at least one argument is provided
+if [ $# -lt 1 ]; then
+    printf "\nUsage: %s [--edit] <pass_entry>\n" "$0"
+    exit 1
+fi
+
+# Check if the first argument is '--edit'
+EDIT_MODE=false
+if [ "$1" == "--edit" ]; then
+    EDIT_MODE=true
+    shift  # Remove --edit from arguments
+fi
+
+PASS_ENTRY="$1"
+
+SRC_PATH="$HOME/.local/share/pass/$PASS_ENTRY"
+SRC_FILE="${SRC_PATH}.gpg"
+
+DEST_PATH="$HOME/github.com/cowboy-bebug/dotfiles-secrets/pass/.local/share/pass/$PASS_ENTRY"
+DEST_FILE="${DEST_PATH}.gpg"
+
+if [ "$EDIT_MODE" = true ]; then
+    pass edit "$PASS_ENTRY"
+    SUCCESS_MESSAGE="Password entry '$PASS_ENTRY' successfully created and stowed."
+else
+    SUCCESS_MESSAGE="Password entry '$PASS_ENTRY' successfully moved and stowed."
+fi
+
+# ensure pass file is created
+if [ ! -e "$SRC_FILE" ]; then
+    printf "\nError: $SRC_FILE does not exist.\n"
+    exit 1
+fi
+
+mkdir -p "$(dirname "$DEST_PATH")"
+mv "$SRC_FILE" "$DEST_FILE"
+stow -Rv $(ls -d */ | tr "/\n" " ") --no-folding --target=$HOME
+
+printf "\n%s\n" "$SUCCESS_MESSAGE"
+
+exit 0

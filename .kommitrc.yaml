@@ -13,6 +13,7 @@ commit:
     - alacritty
     - amethyst
     - bat
+    - bin
     - curl
     - doom
     - git

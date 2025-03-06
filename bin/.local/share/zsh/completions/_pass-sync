@@ -1,0 +1,21 @@
+#compdef pass-sync
+
+_pass_complete_entries_helper() {
+  local IFS=$'\n'
+  local prefix
+  zstyle -s ":completion:${curcontext}:" prefix prefix || prefix="${PASSWORD_STORE_DIR:-$HOME/.password-store}"
+  _values -C 'passwords' ${$(find -L "$prefix" \( -name .git -o -name .gpg-id \) -prune -o -print 2>/dev/null | sed -e "s#${prefix}/\{0,1\}##" -e 's#\.gpg##' -e 's#\\#\\\\#g' -e 's#:#\\:#g' | sort):-""}
+}
+
+_pass_sync_completion() {
+  local -a options
+  options=(
+    '--edit[Edit the password entry before moving]'
+  )
+
+  _arguments \
+    $options \
+    '1:password entry:_pass_complete_entries_helper'
+}
+
+compdef _pass_sync_completion pass-sync
