@@ -2,6 +2,7 @@
 # echo "source ~/.config/zsh/.zshenv" >> ~/.zshenv
 
 # XDG Base Directory Specification
+export XDG_BIN_HOME="$HOME/.local/bin"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -48,6 +49,7 @@ export PATH="$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$PNPM_HOME"
 export PATH="$PATH:PYENV_ROOT/bin"
+export PATH="$PATH:$XDG_BIN_HOME"
 export PATH="$PATH:$XDG_CONFIG_HOME/emacs/bin"
 export PATH="$PATH:/opt/homebrew/bin:/usr/local/bin"
 
