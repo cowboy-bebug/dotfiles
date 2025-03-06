@@ -1,10 +1,24 @@
 #!/usr/bin/env bash
 
-# Usage: script.sh [--edit] <pass_entry>
+# Usage: script.sh [--help] [--edit] <pass_entry>
+
+# Check if help is requested
+if [ "$1" == "--help" ]; then
+    printf "\nUsage: %s [--edit] <pass_entry>\n" "$0"
+    printf "\nOptions:\n"
+    printf "  --help    Display this help message\n"
+    printf "  --edit    Edit the password entry before syncing\n"
+    printf "\nDescription:\n"
+    printf "  Syncs password entries to dotfiles-secrets repository and stows them.\n"
+    printf "\nImportant:\n"
+    printf "  This tool must be executed from within the dotfiles-secrets repository.\n"
+    exit 0
+fi
 
 # Ensure at least one argument is provided
 if [ $# -lt 1 ]; then
     printf "\nUsage: %s [--edit] <pass_entry>\n" "$0"
+    printf "Use '%s --help' for more information.\n" "$0"
     exit 1
 fi
 

@@ -10,6 +10,7 @@ _pass_complete_entries_helper() {
 _pass_sync_completion() {
   local -a options
   options=(
+    '--help[Display help information]'
     '--edit[Edit the password entry before moving]'
   )
 
