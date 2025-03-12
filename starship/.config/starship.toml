@@ -24,3 +24,4 @@ format = "[{$symbol$branch}]($style)"
 only_attached = true
 symbol = ""
 style = "bold cyan"
+ignore_branches = ["main"]
