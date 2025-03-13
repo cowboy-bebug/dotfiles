@@ -16,7 +16,7 @@ cd $XDG_DATA_HOME/zsh
 
 * Stow
 #+begin_src sh :results none
-stow -Rv $(ls -d */ | tr "/\n" " ") --no-folding --target=$HOME
+stow -Rv $(ls -d */ | grep -v "^\.git/$" | tr "/\n" " ") --no-folding --target=$HOME
 #+end_src
 
 * Authentication
