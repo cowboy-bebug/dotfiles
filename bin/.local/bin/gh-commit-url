@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+COMMIT_HASH="${1:-$(git rev-parse HEAD)}"
+
+GITHUB_REMOTE="$(git remote get-url origin | sed -E 's/git@github.com:|https:\/\/github.com\///; s/\.git$//')"
+GITHUB_URL="https://github.com/${GITHUB_REMOTE}"
+GITHUB_COMMIT_URL="${GITHUB_URL}/commit/${COMMIT_HASH}"
+
+echo "${GITHUB_COMMIT_URL}"
