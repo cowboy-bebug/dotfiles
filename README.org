@@ -1,6 +1,8 @@
 #+title: dotfiles
 
-The repo uses [[https://www.gnu.org/software/stow][stow]] to symlink config files.
+The repo uses:
+- [[https://www.gnu.org/software/stow][stow]] to symlink config files.
+- [[https://www.gnu.org/software/gettext/][gettext]]'s ~envsubst~ to template config files.
 
 * Prerequisites
 #+begin_src  sh :results none
@@ -16,7 +18,8 @@ cd $XDG_DATA_HOME/zsh
 
 * Stow
 #+begin_src sh :results none
-stow -Rv $(ls -d */ | grep -v "^\.git/$" | tr "/\n" " ") --no-folding --target=$HOME
+stow -Rv bin --no-folding --target=$HOME
+stow-with-theme
 #+end_src
 
 * Authentication

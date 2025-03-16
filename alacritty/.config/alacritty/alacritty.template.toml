@@ -1,5 +1,5 @@
 [general]
-import = ["~/.local/share/alacritty-theme/themes/ayu_light.toml"]
+import = ["~/.local/share/alacritty-theme/themes/${ALACRITTY_THEME}.toml"]
 live_config_reload = true
 
 [cursor.style]

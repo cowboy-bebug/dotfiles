@@ -2,8 +2,8 @@
 ;;; For more info, see `~/.config/emacs/templates/config.example.el'
 
 ;; ui
-(setq doom-theme 'doom-oksolar-light
-      doom-font                (font-spec :family "Hack Nerd Font"  :size 14)
+(load! "theme")
+(setq doom-font                (font-spec :family "Hack Nerd Font"  :size 14)
       doom-variable-pitch-font (font-spec :family "Liberation Sans" :size 14)
       doom-modeline-vcs-max-length 40 ;; to display branch name
       display-line-numbers-type 'relative)
@@ -63,6 +63,7 @@
         org-hide-emphasis-markers t
         org-log-done 'time
         org-log-into-drawer t
+        org-pretty-entities t
         org-src-preserve-indentation nil
         org-startup-with-inline-images t
         org-startup-with-latex-preview t
@@ -114,7 +115,7 @@
         org-present-startup-folded t))
 
 (after! org-roam
-  (setq org-roam-directory "~/github.com/cowboy-bebug/org/roam"
+  (setq org-roam-directory "~/github.com/cowboy-bebug/org-work/roam"
         org-roam-completion-everywhere t
         org-roam-capture-templates
         `(("d" "default" plain "%?"
