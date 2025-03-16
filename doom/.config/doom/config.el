@@ -38,9 +38,6 @@
   (add-hook! 'org-mode-hook 'auto-fill-mode)
   (add-hook! 'org-mode-hook 'org-fragtog-mode)
   (add-hook! 'org-mode-hook #'org-modern-mode)
-  (add-hook! 'org-src-mode-hook
-    (setq js-indent-level 2
-          typescript-indent-level 2))
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
   (add-hook! 'before-save-hook 'delete-trailing-whitespace)
 
@@ -154,14 +151,18 @@
   (setq magit-log-section-commit-count 30))
 
 ;; formatter
-(after! aphelelia
+(after! apheleia
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
   (add-hook! 'before-save-hook 'delete-trailing-whitespace)
   (add-hook! 'json-mode-hook (setq js-indent-level 2))
   (add-hook! 'typescript-mode-hook (setq typescript-indent-level 2))
-  (add-hook! 'markdown-mode-hook 'format-all-mode)
-  (setq format-all-formatters
-        '(("Markdown" (prettier "--proseWrap" "always")))))
+  (setf (alist-get 'prettier-markdown apheleia-formatters)
+        '("prettier"
+          "--parser" "markdown"
+          "--prose-wrap" "always"
+          "--embedded-language-formatting=auto"))
+  (add-to-list 'apheleia-mode-alist '(gfm-mode . prettier-markdown))
+  (add-to-list 'apheleia-mode-alist '(markdown-mode . prettier-markdown)))
 
 ;; language
 (add-to-list 'auto-mode-alist '("\\.jsonc\\'" . jsonc-mode))
