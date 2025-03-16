@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+set -e
+
+HOUR=$(date +%H)
+DOTFILES_DIR="$HOME/github.com/cowboy-bebug/dotfiles"
+
+if [ "$HOUR" -ge 6 ] && [ "$HOUR" -lt 19 ]; then
+  export ALACRITTY_THEME="ayu_light"
+  export BAT_THEME="OneHalfLight"
+  export DOOM_THEME="doom-oksolar-light"
+  export NVIM_THEME="ayu_light"
+else
+  export ALACRITTY_THEME="doom-one"
+  export BAT_THEME="OneHalfDark"
+  export DOOM_THEME="doom-one"
+  export NVIM_THEME="ayu_dark"
+fi
+
+ALACRITTY_SRC="$DOTFILES_DIR/alacritty/.config/alacritty/alacritty.template.toml"
+ALACRITTY_DST="$DOTFILES_DIR/alacritty/.config/alacritty/alacritty.toml"
+
+BAT_SRC="$DOTFILES_DIR/bat/.config/bat/bat.template.conf"
+BAT_DST="$DOTFILES_DIR/bat/.config/bat/bat.conf"
+
+DOOM_SRC="$DOTFILES_DIR/doom/.config/doom/theme.template.el"
+DOOM_DST="$DOTFILES_DIR/doom/.config/doom/theme.el"
+
+NVIM_SRC="$DOTFILES_DIR/nvim/.config/nvim/lua/chadrc.template.lua"
+NVIM_DST="$DOTFILES_DIR/nvim/.config/nvim/lua/chadrc.lua"
+
+envsubst < $ALACRITTY_SRC > $ALACRITTY_DST
+envsubst <       $BAT_SRC >       $BAT_DST
+envsubst <      $DOOM_SRC >      $DOOM_DST
+envsubst <      $NVIM_SRC >      $NVIM_DST
+
+cd $DOTFILES_DIR
+stow -Rv $(ls -d */ | grep -v "^\.git/$" | tr "/\n" " ") --no-folding --target=$HOME

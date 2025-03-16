@@ -1,2 +1,6 @@
 .DS_Store
+alacritty/.config/alacritty/alacritty.toml
+bat/.config/bat/bat.conf
 doom/.config/doom/flycheck_*.el
+doom/.config/doom/theme.el
+nvim/.config/nvim/lua/chadrc.lua

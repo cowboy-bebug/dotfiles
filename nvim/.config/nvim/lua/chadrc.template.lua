@@ -6,12 +6,19 @@
 local M = {}
 
 M.base46 = {
-	theme = "ayu_light",
+	theme = "${NVIM_THEME}",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
 	-- 	["@comment"] = { italic = true },
 	-- },
 }
+
+vim.api.nvim_create_autocmd("User", {
+	pattern = "VeryLazy", -- ensures it runs after NvChad lazy loading
+	callback = function()
+		require("base46").load_all_highlights()
+	end,
+})
 
 return M
