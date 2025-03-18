@@ -54,4 +54,5 @@ export PATH="$PATH:/opt/homebrew/bin:/usr/local/bin"
 export PATH="$PATH:PYENV_ROOT/bin"
 
 # Other exports
+export DOCKER_HOST=unix:///Users/$USER/.docker/run/docker.sock
 export LESSHISTFILE="-"
