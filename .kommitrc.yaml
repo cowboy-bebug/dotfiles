@@ -19,6 +19,7 @@ commit:
     - git
     - gpg
     - helix
+    - karabiner
     - nvim
     - python
     - starship

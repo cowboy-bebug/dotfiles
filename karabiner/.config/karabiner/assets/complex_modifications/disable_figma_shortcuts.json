@@ -1,0 +1,76 @@
+{
+  "title": "Disable keys for Figma",
+  "rules": [
+    {
+      "description": "Disable keys for Figma in Zen browser",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": ["command", "option"]
+            }
+          },
+          "to": [],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^app\\.zen-browser\\.zen$"
+              ]
+            },
+            {
+              "type": "url_if",
+              "url": "^https://.*\\.figma\\.com/.*"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s",
+            "modifiers": {
+              "mandatory": ["command", "option"]
+            }
+          },
+          "to": [],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^app\\.zen-browser\\.zen$"
+              ]
+            },
+            {
+              "type": "url_if",
+              "url": "^https://.*\\.figma\\.com/.*"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "mandatory": ["command"]
+            }
+          },
+          "to": [],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^app\\.zen-browser\\.zen$"
+              ]
+            },
+            {
+              "type": "url_if",
+              "url": "^https://.*\\.figma\\.com/.*"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
