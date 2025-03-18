@@ -62,6 +62,7 @@
         org-log-into-drawer t
         org-pretty-entities t
         org-src-preserve-indentation nil
+        org-startup-folded t
         org-startup-with-inline-images t
         org-startup-with-latex-preview t
         org-tags-column 80))
