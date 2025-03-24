@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "❌ Error: Please provide the source directory as the first argument."
+  echo "Usage: extract-svgs ./src/new_ux/icons"
+  exit 1
+fi
+
+SRC_DIR="$1"
+OUTPUT_DIR="$SRC_DIR/svgs"
+
+mkdir -p $OUTPUT_DIR
+
+for file in "$SRC_DIR"/*.jsx; do
+  filename=$(basename -- "$file")
+  name="${filename%.*}"
+
+  svg=$(sed -n '/<svg/,/<\/svg>/p' "$file")
+
+  if [ -n "$svg" ]; then
+    echo "$svg" > "$OUTPUT_DIR/$name.svg"
+    echo "✅ Extracted $name.svg"
+  else
+    echo "⚠️  No SVG found in $filename"
+  fi
+done
+
+echo "🎉 Extraction complete! SVGs are in $OUTPUT_DIR/"
