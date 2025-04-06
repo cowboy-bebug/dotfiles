@@ -3,6 +3,7 @@ layouts:
   - two-pane
   - column
   - 3column-left
+  - middle-wide
   - tall
   - wide
 
@@ -21,7 +22,7 @@ focus-follows-mouse: false
 enables-layout-hud: true
 enables-layout-hud-on-space-change: true
 follow-space-thrown-windows: true
-hide-menu-bar-icon: true
+hide-menu-bar-icon: false
 
 focus-main:
   mod: mod2
