@@ -1,6 +1,8 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 ;;; For more info, see `~/.config/emacs/templates/config.example.el'
 
+(load! "functions")
+
 ;; ui
 (load! "theme")
 (setq doom-font                (font-spec :family "Hack Nerd Font"  :size 14)
@@ -31,13 +33,35 @@
           ispell-personal-dictionary personal-dictionary
           spell-fu-word-delimit-camel-case t)))
 
+;; abbrev
+(define-abbrev-table 'global-abbrev-table
+  '(("--" "—")
+    ("..." "…")
+    ("->" "→")
+    ("<-" "←")
+    ("<=" "⇐")
+    ("=>" "⇒")
+    ("<=>" "⇔")
+    ("!=" "≠")
+    ("+-" "±")
+    ("<=" "≤")
+    ("==" "≡")
+    (">=" "≥")))
+
+;; markdown
+(after! markdown-mode
+  (add-hook! 'markdown-mode-hook 'abbrev-mode)
+  (add-hook! 'markdown-mode-hook '+my/make-word-constituents))
+
 ;; org
 (after! org
   (add-to-list 'org-modules 'org-habit t)
   (add-to-list 'org-todo-keyword-faces '("GOAL" . "DarkOliveGreen3") t)
+  (add-hook! 'org-mode-hook 'abbrev-mode)
   (add-hook! 'org-mode-hook 'auto-fill-mode)
   (add-hook! 'org-mode-hook 'org-fragtog-mode)
   (add-hook! 'org-mode-hook #'org-modern-mode)
+  (add-hook! 'org-mode-hook '+my/make-word-constituents)
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
   (add-hook! 'before-save-hook 'delete-trailing-whitespace)
 
