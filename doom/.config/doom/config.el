@@ -61,7 +61,7 @@
   (add-hook! 'org-mode-hook 'abbrev-mode)
   (add-hook! 'org-mode-hook 'auto-fill-mode)
   (add-hook! 'org-mode-hook 'org-fragtog-mode)
-  (add-hook! 'org-mode-hook #'org-modern-mode)
+  (add-hook! 'org-mode-hook 'org-modern-mode)
   (add-hook! 'org-mode-hook '+my/make-word-constituents)
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
   (add-hook! 'before-save-hook 'delete-trailing-whitespace)
