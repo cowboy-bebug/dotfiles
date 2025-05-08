@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+
+set -e
+
+output_mode="url"
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+  --output=*)
+    output_mode="${1#*=}"
+    shift
+    ;;
+  --output | -o)
+    output_mode="$2"
+    shift 2
+    ;;
+  -o=*)
+    output_mode="${1#*=}"
+    shift
+    ;;
+  --help | -h)
+    cat <<EOF
+Usage:
+  gurl [<commit>|<range>] [--output <format>]
+
+Options:
+  -o, --output <format>    Output format: url (default), markdown|md, org|orgmode
+  -h, --help               Show this help message
+
+Examples:
+  gurl                     → https://github.com/org/repo/commit/abc1234
+  gurl abc..def            → https://github.com/org/repo/compare/abc...def
+  gurl -o markdown         → [abc1234](https://github.com/org/repo/commit/abc1234)
+  gurl -o org              → [[https://github.com/org/repo/commit/abc1234][abc1234]]
+EOF
+    exit 0
+    ;;
+  *)
+    target="$1"
+    shift
+    ;;
+  esac
+done
+
+# normalise $output_mode
+output_mode="$(echo "$output_mode" | tr '[:upper:]' '[:lower:]')"
+case "$output_mode" in
+md)
+  output_mode="markdown"
+  ;;
+orgmode)
+  output_mode="org"
+  ;;
+esac
+
+if [ -z "$target" ]; then
+  if [ -t 0 ]; then
+    target="$(git rev-parse --short HEAD)"
+  else
+    read -r target
+  fi
+fi
+
+# extract host and repo path
+remote_url="$(git remote get-url origin)"
+if [[ "$remote_url" =~ ^git@([^:]+):(.+)\.git$ ]]; then
+  host="${BASH_REMATCH[1]}"
+  repo_path="${BASH_REMATCH[2]}"
+elif [[ "$remote_url" =~ ^https?://([^/]+)/(.+)\.git$ ]]; then
+  host="${BASH_REMATCH[1]}"
+  repo_path="${BASH_REMATCH[2]}"
+else
+  echo "Unable to parse remote URL: $remote_url"
+  exit 1
+fi
+
+# override custom SSH aliases
+case "$host" in
+personal.github.com)
+  host="github.com"
+  ;;
+esac
+
+# get platform-specific commit and compare paths
+case "$host" in
+github.com)
+  commit_path="commit"
+  compare_path="compare"
+  ;;
+gitlab.com)
+  commit_path="-/commit"
+  compare_path="-/compare"
+  ;;
+*)
+  echo "Unsupported host: $host"
+  exit 1
+  ;;
+esac
+
+# compose git url
+if [[ "$target" =~ \.\. ]]; then
+  range="${target/../...}"
+  url="https://${host}/${repo_path}/${compare_path}/${range}"
+else
+  url="https://${host}/${repo_path}/${commit_path}/${target}"
+fi
+
+# echo based on output mode
+link="$repo_path@$target"
+if [[ "$output_mode" == "markdown" ]]; then
+  echo "[$link]($url)"
+elif [[ "$output_mode" == "org" ]]; then
+  echo "[[$url][$link]]"
+else
+  echo "$url"
+fi
