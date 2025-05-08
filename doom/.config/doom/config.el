@@ -1,10 +1,11 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 ;;; For more info, see `~/.config/emacs/templates/config.example.el'
 
+;; load things
 (load! "functions")
+(load! "theme")
 
 ;; ui
-(load! "theme")
 (setq doom-font                (font-spec :family "Hack Nerd Font"  :size 14)
       doom-variable-pitch-font (font-spec :family "Liberation Sans" :size 14)
       doom-modeline-vcs-max-length 40 ;; to display branch name
