@@ -51,6 +51,7 @@
 ;; (unpin! t)
 
 (package! denote)
+(package! denote-silo)
 (package! ef-themes)
 (package! org-fragtog)
 (package! org-modern)

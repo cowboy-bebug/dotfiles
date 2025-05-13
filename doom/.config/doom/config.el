@@ -163,8 +163,8 @@
 (after! denote
   (setq denote-directory "~/github.com/cowboy-bebug/org-work/notes"))
 
-(after! denote-silo-extras
-  (setq denote-silo-extras-directories
+(after! denote-silo
+  (setq denote-silo-directories
         '("~/github.com/cowboy-bebug/org-work/notes"
           "~/github.com/cowboy-bebug/org/notes")))
 
