@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "Usage: $(basename "$0")<blog title>"
+  exit 1
+fi
+
+timestamp=$(date +"%Y%m%d%H%M")
+slug=$(echo "$1" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9 ]//g' | tr ' ' '-')
+
+out_dir="$HOME/github.com/cowboy-bebug/blog-dev"
+file_name="${timestamp}-${slug}.md"
+file_path="${out_dir}/${file_name}"
+
+cat <<EOF >"$file_path"
+---
+title: "$1"
+published: "$(gdate +"%Y-%m-%dT%H:%M:%S%:z")"
+slug: "$slug"
+---
+
+# $1
+
+Start writing your post here...
+EOF
+
+echo "Created: $file_path"
+
+code --new-window "$out_dir" --goto "$file_path"
