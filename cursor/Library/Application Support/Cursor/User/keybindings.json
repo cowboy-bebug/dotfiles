@@ -1,0 +1,73 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "command": "workbench.action.splitEditor",
+    "key": "ctrl+cmd+l"
+  },
+  {
+    "command": "workbench.action.navigateLeft",
+    "key": "ctrl+h"
+  },
+  {
+    "command": "workbench.action.navigateRight",
+    "key": "ctrl+l"
+  },
+  {
+    "command": "workbench.action.navigateUp",
+    "key": "ctrl+k"
+  },
+  {
+    "command": "workbench.action.navigateDown",
+    "key": "ctrl+j"
+  },
+  {
+    "command": "workbench.action.files.save",
+    "key": "cmd+s"
+  },
+  {
+    "command": "cursorColumnSelectDown",
+    "key": "ctrl+shift+alt+down",
+    "when": "textInputFocus"
+  },
+  {
+    "command": "cursorColumnSelectUp",
+    "key": "ctrl+shift+alt+up",
+    "when": "textInputFocus"
+  },
+  {
+    "command": "git.stage",
+    "key": "a",
+    "when": "!textInputFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'"
+  },
+  {
+    "command": "git.unstage",
+    "key": "u",
+    "when": "!textInputFocus && sideBarFocus && activeViewlet == 'workbench.view.scm'"
+  },
+  {
+    "command": "-workbench.action.keybindingsReference",
+    "key": "cmd+k cmd+r"
+  },
+  {
+    "key": "cmd+k cmd+r",
+    "command": "git.revertSelectedRanges"
+  },
+  {
+    "key": "cmd+k cmd+r",
+    "command": "-git.revertSelectedRanges",
+    "when": "isInDiffEditor && !operationInProgress"
+  },
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
+  },
+  {
+    "key": "cmd+l",
+    "command": "composerMode.chat"
+  },
+  {
+    "key": "shift+cmd+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  }
+]

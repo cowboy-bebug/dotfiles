@@ -1,0 +1,308 @@
+{
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp",
+    "editor.rulers": [120]
+  },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[html]": {
+    "editor.formatOnSave": false
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "off"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[sql]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "cSpell.checkOnlyEnabledFileTypes": false,
+  "cSpell.ignoreWords": [
+    "ALACRITTY",
+    "CFOR",
+    "Datasource",
+    "Ingestor",
+    "Kommitment",
+    "Llms",
+    "Mailess",
+    "Millis",
+    "Newtonsoft",
+    "Onit",
+    "Shadcn",
+    "bebug",
+    "cbor",
+    "datasources",
+    "dbname",
+    "easymotion",
+    "envsubst",
+    "esbenp",
+    "firstname",
+    "foldfix",
+    "fontawesome",
+    "fortawesome",
+    "gsutil",
+    "kommit",
+    "langchain",
+    "lastname",
+    "lipgloss",
+    "mccarthyfinch",
+    "neverthrow",
+    "nvim",
+    "orga",
+    "outdent",
+    "pino",
+    "signin",
+    "snakecase",
+    "spendai",
+    "substrand",
+    "sumneko",
+    "tailwindcss",
+    "tamasfe",
+    "typebox",
+    "unmarshall",
+    "useremail",
+    "vspacecode",
+    "whichkey"
+  ],
+  "cSpell.language": "en,en-GB",
+  "css.lint.validProperties": ["composes"],
+  "debug.internalConsoleOptions": "openOnSessionStart",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.maxComputationTime": 0,
+  "editor.accessibilitySupport": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.organizeImports": "always"
+  },
+  "editor.cursorBlinking": "solid",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.tokenColorCustomizations": {
+    "[Atom One Dark]": {
+      "comments": "#737373"
+    }
+  },
+  "editor.wordWrap": "off",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.sortOrder": "type",
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.mts": "typescript",
+    "*.rules": "yaml",
+    "vars": "yaml"
+  },
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/dist": true,
+    "**/jest_results": true,
+    "**/lib": true,
+    "**/node_modules": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "git.enableCommitSigning": true,
+  "git.openRepositoryInParentFolders": "always",
+  "gitlens.advanced.messages": {
+    "suppressIntegrationDisconnectedTooManyFailedRequestsWarning": true
+  },
+  "Lua.format.defaultConfig": {
+    "indent_size": "2",
+    "indent_style": "space"
+  },
+  "Lua.format.enable": true,
+  "makefile.configureOnOpen": false,
+  "markdown.preview.doubleClickToSwitchToEditor": false,
+  "markdown.preview.markEditorSelection": false,
+  "markdown.preview.scrollEditorWithPreview": false,
+  "markdown.preview.scrollPreviewWithEditor": false,
+  "prettier.printWidth": 80,
+  "prettier.proseWrap": "always",
+  "python.createEnvironment.trigger": "off",
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.lens.implementations.enable": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.scrollback": 10000,
+  "todo-tree.general.tags": [
+    "TODO",
+    "FIXME",
+    "HACK",
+    "NOTE",
+    "REF",
+    "BUG",
+    "OPTIMIZE",
+    "REVIEW",
+    "DOC",
+    "REFACTOR",
+    "DEPRECATED",
+    "SECURITY"
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "[ ]": {},
+    "[x]": {},
+    "FIXME": {
+      "background": "#00000000",
+      "foreground": "#ffa500"
+    },
+    "HACK": {},
+    "NOTE": {
+      "background": "#00000000",
+      "foreground": "#00d9ff"
+    },
+    "TODO": {
+      "background": "#00000000",
+      "foreground": "#ffa500"
+    }
+  },
+  "todo-tree.highlights.defaultHighlight": {
+    "background": "#00000000"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "update.showReleaseNotes": false,
+  "vim.easymotion": true,
+  "vim.foldfix": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [";"],
+      "commands": ["workbench.action.showCommands"],
+      "silent": true
+    },
+    {
+      "before": ["z", "g"],
+      "commands": ["cSpell.addIgnoreWordsToUser"],
+      "silent": true
+    },
+    {
+      "before": ["]", "s"],
+      "commands": ["cSpell.goToNextSpellingIssue"],
+      "silent": true
+    },
+    {
+      "before": ["[", "s"],
+      "commands": ["cSpell.goToPreviousSpellingIssue"],
+      "silent": true
+    },
+    {
+      "before": ["g", "d"],
+      "commands": ["editor.action.revealDefinition"],
+      "silent": true
+    },
+    {
+      "before": ["g", "D"],
+      "commands": ["editor.action.goToReferences"],
+      "silent": true
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
+    },
+    {
+      "before": [","],
+      "commands": [
+        "vspacecode.space",
+        {
+          "args": "m",
+          "command": "whichkey.triggerKey"
+        }
+      ]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
+    },
+    {
+      "before": [","],
+      "commands": [
+        "vspacecode.space",
+        {
+          "args": "m",
+          "command": "whichkey.triggerKey"
+        }
+      ]
+    },
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    }
+  ],
+  "vspacecode.bindingOverrides": [
+    {
+      "command": "workbench.action.previousEditor",
+      "keys": "b.[",
+      "name": "Previous buffer (doom)",
+      "type": "command"
+    },
+    {
+      "command": "workbench.action.nextEditor",
+      "keys": "b.]",
+      "name": "Next buffer (doom)",
+      "type": "command"
+    }
+  ],
+  "window.autoDetectColorScheme": true,
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorTheme": "Atom One Light",
+  "workbench.editor.showTabs": "multiple",
+  "workbench.enableExperiments": false,
+  "workbench.preferredDarkColorTheme": "Atom One Dark",
+  "workbench.preferredLightColorTheme": "Atom One Light",
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.startupEditor": "none",
+  "window.confirmSaveUntitledWorkspace": false
+}
