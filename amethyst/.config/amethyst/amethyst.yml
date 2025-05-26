@@ -10,6 +10,7 @@ layouts:
 mod1:
   - shift
   - command
+  - option
 mod2:
   - shift
   - control
