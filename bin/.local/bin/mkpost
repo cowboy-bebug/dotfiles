@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Default values
-out_dir=""
+site=""
 title=""
 
 # Function to show usage
@@ -9,22 +9,32 @@ show_usage() {
   echo "Usage: $(basename "$0") [OPTIONS]"
   echo ""
   echo "OPTIONS:"
-  echo "  -p, --path <path>    Target directory for the blog post"
-  echo "                       (defaults to current directory if not specified)"
+  echo "  -p, --path <site>    Target site (required): ericlim.dev or ericlim.me"
   echo "  -t, --title <title>  Title of the blog post (required)"
   echo "  -h, --help          Show this help message"
   echo ""
   echo "Examples:"
-  echo "  $(basename "$0") -t \"My Blog Post\""
-  echo "  $(basename "$0") --path ~/blog-dev --title \"My Blog Post\""
-  echo "  $(basename "$0") -p ~/blog-dev -t \"My Blog Post\""
+  echo "  $(basename "$0") --path ericlim.dev --title \"My Blog Post\""
+  echo "  $(basename "$0") -p ericlim.me -t \"My Blog Post\""
+}
+
+# Function to validate site
+validate_site() {
+  case "$1" in
+    "ericlim.dev"|"ericlim.me")
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
 }
 
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
   case $1 in
   -p | --path)
-    out_dir="$2"
+    site="$2"
     shift 2
     ;;
   -t | --title)
@@ -44,6 +54,22 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+# Check if site is provided
+if [ -z "$site" ]; then
+  echo "Error: Site (--path) is required"
+  echo ""
+  show_usage
+  exit 1
+fi
+
+# Validate site
+if ! validate_site "$site"; then
+  echo "Error: Invalid site '$site'. Must be 'ericlim.dev' or 'ericlim.me'"
+  echo ""
+  show_usage
+  exit 1
+fi
+
 # Check if title is provided
 if [ -z "$title" ]; then
   echo "Error: Title is required"
@@ -52,13 +78,9 @@ if [ -z "$title" ]; then
   exit 1
 fi
 
-# If no path specified, use current directory
-if [ -z "$out_dir" ]; then
-  out_dir="$(pwd)"
-fi
-
-# Expand tilde and resolve path
-out_dir=$(eval echo "$out_dir")
+# Construct the target directory
+base_dir="$HOME/github.com/cowboy-bebug/$site"
+out_dir="$base_dir/src/content/posts"
 
 # Check if target directory exists
 if [ ! -d "$out_dir" ]; then
@@ -72,19 +94,38 @@ slug=$(echo "$title" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9 ]//g' | t
 file_name="${timestamp}-${slug}.md"
 file_path="${out_dir}/${file_name}"
 
-cat <<EOF >"$file_path"
+# Create different docstring based on site
+if [ "$site" = "ericlim.me" ]; then
+  # https://github.com/cowboy-bebug/ericlim.me/blob/main/src/content.config.ts
+  cat <<EOF >"$file_path"
 ---
 title: "$title"
-publishDate: $(gdate +"%Y-%m-%dT%H:%M:%S%:z")
-tags: []
 description: ""
+categories: []
+pubDate: $(gdate +"%Y-%m-%dT%H:%M:%S%:z")
 ---
-
-# $title
 
 Start writing your post here...
 EOF
+else
+  # https://github.com/cowboy-bebug/ericlim.dev/blob/main/src/content.config.ts
+  cat <<EOF >"$file_path"
+---
+title: "$title"
+description: ""
+tags: []
+publishDate: $(gdate +"%Y-%m-%dT%H:%M:%S%:z")
+coverImage:
+  src: ""
+  alt: ""
+seriesId: ""
+orderInSeries:
+---
+
+Start writing your post here...
+EOF
+fi
 
 echo "Created: $file_path"
 
-code --new-window "$out_dir" --goto "$file_path"
+code --new-window "$base_dir" --goto "$file_path"
