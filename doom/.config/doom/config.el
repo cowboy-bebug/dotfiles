@@ -56,6 +56,14 @@
 
 ;; org
 (after! org
+  (add-to-list 'org-capture-templates
+               '("b" "Blog Note" entry
+                 (file+headline "~/github.com/cowboy-bebug/org-work/notes.org" "Blogs")
+                 "\n* %(org-read-date nil nil nil) %^{Title}  :blog:\n:source: %^{URL}\n:read_on: %U\n\n%?"))
+  (add-to-list 'org-capture-templates
+               '("v" "Video Note" entry
+                 (file+headline "~/github.com/cowboy-bebug/org-work/notes.org" "Videos")
+                 "\n* %(org-read-date nil nil nil) %^{Title}  :video:\n:source: %^{URL}\n:watched_on: %U\n\n%?"))
   (add-to-list 'org-modules 'org-habit t)
   (add-to-list 'org-todo-keyword-faces '("GOAL" . "DarkOliveGreen3") t)
   (add-hook! 'org-mode-hook 'abbrev-mode)
