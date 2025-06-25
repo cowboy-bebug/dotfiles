@@ -40,7 +40,7 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 export ANDROID_HOME=$HOME/Android/Sdk
 export DOTNET_ROOT=$HOME/.dotnet
 export HOMEBREW_NO_AUTO_UPDATE=1
-export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 
 # paths
 export PATH="$PATH:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools"
@@ -51,7 +51,7 @@ export PATH="$PATH:$PNPM_HOME"
 export PATH="$PATH:$XDG_BIN_HOME"
 export PATH="$PATH:$XDG_CONFIG_HOME/emacs/bin"
 export PATH="$PATH:/opt/homebrew/bin:/usr/local/bin"
-export PATH="$PATH:PYENV_ROOT/bin"
+export PATH="$PATH:$PYENV_ROOT/bin"
 
 # Other exports
 export DOCKER_HOST=unix:///Users/$USER/.docker/run/docker.sock
