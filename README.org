@@ -1,13 +1,81 @@
 #+title: dotfiles
+#+property: header-args :results none
 
+* Prerequisite
 The repo uses:
 - [[https://www.gnu.org/software/stow][stow]] to symlink config files.
 - [[https://www.gnu.org/software/gettext/][gettext]]'s ~envsubst~ to template config files.
 
-* Prerequisites
-#+begin_src  sh :results none
-cd $XDG_DATA_HOME
-[ ! -d alacritty-theme ] && git clone https://github.com/alacritty/alacritty-theme
+** MacOS
+Install [[https://brew.sh][Homebrew]]:
+#+begin_src bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#+end_src
+
+Download the dependencies:
+#+begin_src bash
+brew install gettext gpg stow
+#+end_src
+
+Optionally:
+#+begin_src bash
+brew bundle --file=~Brewfile
+#+end_src
+
+** Authentication
+Create two sets of SSH keys:
+#+begin_src bash :results value
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+
+ssh-keygen -t ed25519 -N "" -q -f ~/.ssh/id_ed25519_work <<< y
+ssh-keygen -t ed25519 -N "" -q -f ~/.ssh/id_ed25519_personal <<< y
+
+shopt -s extglob
+chmod 600 ~/.ssh/id_ed25519_!(pub)
+chmod 644 ~/.ssh/id_ed25519_*.pub
+#+end_src
+
+Managing multiple accounts on a single machine has been a challenge. It works
+the best with alias:
+#+begin_src conf :tangle ~/.ssh/config :noeval
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519
+
+Host personal.github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_personal
+#+end_src
+
+* Set up
+** Clone
+#+begin_src bash
+git clone git@personal.github.com:cowboy-bebug/dotfiles.git
+#+end_src
+
+** Stow
+#+begin_src bash
+stow -Sv $(ls -d */ | grep -v "^\.git/$" | tr "/\n" " ") --no-folding --target=$HOME
+#+end_src
+
+** GPG
+#+begin_src bash
+gpg --import /Volumes/USB_NAME/mykey.sec.asc
+#+end_src
+
+Update trust level:
+#+begin_src :noeval
+gpg --edit-key cowboy-bebug@users.noreply.github.com
+gpg> trust # 5
+#+end_src
+
+** Z Shell
+#+begin_src bash
+echo "source ~/.config/zsh/.zshenv" >> ~/.zshenv
+source ~/.zshenv
 
 mkdir -p $XDG_DATA_HOME/zsh
 cd $XDG_DATA_HOME/zsh
@@ -16,23 +84,53 @@ cd $XDG_DATA_HOME/zsh
 [ ! -d zsh-vi-mode             ] && git clone https://github.com/jeffreytse/zsh-vi-mode
 #+end_src
 
-* Stow
-#+begin_src sh :results none
-stow -Rv bin --no-folding --target=$HOME
-stow-with-theme
+** Miscellaneous:
+#+begin_src bash
+cd $XDG_DATA_HOME
+[ ! -d alacritty-theme ] && git clone https://github.com/alacritty/alacritty-theme
 #+end_src
 
-* Authentication
-Managing multiple accounts on a single machine has been a challenge. It works
-the best with SSH with alias:
-#+begin_src conf :eval no
-Host work.github.com
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/id_rsa_work
+** Git
+#+begin_src bash
+git set-personal
+#+end_src
 
-Host personal.github.com
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/id_rsa_personal
+* Teardown
+** GPG
+Optionally export:
+#+begin_src bash :noeval
+gpg --armor --export-secret-keys cowboy-bebug@users.noreply.github.com > /Volumes/USB_NAME/mykey.sec.asc
+#+end_src
+
+Delete keys:
+#+begin_src bash :noeval
+gpgconf —kill gpg-agent
+gpg --delete-secret-keys 4E73B55E
+gpg --delete-keys 4E73B55E
+#+end_src
+
+** Packages
+*** MacOS
+#+begin_src bash
+brew bundle dump --file=Brewfile --force
+#+end_src
+
+** Unstow
+#+begin_src bash :dir ~/github.com/cowboy-bebug/dotfiles
+stow -Dv */ --no-folding --target=$HOME
+#+end_src
+
+** Delete
+#+begin_src bash :noeval
+rm -rf $GNUPGHOME
+rm -rf \
+  ~/github.com \
+  ~/gitlab.com
+rm -rf \
+  ~/.config \
+  ~/.cache \
+  ~/.ssh \
+  ~/.zshenv \
+  ~/Library/Application\ Support/Mozilla
+  ~/Library/Application\ Support/zen
 #+end_src
