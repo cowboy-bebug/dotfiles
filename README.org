@@ -1,38 +1,162 @@
 #+title: dotfiles
+#+property: header-args :results none :dir ~/github.com/cowboy-bebug/dotfiles
 
-The repo uses:
+My dotfiles are primarily managed by:
 - [[https://www.gnu.org/software/stow][stow]] to symlink config files.
 - [[https://www.gnu.org/software/gettext/][gettext]]'s ~envsubst~ to template config files.
 
-* Prerequisites
-#+begin_src  sh :results none
-cd $XDG_DATA_HOME
-[ ! -d alacritty-theme ] && git clone https://github.com/alacritty/alacritty-theme
+* Set up
+Follow these to set up a new machine exactly how I like it.
+** Clone
+#+begin_src bash
+target="github.com/cowboy-bebug"
+mkdir -p $target && cd $target
+git clone https://github.com/cowboy-bebug/dotfiles.git
+#+end_src
+
+** Stow
+#+begin_src bash
+find . -maxdepth 1 -type d ! -name ".git" -exec basename {} \; | xargs stow -Sv --no-folding --target=$HOME
+#+end_src
+
+** Z Shell & Miscellaneous
+#+begin_src bash
+echo "source ~/.config/zsh/.zshenv" >> ~/.zshenv
+source ~/.zshenv
 
 mkdir -p $XDG_DATA_HOME/zsh
 cd $XDG_DATA_HOME/zsh
 [ ! -d fzf-tab                 ] && git clone https://github.com/Aloxaf/fzf-tab
 [ ! -d zsh-syntax-highlighting ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting
 [ ! -d zsh-vi-mode             ] && git clone https://github.com/jeffreytse/zsh-vi-mode
+
+cd $XDG_DATA_HOME
+[ ! -d alacritty-theme ] && git clone https://github.com/alacritty/alacritty-theme
 #+end_src
 
-* Stow
-#+begin_src sh :results none
-stow -Rv bin --no-folding --target=$HOME
-stow-with-theme
+** Packages
+*** MacOS
+Install [[https://brew.sh][Homebrew]]:
+#+begin_src bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 #+end_src
 
-* Authentication
-Managing multiple accounts on a single machine has been a challenge. It works
-the best with SSH with alias:
-#+begin_src conf :eval no
-Host work.github.com
+Download the dependencies:
+#+begin_src bash
+brew bundle --file=Brewfile
+#+end_src
+
+** Keys
+*** GPG
+Create a file at ~~/tmp/gpg-batch.txt~ with this content:
+#+begin_src text :tangle ~/tmp/gpg-batch.txt
+%no-protection
+Key-Type: default
+Key-Length: 2048
+Subkey-Type: default
+Name-Real: Eric Lim
+Name-Email: you@example.com
+Expire-Date: 0
+%commit
+#+end_src
+
+Run in batch mode:
+#+begin_src bash
+gpg --batch --generate-key ~/tmp/gpg-batch.txt
+chmod 700 $GNUPGHOME
+#+end_src
+
+Go to https://github.com/settings/gpg/new to add the key.
+
+Also import my personal key:
+#+begin_src bash
+gpg --import /Volumes/USB_NAME/mykey.sec.asc
+#+end_src
+
+Update trust level:
+#+begin_src bash :eval no
+gpg --edit-key cowboy-bebug@users.noreply.github.com
+gpg> trust  # select 5 (ultimate) when prompted
+#+end_src
+
+*** Authentication
+Managing multiple GitHub accounts on a single machine has been a challenge. What
+worked best for me is to use multiple SSH key pairs with aliases.
+
+Create two sets of SSH keys:
+#+begin_src bash :results value
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+
+ssh-keygen -t ed25519 -N "" -q -f ~/.ssh/id_ed25519_work <<< y
+ssh-keygen -t ed25519 -N "" -q -f ~/.ssh/id_ed25519_personal <<< y
+
+shopt -s extglob
+chmod 600 ~/.ssh/id_ed25519_!(pub)
+chmod 644 ~/.ssh/id_ed25519_*.pub
+#+end_src
+
+Add this to ~~/.ssh/config~:
+#+begin_src conf :tangle ~/.ssh/config :eval no
+Host github.com
   HostName github.com
   User git
-  IdentityFile ~/.ssh/id_rsa_work
+  IdentityFile ~/.ssh/id_ed25519
 
 Host personal.github.com
   HostName github.com
   User git
-  IdentityFile ~/.ssh/id_rsa_personal
+  IdentityFile ~/.ssh/id_ed25519_personal
+#+end_src
+
+Go to https://github.com/settings/ssh/new to add those keys.
+
+** Git
+#+begin_src bash
+git remote set-url origin git@personal.github.com:cowboy-bebug/dotfiles.git
+git set-personal
+#+end_src
+
+* Teardown
+Follow these steps to delete everything and restore the machine to a
+pre-dotfiles state.
+
+** Packages
+*** MacOS
+#+begin_src bash
+brew bundle dump --file=Brewfile --force
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+#+end_src
+
+** GPG
+Optionally export:
+#+begin_src bash :eval no
+gpg --armor --export-secret-keys cowboy-bebug@users.noreply.github.com > /Volumes/USB_NAME/mykey.sec.asc
+#+end_src
+
+Delete my personal key:
+#+begin_src bash :eval no
+gpgconf --kill gpg-agent
+gpg --delete-secret-keys 4E73B55E
+gpg --delete-keys 4E73B55E
+#+end_src
+
+** Unstow
+#+begin_src bash
+find . -maxdepth 1 -type d ! -name ".git" -exec basename {} \; | xargs stow -Dv --no-folding --target=$HOME
+#+end_src
+
+** Delete everything
+*This will remove dotfiles and all related data. Consider backing up important.*
+
+#+begin_src bash :eval no
+rm -rf $GNUPGHOME
+rm -rf ~/github.com ~/gitlab.com
+rm -rf \
+  ~/.config \
+  ~/.cache \
+  ~/.ssh \
+  ~/.zshenv \
+  ~/Library/Application\ Support/Mozilla
+  ~/Library/Application\ Support/zen
 #+end_src
