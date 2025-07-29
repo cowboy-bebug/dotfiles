@@ -48,25 +48,36 @@ brew bundle --file=Brewfile
 
 ** Keys
 *** GPG
-Create a file at ~~/tmp/gpg-batch.txt~ with this content:
-#+begin_src text :tangle ~/tmp/gpg-batch.txt
+Set permissions for existing ~gpg~ directory:
+#+begin_src bash
+chown -R $(whoami) ~/.local/share/gnupg
+chown 600 ~/.local/share/gnupg/*
+chown 700 ~/.local/share/gnupg
+#+end_src
+
+Create a file at ~/tmp/gpg-batch.txt~ with this content:
+#+begin_src text :tangle /tmp/gpg-batch.txt
 %no-protection
-Key-Type: default
+Key-Type: EDDSA
+Key-Curve: ed25519
 Key-Length: 2048
-Subkey-Type: default
+Subkey-Type: ECDH
+Subkey-Curve: cv25519
 Name-Real: Eric Lim
-Name-Email: you@example.com
+Name-Email: eric-lim@idexx.com
 Expire-Date: 0
 %commit
 #+end_src
 
 Run in batch mode:
 #+begin_src bash
-gpg --batch --generate-key ~/tmp/gpg-batch.txt
-chmod 700 $GNUPGHOME
+gpg --batch --generate-key /tmp/gpg-batch.txt
 #+end_src
 
-Go to https://github.com/settings/gpg/new to add the key.
+Go to https://github.com/settings/gpg/new to add the key:
+#+begin_src
+gpg --armor --export [key-id]
+#+end_src
 
 Also import my personal key:
 #+begin_src bash
