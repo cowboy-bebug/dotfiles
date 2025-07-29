@@ -112,7 +112,7 @@ Add this to ~~/.ssh/config~:
 Host github.com
   HostName github.com
   User git
-  IdentityFile ~/.ssh/id_ed25519
+  IdentityFile ~/.ssh/id_ed25519_work
 
 Host personal.github.com
   HostName github.com
