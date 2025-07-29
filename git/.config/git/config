@@ -1,8 +1,8 @@
 [alias]
 	set-personal = !git config --local user.email "cowboy-bebug@users.noreply.github.com" && \
 	                git config --local user.signingkey "4E73B55E"
-	set-work = !git config --local user.email "eric.lim@onit.com" && \
-	            git config --local user.signingkey "1DD93DCE"
+	set-work = !git config --local user.email "eric-lim@idexx.com" && \
+	            git config --local user.signingkey "C2711835"
 [commit]
 	gpgsign = true
 [core]
