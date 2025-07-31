@@ -28,6 +28,13 @@ focus-main:
   mod: mod2
   key: m
 
+focus-cw:
+  mod: mod1
+  key: j
+focus-ccw:
+  mod: mod1
+  key: k
+
 focus-screen-ccw:
   mod: mod2
   key: p
