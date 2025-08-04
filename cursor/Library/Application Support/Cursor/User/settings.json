@@ -297,6 +297,7 @@
     }
   ],
   "window.autoDetectColorScheme": true,
+  "window.commandCenter": false,
   "workbench.activityBar.location": "hidden",
   "workbench.colorTheme": "Atom One Light",
   "workbench.editor.showTabs": "multiple",
