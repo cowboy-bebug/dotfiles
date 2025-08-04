@@ -104,6 +104,7 @@
   ],
   "cSpell.language": "en,en-GB",
   "css.lint.validProperties": ["composes"],
+  "cursor.general.disableHttp2": true,
   "debug.internalConsoleOptions": "openOnSessionStart",
   "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.maxComputationTime": 0,
