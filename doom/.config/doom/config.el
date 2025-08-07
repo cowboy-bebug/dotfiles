@@ -48,6 +48,7 @@
     ("<=" "≤")
     ("==" "≡")
     (">=" "≥")))
+(setq save-abbrevs nil)
 
 ;; markdown
 (after! markdown-mode
