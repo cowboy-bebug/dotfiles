@@ -53,6 +53,8 @@
 (package! denote)
 (package! denote-silo)
 (package! ef-themes)
+(package! mermaid-mode)
+(package! ob-mermaid)
 (package! org-fragtog)
 (package! org-modern)
 (package! org-present)
