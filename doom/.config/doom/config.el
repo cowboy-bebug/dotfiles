@@ -106,6 +106,9 @@
         org-habit-today-glyph ?◦
         org-habit-completed-glyph ?•))
 
+(after! org-journal
+  (setq org-journal-file-format "%Y-%m-%d.org"))
+
 (after! org-modern
   (setq org-modern-block-name '((t . ("▶ " "▶ "))
                                 ("src" . ("󰞷" "󰞷")))
