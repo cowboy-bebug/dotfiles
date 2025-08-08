@@ -75,6 +75,10 @@
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
   (add-hook! 'before-save-hook 'delete-trailing-whitespace)
 
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((mermaid . t)))
+
   (map! :leader
         (:prefix-map ("t" . "toggle")
          :desc "Present mode" "p" #'org-present))
@@ -108,6 +112,9 @@
 
 (after! org-journal
   (setq org-journal-file-format "%Y-%m-%d.org"))
+
+(after! ob-mermaid
+  (setq ob-mermaid-cli-path "npx @mermaid-js/mermaid-cli"))
 
 (after! org-modern
   (setq org-modern-block-name '((t . ("▶ " "▶ "))
