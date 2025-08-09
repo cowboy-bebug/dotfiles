@@ -34,6 +34,10 @@
           ispell-personal-dictionary personal-dictionary
           spell-fu-word-delimit-camel-case t)))
 
+;; authentication
+(after! auth-source
+  (setq auth-sources '("~/github.com/cowboy-bebug/dotfiles-secrets/.authinfo.gpg")))
+
 ;; abbrev
 (define-abbrev-table 'global-abbrev-table
   '(("--" "—")
