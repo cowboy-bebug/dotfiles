@@ -53,6 +53,7 @@
 (package! denote)
 (package! denote-silo)
 (package! ef-themes)
+(package! gptel)
 (package! mermaid-mode)
 (package! ob-mermaid)
 (package! org-fragtog)
