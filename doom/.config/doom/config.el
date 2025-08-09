@@ -115,6 +115,20 @@
         org-habit-completed-glyph ?•))
 
 (after! org-journal
+  (defun my/org-journal-template ()
+    (goto-char (point-max))
+    (unless (save-excursion
+              (goto-char (point-min))
+              (re-search-forward "^\\* Goals" nil t))
+      (insert "\n*** Goals\n- [ ] Main goal 1\n- [ ] Main goal 2\n\n")
+      (insert "*** Highlight\n- The most positive moment of the day\n\n")
+      (insert "*** Gratitude\n- I'm grateful for...\n\n")
+      (insert "*** Daily Log\n- Morning ::\n- Afternoon ::\n- Evening ::\n\n")
+      (insert "*** What worked today?\n- (What actions boosted productivity, mood, or learning?)\n\n")
+      (insert "*** What could I improve tomorrow?\n- (Specific and measurable change)\n- (Another improvement)\n")))
+
+  (add-hook 'org-journal-after-entry-create-hook #'my/org-journal-template)
+
   (setq org-journal-file-format "%Y-%m-%d.org"))
 
 (after! ob-mermaid
