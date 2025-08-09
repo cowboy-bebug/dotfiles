@@ -72,6 +72,7 @@
   (add-hook! 'org-mode-hook 'org-fragtog-mode)
   (add-hook! 'org-mode-hook 'org-modern-mode)
   (add-hook! 'org-mode-hook '+my/make-word-constituents)
+  (add-hook! 'org-mode-hook (setq-local fill-column 80))
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
   (add-hook! 'before-save-hook 'delete-trailing-whitespace)
 
@@ -91,7 +92,6 @@
         org-edit-src-content-indentation 0
         org-id-locations-file "~/.config/emacs/.local/cache/.org-id-locations"
         org-directory "~/github.com/cowboy-bebug/org"
-        fill-column 80
         org-agenda-start-with-log-mode t
         org-blank-before-new-entry '((heading . t)
                                      (plain-list-item . nil))
