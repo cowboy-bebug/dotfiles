@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -eu
+
+commit_type=${1:-docs}
+today=$(date +%Y-%m-%d)
+msg="${commit_type}(${today}): sync"
+
+# Shift if prefix provided so remaining args can be passed to git commit
+shift 1 || true
+
+git commit -m "$msg" "$@"
