@@ -150,6 +150,9 @@
   "gitlens.advanced.messages": {
     "suppressIntegrationDisconnectedTooManyFailedRequestsWarning": true
   },
+  "gopls": {
+    "buildFlags": ["-tags=tools"]
+  },
   "Lua.format.defaultConfig": {
     "indent_size": "2",
     "indent_style": "space"
