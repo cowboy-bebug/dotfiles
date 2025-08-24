@@ -53,6 +53,7 @@ export PATH="$PATH:$HOME/.rd/bin"
 export PATH="$PATH:$XDG_BIN_HOME"
 export PATH="$PATH:$XDG_CONFIG_HOME/emacs/bin"
 export PATH="$PATH:/opt/homebrew/bin:/usr/local/bin"
+export PATH="$PATH:/opt/homebrew/opt/libpq/bin"
 export PATH="$PATH:$PYENV_ROOT/bin"
 
 # Other exports
