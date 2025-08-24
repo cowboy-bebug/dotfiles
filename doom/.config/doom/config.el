@@ -88,15 +88,12 @@
         (:prefix-map ("t" . "toggle")
          :desc "Present mode" "p" #'org-present))
 
-  (setq org-agenda-files '("~/github.com/cowboy-bebug/org/todo.org"
-                           "~/github.com/cowboy-bebug/org-work/todo.org")
-        org-babel-default-header-args (cons '(:results . "replace verbatim")
+  (setq org-babel-default-header-args (cons '(:results . "replace verbatim")
                                             (assq-delete-all :results org-babel-default-header-args))
         org-babel-results-keyword "results"
         org-edit-src-content-indentation 0
         org-id-locations-file "~/.config/emacs/.local/cache/.org-id-locations"
         org-directory "~/github.com/cowboy-bebug/org"
-        org-agenda-start-with-log-mode t
         org-blank-before-new-entry '((heading . t)
                                      (plain-list-item . nil))
         org-hide-emphasis-markers t
@@ -108,6 +105,11 @@
         org-startup-with-inline-images t
         org-startup-with-latex-preview t
         org-tags-column 80))
+
+(after! org-agenda
+  (setq org-agenda-files '("~/github.com/cowboy-bebug/org/todo.org"
+                           "~/github.com/cowboy-bebug/org-work/todo.org")
+        org-agenda-start-with-log-mode t))
 
 (after! org-habit
   (setq org-habit-show-habits-only-for-today nil
