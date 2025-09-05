@@ -77,6 +77,7 @@
   (add-hook! 'org-mode-hook 'org-modern-mode)
   (add-hook! 'org-mode-hook '+my/make-word-constituents)
   (add-hook! 'org-mode-hook (setq-local fill-column 80))
+  (add-hook! 'org-mode-hook (visual-line-mode -1))
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
   (add-hook! 'before-save-hook 'delete-trailing-whitespace)
 
