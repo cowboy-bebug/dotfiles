@@ -16,7 +16,7 @@ git clone https://github.com/cowboy-bebug/dotfiles.git
 
 ** Stow
 #+begin_src bash
-find . -maxdepth 1 -type d ! -name ".git" -exec basename {} \; | xargs stow -Sv --no-folding --target=$HOME
+find . -mindepth 1 -maxdepth 1 -type d ! -name ".git" -exec basename {} \; | xargs stow -Sv --no-folding --target=$HOME
 #+end_src
 
 ** Z Shell & Miscellaneous
@@ -154,7 +154,7 @@ gpg --delete-keys 4E73B55E
 
 ** Unstow
 #+begin_src bash
-find . -maxdepth 1 -type d ! -name ".git" -exec basename {} \; | xargs stow -Dv --no-folding --target=$HOME
+find . -mindepth 1 -maxdepth 1 -type d ! -name ".git" -exec basename {} \; | xargs stow -Dv --no-folding --target=$HOME
 #+end_src
 
 ** Delete everything
