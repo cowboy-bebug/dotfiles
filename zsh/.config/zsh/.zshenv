@@ -56,6 +56,5 @@ export PATH="$PATH:/opt/homebrew/opt/libpq/bin"
 export PATH="$PATH:$PYENV_ROOT/bin"
 
 # Other exports
-export DOCKER_DEFAULT_PLATFORM=linux/amd64
 export DOCKER_HOST=unix:///Users/$USER/.docker/run/docker.sock
 export LESSHISTFILE="-"
