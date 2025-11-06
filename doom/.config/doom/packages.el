@@ -59,6 +59,7 @@
 (package! gptel)
 (package! mermaid-mode)
 (package! ob-mermaid)
+(package! ob-typescript)
 (package! org-fragtog)
 (package! org-modern)
 (package! org-present)

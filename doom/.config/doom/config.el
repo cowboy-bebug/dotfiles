@@ -83,7 +83,8 @@
 
   (org-babel-do-load-languages
    'org-babel-load-languages
-   '((mermaid . t)))
+   '((mermaid . t)
+     (typescript . t)))
 
   (map! :leader
         (:prefix-map ("t" . "toggle")
