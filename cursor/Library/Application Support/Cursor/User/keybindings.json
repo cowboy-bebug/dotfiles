@@ -79,5 +79,9 @@
     "key": "shift+cmd+k",
     "command": "-aipopup.action.modal.generate",
     "when": "editorFocus && !composerBarIsVisible"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "gitlens.copyRemoteFileUrlToClipboard"
   }
 ]
