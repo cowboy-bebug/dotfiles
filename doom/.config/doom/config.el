@@ -252,3 +252,6 @@ Always be concise, pragmatic, and professional.")
   (setq lsp-rust-analyzer-binding-mode-hints nil
         lsp-rust-analyzer-display-parameter-hints nil
         lsp-rust-analyzer-closure-capture-hints nil))
+
+(after! sql
+  (setq sql-mysql-program "/opt/homebrew/opt/mysql-client/bin/mysql"))
