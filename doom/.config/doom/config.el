@@ -237,6 +237,7 @@ Always be concise, pragmatic, and professional.")
   (add-hook! 'before-save-hook 'delete-trailing-whitespace)
   (add-hook! 'json-mode-hook (setq js-indent-level 2))
   (add-hook! 'typescript-mode-hook (setq typescript-indent-level 2))
+  (add-hook! 'sh-mode-hook (setq sh-basic-offset 2))
   (setf (alist-get 'prettier-markdown apheleia-formatters)
         '("prettier"
           "--parser" "markdown"
