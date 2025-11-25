@@ -199,6 +199,10 @@
 (after! elfeed
   (setq elfeed-search-filter "@1-month-ago"))
 
+;; eww
+(after! eww
+  (set-popup-rule! "^\\*eww.*" :side 'right :size 0.5))
+
 ;; gptel
 (after! gptel
   (setq gptel-directives
