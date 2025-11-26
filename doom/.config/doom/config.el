@@ -186,9 +186,9 @@
 
 (after! denote-silo
   (setq denote-silo-directories
-        '("~/github.com/cowboy-bebug/org/notes"
-          "~/github.com/cowboy-bebug/org-work/blogs"
-          "~/github.com/cowboy-bebug/org-work/notes")))
+        (list (plist-get +my/denote-silo-directories :blogs)
+              (plist-get +my/denote-silo-directories :notes)
+              (plist-get +my/denote-silo-directories :personal-notes))))
 
 ;; elfeed
 (after! elfeed
