@@ -119,7 +119,9 @@
         org-habit-completed-glyph ?•))
 
 (after! org-journal
-  (setq org-journal-file-format "%Y-%m-%d.org"))
+  (setq org-journal-dir "~/github.com/cowboy-bebug/org-work/logs/"
+        org-journal-file-format "%Y-%m-%d.org"
+        org-journal-file-type 'weekly))
 
 (after! ob-mermaid
   (setq ob-mermaid-cli-path "npx @mermaid-js/mermaid-cli"))
