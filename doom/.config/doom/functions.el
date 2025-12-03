@@ -13,7 +13,8 @@
 (defconst +my/denote-silo-directories
   '(:blogs "~/github.com/cowboy-bebug/org-work/blogs"
     :notes "~/github.com/cowboy-bebug/org-work/notes"
-    :personal-notes "~/github.com/cowboy-bebug/org/notes")
+    :personal-notes "~/github.com/cowboy-bebug/org/notes"
+    :reading-notes "~/github.com/cowboy-bebug/org/reading")
   "Plist of directory paths used for denote-silo.")
 
 (defun +my/denote-create-blog ()
@@ -33,3 +34,9 @@
   (interactive)
   (denote-silo-create-note
    (plist-get +my/denote-silo-directories :personal-notes)))
+
+(defun +my/denote-create-reading-note ()
+  "Create a new reading note using denote-silo."
+  (interactive)
+  (denote-silo-create-note
+   (plist-get +my/denote-silo-directories :reading-notes)))
