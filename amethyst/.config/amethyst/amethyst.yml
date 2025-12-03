@@ -55,6 +55,9 @@ focus-screen-3:
 focus-screen-4:
   mod: ""
   key: ""
+focus-screen-5:
+  mod: ""
+  key: ""
 throw-screen-1:
   mod: ""
   key: ""
