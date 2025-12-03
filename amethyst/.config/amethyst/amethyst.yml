@@ -44,11 +44,11 @@ focus-screen-cw:
   key: n
 
 focus-screen-1:
-  mod: ""
-  key: ""
+  mod: mod2
+  key: q
 focus-screen-2:
-  mod: ""
-  key: ""
+  mod: mod2
+  key: w
 focus-screen-3:
   mod: ""
   key: ""
