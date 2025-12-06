@@ -1,11 +1,6 @@
-;;; functions.el -*- lexical-binding: t; -*-
-
-(defun +my/add-abbrev-word-constituents ()
-  "Treat selected punctuation characters as part of words.
-This is intended for better abbrev expansion that includes these symbols."
-  (unless (derived-mode-p 'org-src-mode)
-    (dolist (ch '(?! ?+ ?- ?. ?< ?= ?>))
-      (modify-syntax-entry ch "w"))))
+;;; my-denote.el --- Helpers for denote -*- lexical-binding: t; -*-
+;;; Commentary:
+;;; Code:
 
 (defconst +my/denote-silo-directories
   '(:blogs          "~/github.com/cowboy-bebug/org-work/blogs"
@@ -44,3 +39,6 @@ This is intended for better abbrev expansion that includes these symbols."
 (defun +my/denote-create-reading-note ()
   "Create a new reading note using denote-silo."
   (interactive) (+my/denote-silo-create-note :reading-notes))
+
+(provide 'my-denote)
+;;; my-denote.el ends here
