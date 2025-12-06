@@ -1,14 +1,11 @@
 ;;; functions.el -*- lexical-binding: t; -*-
 
-(defun +my/make-word-constituents ()
-  "Make specific symbols into word constituents so they can be used in abbrevs."
-  (modify-syntax-entry ?! "w")
-  (modify-syntax-entry ?+ "w")
-  (modify-syntax-entry ?- "w")
-  (modify-syntax-entry ?. "w")
-  (modify-syntax-entry ?< "w")
-  (modify-syntax-entry ?= "w")
-  (modify-syntax-entry ?> "w"))
+(defun +my/add-abbrev-word-constituents ()
+  "Treat selected punctuation characters as part of words.
+This is intended for better abbrev expansion that includes these symbols."
+  (unless (derived-mode-p 'org-src-mode)
+    (dolist (ch '(?! ?+ ?- ?. ?< ?= ?>))
+      (modify-syntax-entry ch "w"))))
 
 (defconst +my/denote-silo-directories
   '(:blogs "~/github.com/cowboy-bebug/org-work/blogs"

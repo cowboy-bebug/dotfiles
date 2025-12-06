@@ -57,7 +57,7 @@
 ;; markdown
 (after! markdown-mode
   (add-hook! 'markdown-mode-hook 'abbrev-mode)
-  (add-hook! 'markdown-mode-hook '+my/make-word-constituents))
+  (add-hook! 'markdown-mode-hook '+my/add-abbrev-word-constituents))
 
 ;; org
 (after! org
@@ -67,7 +67,7 @@
   (add-hook! 'org-mode-hook 'auto-fill-mode)
   (add-hook! 'org-mode-hook 'org-fragtog-mode)
   (add-hook! 'org-mode-hook 'org-modern-mode)
-  (add-hook! 'org-mode-hook '+my/make-word-constituents)
+  (add-hook! 'org-mode-hook '+my/add-abbrev-word-constituents)
   (add-hook! 'org-mode-hook (setq-local fill-column 80))
   (add-hook! 'org-mode-hook (visual-line-mode -1))
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
