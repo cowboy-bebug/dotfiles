@@ -188,6 +188,7 @@
   (setq denote-silo-directories
         (list (plist-get +my/denote-silo-directories :blogs)
               (plist-get +my/denote-silo-directories :notes)
+              (plist-get +my/denote-silo-directories :personal-blogs)
               (plist-get +my/denote-silo-directories :personal-notes)
               (plist-get +my/denote-silo-directories :reading-notes))))
 
