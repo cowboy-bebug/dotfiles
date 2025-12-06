@@ -1,8 +1,11 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 ;;; For more info, see `~/.config/emacs/templates/config.example.el'
 
-;; load things
-(load! "functions")
+(add-load-path! "lisp")
+
+(require 'my-abbrev)
+(require 'my-denote)
+
 (load! "theme")
 
 ;; ui
