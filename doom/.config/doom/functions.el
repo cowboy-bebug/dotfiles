@@ -8,39 +8,39 @@ This is intended for better abbrev expansion that includes these symbols."
       (modify-syntax-entry ch "w"))))
 
 (defconst +my/denote-silo-directories
-  '(:blogs "~/github.com/cowboy-bebug/org-work/blogs"
-    :notes "~/github.com/cowboy-bebug/org-work/notes"
+  '(:blogs          "~/github.com/cowboy-bebug/org-work/blogs"
+    :notes          "~/github.com/cowboy-bebug/org-work/notes"
     :personal-blogs "~/github.com/cowboy-bebug/org/blogs"
     :personal-notes "~/github.com/cowboy-bebug/org/notes"
-    :reading-notes "~/github.com/cowboy-bebug/org/reading")
-  "Plist of directory paths used for denote-silo.")
+    :reading-notes  "~/github.com/cowboy-bebug/org/reading")
+  "Plist mapping silo types to their directories.")
 
+(defun +my/denote-silo-create-note (type)
+  "Create a denote note of TYPE using `+my/denote-silo-directories`."
+  (denote-silo-create-note
+   (plist-get +my/denote-silo-directories type)))
+
+;;;###autoload
 (defun +my/denote-create-blog ()
   "Create a new blog using denote-silo."
-  (interactive)
-  (denote-silo-create-note
-   (plist-get +my/denote-silo-directories :blogs)))
+  (interactive) (+my/denote-silo-create-note :blogs))
 
+;;;###autoload
 (defun +my/denote-create-note ()
   "Create a new note using denote-silo."
-  (interactive)
-  (denote-silo-create-note
-   (plist-get +my/denote-silo-directories :notes)))
+  (interactive) (+my/denote-silo-create-note :notes))
 
+;;;###autoload
 (defun +my/denote-create-personal-blog ()
   "Create a new personal blog using denote-silo."
-  (interactive)
-  (denote-silo-create-note
-   (plist-get +my/denote-silo-directories :personal-blogs)))
+  (interactive) (+my/denote-silo-create-note :personal-blogs))
 
+;;;###autoload
 (defun +my/denote-create-personal-note ()
   "Create a new personal note using denote-silo."
-  (interactive)
-  (denote-silo-create-note
-   (plist-get +my/denote-silo-directories :personal-notes)))
+  (interactive) (+my/denote-silo-create-note :personal-notes))
 
+;;;###autoload
 (defun +my/denote-create-reading-note ()
   "Create a new reading note using denote-silo."
-  (interactive)
-  (denote-silo-create-note
-   (plist-get +my/denote-silo-directories :reading-notes)))
+  (interactive) (+my/denote-silo-create-note :reading-notes))
