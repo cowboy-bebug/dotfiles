@@ -4,6 +4,7 @@
 (add-load-path! "lisp")
 
 (require 'my-abbrev)
+(require 'my-blog)
 (require 'my-denote)
 
 (load! "theme")
