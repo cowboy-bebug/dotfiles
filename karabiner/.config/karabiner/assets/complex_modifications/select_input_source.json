@@ -1,0 +1,59 @@
+{
+  "title": "Input Source",
+  "rules": [
+    {
+      "description": "Select input source with Ctrl+Cmd+Num",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1",
+            "modifiers": { "mandatory": ["control", "command"] }
+          },
+          "to": [{ "key_code": "japanese_eisuu" }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "2",
+            "modifiers": { "mandatory": ["control", "command"] }
+          },
+          "to": [{ "key_code": "japanese_kana" }]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "3",
+            "modifiers": { "mandatory": ["control", "command"] }
+          },
+          "to": [
+            { "key_code": "spacebar", "modifiers": ["control", "option"] }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [{ "language": "ja" }]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "3",
+            "modifiers": { "mandatory": ["control", "command"] }
+          },
+          "to": [
+            { "key_code": "spacebar", "modifiers": ["control", "option"] },
+            { "key_code": "spacebar", "modifiers": ["control", "option"] }
+          ],
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [{ "language": "en" }]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
