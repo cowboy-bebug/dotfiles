@@ -16,7 +16,7 @@ git clone https://github.com/cowboy-bebug/dotfiles.git
 
 ** Stow
 #+begin_src bash
-find . -mindepth 1 -maxdepth 1 -type d ! -name ".git" -exec basename {} \; | xargs stow -Sv --no-folding --target=$HOME
+find . -mindepth 1 -maxdepth 1 -type d ! -name ".git" -exec basename {} \; | xargs stow -Sv --adopt --no-folding --target=$HOME
 #+end_src
 
 ** Z Shell & Miscellaneous
