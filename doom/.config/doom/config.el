@@ -82,6 +82,17 @@
    '((mermaid . t)
      (typescript . t)))
 
+  (org-link-set-parameters
+   "namu"
+   :follow (lambda (path _)
+             (browse-url
+              (concat "https://namu.wiki/w/" path)))
+   :export (lambda (path desc backend _)
+             (when (eq backend 'md)
+               (format "[%s](https://namu.wiki/w/%s)"
+                       (or desc path)
+                       path))))
+
   (map! :leader
         (:prefix-map ("t" . "toggle")
          :desc "Present mode" "p" #'org-present))
