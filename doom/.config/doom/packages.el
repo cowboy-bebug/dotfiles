@@ -53,6 +53,7 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
+(package! anki-editor)
 (package! denote)
 (package! denote-silo)
 (package! ef-themes)
