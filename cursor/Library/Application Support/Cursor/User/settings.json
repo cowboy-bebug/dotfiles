@@ -29,7 +29,8 @@
     "editor.wordWrap": "off"
   },
   "[php]": {
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    "editor.defaultFormatter": "DEVSENSE.phptools-vscode",
+    "editor.inlayHints.enabled": "off"
   },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
