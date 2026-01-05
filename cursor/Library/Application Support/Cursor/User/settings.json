@@ -318,6 +318,9 @@
   "workbench.activityBar.location": "hidden",
   "workbench.colorTheme": "Atom One Light",
   "workbench.editor.showTabs": "multiple",
+  "workbench.editorAssociations": {
+    "git-rebase-todo": "default"
+  },
   "workbench.enableExperiments": false,
   "workbench.preferredDarkColorTheme": "Atom One Dark",
   "workbench.preferredLightColorTheme": "Atom One Light",
