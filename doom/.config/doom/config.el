@@ -18,17 +18,17 @@
 (add-to-list 'default-frame-alist '(undecorated-round . t))
 
 ;; project sidebar
-(after! treemacs
+(with-eval-after-load 'treemacs
   (map! :leader
         (:prefix-map ("o" . "open")
          :desc "Project sidebar" "p" #'treemacs)))
 
 ;; recent files
-(after! recentf
+(with-eval-after-load 'recentf
   (add-to-list 'recentf-exclude (recentf-expand-file-name "~/.config/emacs/.local/.*")))
 
 ;; spelling
-(after! spell-fu
+(with-eval-after-load 'spell-fu
   ;; Initialise personal dictionary, if not exists
   (let ((personal-dictionary (expand-file-name "ispell/.pws" doom-data-dir)))
     (unless (file-exists-p personal-dictionary)
@@ -39,7 +39,7 @@
           spell-fu-word-delimit-camel-case t)))
 
 ;; authentication
-(after! auth-source
+(with-eval-after-load 'auth-source
   (setq auth-sources '("~/github.com/cowboy-bebug/dotfiles-secrets/.authinfo.gpg")))
 
 ;; abbrev
@@ -53,12 +53,12 @@
 (setq save-abbrevs nil)
 
 ;; markdown
-(after! markdown-mode
+(with-eval-after-load 'markdown-mode
   (add-hook! 'markdown-mode-hook 'abbrev-mode)
   (add-hook! 'markdown-mode-hook '+my/add-abbrev-word-constituents))
 
 ;; org
-(after! org
+(with-eval-after-load 'org
   (add-to-list 'org-modules 'org-habit t)
   (add-to-list 'org-todo-keyword-faces '("GOAL" . "DarkOliveGreen3") t)
   (add-hook! 'org-mode-hook 'abbrev-mode)
@@ -109,25 +109,25 @@
         org-startup-with-latex-preview t
         org-tags-column 80))
 
-(after! org-agenda
+(with-eval-after-load 'org-agenda
   (setq org-agenda-files '("~/github.com/cowboy-bebug/org/todo.org"
                            "~/github.com/cowboy-bebug/org-work/todo.org")
         org-agenda-start-with-log-mode t))
 
-(after! org-habit
+(with-eval-after-load 'org-habit
   (setq org-habit-show-habits-only-for-today nil
         org-habit-today-glyph ?◦
         org-habit-completed-glyph ?•))
 
-(after! org-journal
+(with-eval-after-load 'org-journal
   (setq org-journal-dir "~/github.com/cowboy-bebug/org-work/logs/"
         org-journal-file-format "%Y-%m-%d.org"
         org-journal-file-type 'weekly))
 
-(after! ob-mermaid
+(with-eval-after-load 'ob-mermaid
   (setq ob-mermaid-cli-path "npx @mermaid-js/mermaid-cli"))
 
-(after! org-modern
+(with-eval-after-load 'org-modern
   (setq org-modern-block-name '((t . ("▶ " "▶ "))
                                 ("src" . ("󰞷" "󰞷")))
         org-modern-checkbox nil
@@ -147,7 +147,7 @@
         org-modern-replace-stars "●◉◎○"
         org-modern-fold-stars '(("▶" . "▼"))))
 
-(after! org-present
+(with-eval-after-load 'org-present
   (add-hook 'org-present-mode-hook
             (lambda ()
               (org-display-inline-images)
@@ -167,7 +167,7 @@
         org-present-one-big-page nil
         org-present-startup-folded t))
 
-(after! org-roam
+(with-eval-after-load 'org-roam
   (setq org-roam-directory "~/github.com/cowboy-bebug/org-work/roam"
         org-roam-completion-everywhere t
         org-roam-capture-templates
@@ -190,10 +190,10 @@
         org-roam-ui-update-on-save t))
 
 ;; denote
-(after! denote
+(with-eval-after-load 'denote
   (setq denote-directory "~/github.com/cowboy-bebug/org-work/notes"))
 
-(after! denote-silo
+(with-eval-after-load 'denote-silo
   (setq denote-silo-directories
         (list (plist-get +my/denote-silo-directories :blogs)
               (plist-get +my/denote-silo-directories :notes)
@@ -202,15 +202,15 @@
               (plist-get +my/denote-silo-directories :reading-notes))))
 
 ;; elfeed
-(after! elfeed
+(with-eval-after-load 'elfeed
   (setq elfeed-search-filter "@1-month-ago"))
 
 ;; eww
-(after! eww
+(with-eval-after-load 'eww
   (set-popup-rule! "^\\*eww.*" :side 'right :size 0.5))
 
 ;; gptel
-(after! gptel
+(with-eval-after-load 'gptel
   (setq gptel-directives
         '((default . "You are a large language model living in Emacs and a helpful assistant. Respond concisely.")
           (programming . "You are a large language model and a careful programmer. Provide code and only code as output without any additional text, prompt or note.")
@@ -238,11 +238,11 @@ Always be concise, pragmatic, and professional.")
           )))
 
 ;; magit
-(after! magit
+(with-eval-after-load 'magit
   (setq magit-log-section-commit-count 30))
 
 ;; formatter
-(after! apheleia
+(with-eval-after-load 'apheleia
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
   (add-hook! 'before-save-hook 'delete-trailing-whitespace)
   (add-hook! 'json-mode-hook (setq js-indent-level 2))
@@ -258,10 +258,10 @@ Always be concise, pragmatic, and professional.")
 
 ;; language
 (add-to-list 'auto-mode-alist '("\\.jsonc\\'" . jsonc-mode))
-(after! lsp-mode
+(with-eval-after-load 'lsp-mode
   (setq lsp-rust-analyzer-binding-mode-hints nil
         lsp-rust-analyzer-display-parameter-hints nil
         lsp-rust-analyzer-closure-capture-hints nil))
 
-(after! sql
+(with-eval-after-load 'sql
   (setq sql-mysql-program "/opt/homebrew/opt/mysql-client/bin/mysql"))
