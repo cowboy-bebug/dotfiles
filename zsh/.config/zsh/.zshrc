@@ -26,6 +26,7 @@ alias diff="diff --color -y"
 alias {v,vi,vim}="nvim"
 alias ls="ls --color=auto -v"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
+alias uid="npx nanoid --size 21 --alphabet 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
 # browser
 export BROWSER="brave"
