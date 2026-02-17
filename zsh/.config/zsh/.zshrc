@@ -27,6 +27,7 @@ alias {v,vi,vim}="nvim"
 alias ls="ls --color=auto -v"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 alias uid="npx nanoid --size 21 --alphabet 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+alias ddtrace_id="python3 -c 'import secrets; print(secrets.token_hex(16))'"
 
 # browser
 export BROWSER="brave"
