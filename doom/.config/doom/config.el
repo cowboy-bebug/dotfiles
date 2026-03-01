@@ -61,7 +61,6 @@
 (with-eval-after-load 'org
   (add-to-list 'org-modules 'org-habit t)
   (add-to-list 'org-todo-keyword-faces '("GOAL" . "DarkOliveGreen3") t)
-  (add-hook! 'org-mode-hook 'abbrev-mode)
   (add-hook! 'org-mode-hook 'auto-fill-mode)
   (add-hook! 'org-mode-hook 'org-fragtog-mode)
   (add-hook! 'org-mode-hook 'org-modern-mode)
