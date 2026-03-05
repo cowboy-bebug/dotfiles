@@ -22,3 +22,6 @@
 	autoSetupRemote = true
 [user]
 	name = Eric Lim
+[fetch]
+	pruneTags = true
+	prune = true
