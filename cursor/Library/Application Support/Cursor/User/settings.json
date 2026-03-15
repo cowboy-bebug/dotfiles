@@ -134,6 +134,7 @@
   "explorer.sortOrder": "type",
   "files.associations": {
     "*.css": "tailwindcss",
+    "*.mjs": "javascript",
     "*.mts": "typescript",
     "*.rules": "yaml",
     "vars": "yaml"
