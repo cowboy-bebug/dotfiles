@@ -1,0 +1,6 @@
+{
+  "effortLevel": "medium",
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
+  }
+}

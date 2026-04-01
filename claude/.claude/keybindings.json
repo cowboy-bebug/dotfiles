@@ -1,0 +1,7 @@
+[
+  {
+    "key": "Escape",
+    "command": "-cli.interrupt",
+    "when": "isResponseStreaming"
+  }
+]
