@@ -6,8 +6,7 @@
   '(:blogs          "~/github.com/cowboy-bebug/org-work/blogs"
     :notes          "~/github.com/cowboy-bebug/org-work/notes"
     :personal-blogs "~/github.com/cowboy-bebug/org/blogs"
-    :personal-notes "~/github.com/cowboy-bebug/org/notes"
-    :reading-notes  "~/github.com/cowboy-bebug/org/reading")
+    :personal-notes "~/github.com/cowboy-bebug/org/notes")
   "Plist mapping silo types to their directories.")
 
 (defun +my/denote-silo-create-note (type)
@@ -34,11 +33,6 @@
 (defun +my/denote-create-personal-note ()
   "Create a new personal note using denote-silo."
   (interactive) (+my/denote-silo-create-note :personal-notes))
-
-;;;###autoload
-(defun +my/denote-create-reading-note ()
-  "Create a new reading note using denote-silo."
-  (interactive) (+my/denote-silo-create-note :reading-notes))
 
 (provide 'my-denote)
 ;;; my-denote.el ends here

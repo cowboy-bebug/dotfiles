@@ -197,8 +197,7 @@
         (list (plist-get +my/denote-silo-directories :blogs)
               (plist-get +my/denote-silo-directories :notes)
               (plist-get +my/denote-silo-directories :personal-blogs)
-              (plist-get +my/denote-silo-directories :personal-notes)
-              (plist-get +my/denote-silo-directories :reading-notes))))
+              (plist-get +my/denote-silo-directories :personal-notes))))
 
 ;; elfeed
 (with-eval-after-load 'elfeed
