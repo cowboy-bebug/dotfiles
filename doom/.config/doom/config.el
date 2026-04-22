@@ -5,7 +5,6 @@
 
 (require 'my-abbrev)
 (require 'my-blog)
-(require 'my-denote)
 
 (load! "theme")
 
@@ -109,8 +108,7 @@
         org-tags-column 80))
 
 (with-eval-after-load 'org-agenda
-  (setq org-agenda-files '("~/github.com/cowboy-bebug/org/todo.org"
-                           "~/github.com/cowboy-bebug/org-work/todo.org")
+  (setq org-agenda-files '("~/github.com/cowboy-bebug/org/todo.org")
         org-agenda-start-with-log-mode t))
 
 (with-eval-after-load 'org-habit
@@ -119,7 +117,7 @@
         org-habit-completed-glyph ?•))
 
 (with-eval-after-load 'org-journal
-  (setq org-journal-dir "~/github.com/cowboy-bebug/org-work/logs/"
+  (setq org-journal-dir "~/github.com/cowboy-bebug/org/logs/"
         org-journal-file-format "%Y-%m-%d.org"
         org-journal-file-type 'weekly))
 
@@ -167,7 +165,7 @@
         org-present-startup-folded t))
 
 (with-eval-after-load 'org-roam
-  (setq org-roam-directory "~/github.com/cowboy-bebug/org-work/roam"
+  (setq org-roam-directory "~/github.com/cowboy-bebug/org/roam"
         org-roam-completion-everywhere t
         org-roam-capture-templates
         `(("d" "default" plain "%?"
@@ -190,14 +188,7 @@
 
 ;; denote
 (with-eval-after-load 'denote
-  (setq denote-directory "~/github.com/cowboy-bebug/org-work/notes"))
-
-(with-eval-after-load 'denote-silo
-  (setq denote-silo-directories
-        (list (plist-get +my/denote-silo-directories :blogs)
-              (plist-get +my/denote-silo-directories :notes)
-              (plist-get +my/denote-silo-directories :personal-blogs)
-              (plist-get +my/denote-silo-directories :personal-notes))))
+  (setq denote-directory "~/github.com/cowboy-bebug/org/notes"))
 
 ;; elfeed
 (with-eval-after-load 'elfeed
