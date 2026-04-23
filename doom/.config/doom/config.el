@@ -225,6 +225,17 @@ Always be concise, pragmatic, and professional.")
 
 ;; magit
 (with-eval-after-load 'magit
+  (defun +my/magit-commit-docs-action ()
+    ;; TODO: extract into ./lisp/*.el
+    "Commit with a timestamped message via shell script."
+    (interactive)
+    (magit-with-editor
+      (magit-run-git "commit-docs"))
+    (magit-refresh))
+
+  (transient-append-suffix 'magit-commit "c"
+    '("s" "Sync docs (timestamped)" +my/magit-commit-docs-action))
+
   (setq magit-log-section-commit-count 30))
 
 ;; formatter
