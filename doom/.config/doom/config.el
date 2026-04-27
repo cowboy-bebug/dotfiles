@@ -91,7 +91,6 @@
   (setq org-babel-default-header-args (cons '(:results . "replace verbatim")
                                             (assq-delete-all :results org-babel-default-header-args))
         org-babel-results-keyword "results"
-        org-edit-src-content-indentation 0
         org-id-locations-file "~/.config/emacs/.local/cache/.org-id-locations"
         org-directory "~/github.com/cowboy-bebug/org"
         org-blank-before-new-entry '((heading . t)
@@ -100,6 +99,7 @@
         org-log-done 'time
         org-log-into-drawer t
         org-pretty-entities t
+        org-src-content-indentation 0
         org-src-preserve-indentation nil
         org-startup-folded nil
         org-startup-with-inline-images t
