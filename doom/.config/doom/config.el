@@ -86,6 +86,8 @@
         (:prefix-map ("t" . "toggle")
          :desc "Present mode" "p" #'org-present))
 
+  (map! :map org-mode-map "C-c t" (cmd! (org-time-stamp-inactive t)))
+
   (setq org-babel-default-header-args (cons '(:results . "replace verbatim")
                                             (assq-delete-all :results org-babel-default-header-args))
         org-babel-results-keyword "results"
