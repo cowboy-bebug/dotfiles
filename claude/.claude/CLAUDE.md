@@ -14,3 +14,22 @@
 
 - **Do NOT append a `Co-Authored-By: Claude ...` trailer** (or any Claude
   attribution) to commit messages. This applies to every repo, on every project.
+
+## Personal documentation project
+
+My personal documentation project lives at `~/github.com/cowboy-bebug/org`.
+
+- `todo.org` holds all my TODO items. Work-related items are tagged `work`
+  and personal items are tagged `personal`.
+- `~/github.com/cowboy-bebug/org/logs` holds occasional work logs recorded
+  via `org-journal`.
+- `~/github.com/cowboy-bebug/org/notes` holds all my notes, captured via
+  `denote`.
+
+Notable files for my current work:
+
+- `~/github.com/cowboy-bebug/org/notes/20251020T094708--ezyvet__idexx.org`
+  captures all ezyvet-related notes, including database queries, AWS
+  commands, code snippets, and APIs (via `restclient`).
+- `~/github.com/cowboy-bebug/org/notes/20251010T123533--ezycab__idexx_maximus.org`
+  captures all ezycab-related notes (same shape as the ezyvet file).
