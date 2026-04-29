@@ -1,19 +1,4 @@
 {
-  "hooks": {
-    "SessionStart": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "agent",
-            "prompt": "You are a user-level SessionStart hook. Follow the `daily-slack-digest` skill in `~/.claude/skills/daily-slack-digest/SKILL.md` for full rules.\n\nGoal: surface yesterday's #team-whisper activity into this session's context.\n\nFlow:\n1. Compute today's date (YYYY-MM-DD, local NZT).\n2. Read the org file at `~/github.com/cowboy-bebug/org/notes/20260423T091749--daily-slack-digest__agent_ezyvet_idexx_whisper.org`.\n3. If a heading `* <today>` already exists, inject its section body as session context via `hookSpecificOutput.additionalContext` and exit. Do not re-summarise, do not edit the file.\n4. Otherwise, read #team-whisper (channel id `C0ATYD5263C`) messages from yesterday 00:00–23:59 NZT (channel only, no threads) and produce a three-bucket summary: **Done** (completed work / decisions / merges), **In progress** (active work with known next step), **Blocking** (waiting on a person / decision / access — say who's blocked on whom).\n5. Insert the new `* <today>` section directly after the Denote metadata header, write the file, and inject the section as session context.\n\nConstraints: tight bullets (2–5 per bucket, one sentence each), link originating Slack messages using `https://idexx.enterprise.slack.com/archives/C0ATYD5263C/p<TS without dot>`, skip social chatter, redact secrets, never block or surface errors — on any MCP failure log to stderr and exit 0 cleanly.\n\nMCP tools available: `mcp__claude_ai_Slack__slack_read_channel`.",
-            "timeout": 90,
-            "statusMessage": "Fetching Whisper daily digest…"
-          }
-        ]
-      }
-    ]
-  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
