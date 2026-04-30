@@ -185,6 +185,10 @@
         org-roam-ui-sync-theme t
         org-roam-ui-update-on-save t))
 
+;; gpg
+(with-eval-after-load 'epa
+  (setq epa-pinentry-mode 'loopback))
+
 ;; denote
 (with-eval-after-load 'denote
   (setq denote-directory "~/github.com/cowboy-bebug/org/notes"))
