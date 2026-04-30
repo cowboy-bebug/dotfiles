@@ -128,6 +128,16 @@ git remote set-url origin git@personal.github.com:cowboy-bebug/dotfiles.git
 git set-personal
 #+end_src
 
+** Docker
+Add this to ~~/.config/docker/config.json~ so =docker compose=, =docker buildx=, etc.
+installed via Homebrew get discovered:
+#+begin_src json :tangle ~/.config/docker/config.json :mkdirp yes
+{
+  "credsStore": "osxkeychain",
+  "cliPluginsExtraDirs": ["/opt/homebrew/lib/docker/cli-plugins"]
+}
+#+end_src
+
 * Teardown
 Follow these steps to delete everything and restore the machine to a
 pre-dotfiles state.
