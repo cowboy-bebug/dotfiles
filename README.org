@@ -107,19 +107,6 @@ chmod 600 ~/.ssh/id_ed25519_!(pub)
 chmod 644 ~/.ssh/id_ed25519_*.pub
 #+end_src
 
-Add this to ~~/.ssh/config~:
-#+begin_src conf :tangle ~/.ssh/config :eval no
-Host github.com
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/id_ed25519_work
-
-Host personal.github.com
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/id_ed25519_personal
-#+end_src
-
 Go to https://github.com/settings/ssh/new to add those keys.
 
 ** Git
