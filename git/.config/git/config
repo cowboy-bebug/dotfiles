@@ -7,15 +7,23 @@
 	gpgsign = true
 [core]
 	ignorecase = false
-	pager = less -F -X
+	pager = delta
+[delta]
+	line-numbers = true
+	navigate = true
+	side-by-side = true
 [diff]
 	wsErrorHighlight = all
 [format]
 	pretty = oneline
 [init]
 	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only
 [log]
 	abbrevCommit = true
+[merge]
+	conflictStyle = zdiff3
 [pull]
 	rebase = true
 [push]
