@@ -7,5 +7,6 @@
     "gopls-lsp@claude-plugins-official": true
   },
   "effortLevel": "medium",
+  "promptSuggestionEnabled": false,
   "skipAutoPermissionPrompt": true
 }
