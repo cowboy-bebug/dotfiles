@@ -5,6 +5,10 @@
 (load! "lisp/my-blog")
 (load! "theme")
 
+;; globals
+(global-auto-revert-mode 1)
+(setq global-auto-revert-non-file-buffers t)
+
 ;; ui
 (setq doom-font                (font-spec :family "Hack Nerd Font"  :size 14)
       doom-variable-pitch-font (font-spec :family "Iosevka"         :size 14)
