@@ -7,6 +7,53 @@
       "bindings": {
         "escape": null
       }
+    },
+    {
+      "context": "Confirmation",
+      "bindings": {
+        "k": "confirm:previous",
+        "j": "confirm:next"
+      }
+    },
+    {
+      "context": "Tabs",
+      "bindings": {
+        "l": "tabs:next",
+        "h": "tabs:previous"
+      }
+    },
+    {
+      "context": "Attachments",
+      "bindings": {
+        "l": "attachments:next",
+        "h": "attachments:previous",
+        "j": "attachments:exit"
+      }
+    },
+    {
+      "context": "Footer",
+      "bindings": {
+        "k": "footer:up",
+        "j": "footer:down",
+        "l": "footer:next",
+        "h": "footer:previous"
+      }
+    },
+    {
+      "context": "DiffDialog",
+      "bindings": {
+        "h": "diff:previousSource",
+        "l": "diff:nextSource",
+        "k": "diff:previousFile",
+        "j": "diff:nextFile"
+      }
+    },
+    {
+      "context": "ModelPicker",
+      "bindings": {
+        "h": "modelPicker:decreaseEffort",
+        "l": "modelPicker:increaseEffort"
+      }
     }
   ]
 }
