@@ -8,6 +8,15 @@
 [core]
 	ignorecase = false
 	pager = less -F -X
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gitlab.com"]
+	helper =
+	helper = !/opt/homebrew/bin/glab auth git-credential
 [diff]
 	wsErrorHighlight = all
 [format]
