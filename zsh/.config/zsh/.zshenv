@@ -38,6 +38,7 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 
 # miscellaneous
 export ANDROID_HOME=$HOME/Android/Sdk
+export CLAUDE_CODE_ENABLE_TELEMETRY=0
 export DOTNET_ROOT=$HOME/.dotnet
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
