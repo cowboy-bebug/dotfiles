@@ -1,4 +1,4 @@
-# Navigate to: https://github.com/ianyh/Amethyst/blob/development/docs/configuration-files.md
+# REF: https://github.com/ianyh/Amethyst/blob/development/.amethyst.sample.yml
 layouts:
   - two-pane
   - column
@@ -82,6 +82,13 @@ select-fullscreen-layout:
 select-column-layout:
   mod: ""
   key: ""
+
+swap-cw:
+  mod: mod2
+  key: j
+swap-ccw:
+  mod: mod2
+  key: k
 
 toggle-focus-follows-mouse:
   mod: ""
