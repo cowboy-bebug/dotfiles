@@ -20,6 +20,7 @@
   },
   "project_panel": {
     "dock": "left",
+    "git_status_indicator": true,
     "hide_gitignore": true,
   },
 
