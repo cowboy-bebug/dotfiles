@@ -138,6 +138,13 @@ installed via Homebrew get discovered:
 }
 #+end_src
 
+** CSpell
+#+begin_src json :tangle ~/Library/Preferences/cspell/cspell.json :mkdirp yes
+{
+  "language": "en-GB"
+}
+#+end_src
+
 * Teardown
 Follow these steps to delete everything and restore the machine to a
 pre-dotfiles state.
