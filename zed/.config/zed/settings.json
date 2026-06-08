@@ -1,5 +1,6 @@
 {
   // ---- Editor & Theme Basics ----
+  "diff_view_style": "split",
   "theme": {
     "mode": "system",
     "light": "One Light",
