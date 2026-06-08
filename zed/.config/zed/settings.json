@@ -1,0 +1,63 @@
+{
+  // ---- Editor & Theme Basics ----
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+  "icon_theme": "Zed (Default)",
+  "buffer_font_family": "Hack Nerd Font Mono",
+  "buffer_font_size": 15,
+  "buffer_line_height": "comfortable",
+  "ui_font_size": 16,
+  "text_rendering_mode": "platform_default",
+
+  // ---- Sidebar Panels ----
+  "git_panel": {
+    "dock": "left",
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+
+  // ---- Global Code Behavior ----
+  "format_on_save": "on",
+
+  // ──── Vim Mode ────
+  "vim_mode": true,
+  "vim": {
+    "toggle_relative_line_numbers": true,
+  },
+
+  // ---- Language & LSP Settings ----
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+      },
+      "enable_lsp_tasks": true,
+    },
+  },
+
+  "languages": {
+    "Markdown": {
+      "format_on_save": "on",
+    },
+  },
+
+  // ---- Privacy & AI ----
+  "disable_ai": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+}
