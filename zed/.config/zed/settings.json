@@ -20,6 +20,7 @@
   },
   "project_panel": {
     "dock": "left",
+    "hide_gitignore": true,
   },
 
   // ---- Global Code Behavior ----
