@@ -61,3 +61,4 @@ done
 [ -x "$(command -v fastfetch)" ] && fastfetch
 [ -x "$(command -v fzf)" ] && eval "source <(fzf --zsh)"
 [ -x "$(command -v pyenv)" ] && eval "$(pyenv init - zsh)"
+[ -x "$(command -v direnv)" ] && eval "$(direnv hook zsh)"
