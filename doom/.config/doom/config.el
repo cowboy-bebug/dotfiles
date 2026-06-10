@@ -150,14 +150,14 @@
 (with-eval-after-load 'org-present
   (add-hook 'org-present-mode-hook
             (lambda ()
-              (org-display-inline-images)
+              (org-link-preview-region)
               (org-present-read-only)
               (org-present-hide-cursor)
               (writeroom-mode 1)
               (display-line-numbers-mode 0)))
   (add-hook 'org-present-mode-quit-hook
             (lambda()
-              (org-remove-inline-images)
+              (org-link-preview-region)
               (org-present-read-write)
               (org-present-show-cursor)
               (visual-fill-column-mode 0)
