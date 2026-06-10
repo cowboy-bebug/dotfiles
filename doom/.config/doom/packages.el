@@ -58,6 +58,7 @@
 (package! denote-silo)
 (package! ef-themes)
 (package! mermaid-mode)
+(package! ob-async)
 (package! ob-mermaid)
 (package! ob-typescript)
 (package! org-fragtog)
