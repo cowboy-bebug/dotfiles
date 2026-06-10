@@ -254,7 +254,7 @@ Always be concise, pragmatic, and professional.")
   (add-hook! 'before-save-hook 'delete-trailing-whitespace)
   (add-hook! 'json-mode-hook (setq js-indent-level 2))
   (add-hook! 'yaml-mode-hook (setq yaml-indent-offset 2))
-  (add-hook! 'typescript-mode-hook (setq typescript-indent-level 2))
+  (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) (setq typescript-indent-level 2))
   (add-hook! 'sh-mode-hook (setq sh-basic-offset 2))
   (setf (alist-get 'prettier-markdown apheleia-formatters)
         '("prettier"
@@ -273,3 +273,10 @@ Always be concise, pragmatic, and professional.")
 
 (with-eval-after-load 'sql
   (setq sql-mysql-program "/opt/homebrew/opt/mysql-client/bin/mysql"))
+
+;; LSP
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               '((typescript-ts-mode tsx-ts-mode) . ("typescript-language-server" "--stdio"))))
+(add-hook 'typescript-ts-mode-hook #'eglot-ensure)
+(add-hook 'tsx-ts-mode-hook #'eglot-ensure)
