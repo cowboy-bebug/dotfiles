@@ -9,6 +9,7 @@ brew "cmake"
 brew "cocoapods"
 brew "coreutils"
 brew "d12frosted/emacs-plus/emacs-plus@30", args: ["with-memeplex-slim-icon"]
+brew "direnv"
 brew "docker-compose"
 brew "docker-credential-helper"
 brew "editorconfig"
