@@ -75,7 +75,7 @@ gpg --batch --generate-key /tmp/gpg-batch.txt
 #+end_src
 
 Go to https://github.com/settings/gpg/new to add the key:
-#+begin_src
+#+begin_src bash :eval no
 gpg --armor --export [key-id]
 #+end_src
 
@@ -173,7 +173,7 @@ gpg --delete-keys 4E73B55E
 #+end_src
 
 ** Unstow
-#+begin_src bash
+#+begin_src bash :eval no
 stow --verbose --delete --target="$HOME" */
 #+end_src
 
