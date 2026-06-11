@@ -1,11 +1,9 @@
 # REF: https://github.com/ianyh/Amethyst/blob/development/.amethyst.sample.yml
 layouts:
   - two-pane
-  - column
-  - 3column-left
   - middle-wide
   - tall
-  - wide
+  - fullscreen
 
 mod1:
   - shift
@@ -113,6 +111,16 @@ select-wide-layout:
 select-column-layout:
   mod: mod3
   key: UNSET
+
+select-two-pane-layout:
+  mod: mod2
+  key: 2
+select-middle-wide-layout:
+  mod: mod2
+  key: w
+select-tall-layout:
+  mod: mod2
+  key: t
 select-fullscreen-layout:
   mod: mod2
   key: f
