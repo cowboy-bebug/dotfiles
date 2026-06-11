@@ -15,6 +15,10 @@ mod2:
   - control
   - command
 
+# NOTE: mod3 is a dedicated unset modifier. Any binding set to mod3 is
+# effectively disabled since `UNSET` maps to no key.
+mod3: [alt]
+
 window-margins: true
 window-margin-size: 8
 float-small-windows: true
@@ -49,39 +53,69 @@ focus-screen-2:
   mod: mod2
   key: w
 focus-screen-3:
-  mod: ""
-  key: ""
+  mod: mod3
+  key: UNSET
 focus-screen-4:
-  mod: ""
-  key: ""
+  mod: mod3
+  key: UNSET
 focus-screen-5:
-  mod: ""
-  key: ""
+  mod: mod3
+  key: UNSET
 throw-screen-1:
-  mod: ""
-  key: ""
+  mod: mod3
+  key: UNSET
 throw-screen-2:
-  mod: ""
-  key: ""
+  mod: mod3
+  key: UNSET
 throw-screen-3:
-  mod: ""
-  key: ""
+  mod: mod3
+  key: UNSET
 throw-screen-4:
-  mod: ""
-  key: ""
+  mod: mod3
+  key: UNSET
+throw-screen-5:
+  mod: mod3
+  key: UNSET
+throw-space-1:
+  mod: mod3
+  key: UNSET
+throw-space-2:
+  mod: mod3
+  key: UNSET
+throw-space-3:
+  mod: mod3
+  key: UNSET
+throw-space-4:
+  mod: mod3
+  key: UNSET
+throw-space-5:
+  mod: mod3
+  key: UNSET
+throw-space-6:
+  mod: mod3
+  key: UNSET
+throw-space-7:
+  mod: mod3
+  key: UNSET
+throw-space-8:
+  mod: mod3
+  key: UNSET
+throw-space-9:
+  mod: mod3
+  key: UNSET
+throw-space-10:
+  mod: mod3
+  key: UNSET
 
-select-tall-layout:
-  mod: ""
-  key: ""
 select-wide-layout:
-  mod: ""
-  key: ""
+  mod: mod3
+  key: UNSET
+select-column-layout:
+  mod: mod3
+  key: UNSET
 select-fullscreen-layout:
   mod: mod2
   key: f
-select-column-layout:
-  mod: ""
-  key: ""
 
 swap-cw:
   mod: mod2
@@ -91,8 +125,11 @@ swap-ccw:
   key: k
 
 toggle-focus-follows-mouse:
-  mod: ""
-  key: ""
+  mod: mod3
+  key: UNSET
+toggle-global-tiling:
+  mod: mod3
+  key: UNSET
 
 reevaluate-windows:
   mod: mod2
