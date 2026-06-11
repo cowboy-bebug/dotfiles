@@ -15,7 +15,7 @@ git clone https://github.com/cowboy-bebug/dotfiles.git
 #+end_src
 
 ** Stow
-#+begin_src bash :results none :dir ~/github.com/cowboy-bebug/dotfiles
+#+begin_src bash
 stow --verbose --restow --no-folding --target="$HOME" */
 #+end_src
 
@@ -173,7 +173,7 @@ gpg --delete-keys 4E73B55E
 #+end_src
 
 ** Unstow
-#+begin_src bash :results none :dir ~/github.com/cowboy-bebug/dotfiles
+#+begin_src bash
 stow --verbose --delete --target="$HOME" */
 #+end_src
 
