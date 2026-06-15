@@ -18,7 +18,7 @@ if [ "$THEME" = "light" ]; then
   export DOOM_THEME="doom-one-light"
   export NVIM_THEME="ayu_light"
 else
-  export ALACRITTY_THEME="doom-one"
+  export ALACRITTY_THEME="doom_one"
   export BAT_THEME="OneHalfDark"
   export DOOM_THEME="doom-one"
   export NVIM_THEME="ayu_dark"
