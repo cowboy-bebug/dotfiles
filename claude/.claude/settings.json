@@ -23,6 +23,7 @@
     "allow": [
       "Bash(cat:*)",
       "Bash(find:*)",
+      "Bash(git:*)",
       "Bash(grep:*)",
       "Bash(head:*)",
       "Bash(jq:*)",
