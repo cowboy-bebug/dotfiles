@@ -2,10 +2,17 @@
 
 set -e
 
-HOUR=$(date +%H)
 DOTFILES_DIR="$HOME/github.com/cowboy-bebug/dotfiles"
+THEME="light"
 
-if [ "$HOUR" -ge 6 ] && [ "$HOUR" -lt 19 ]; then
+for arg in "$@"; do
+  case "$arg" in
+  --dark) THEME="dark" ;;
+  --light) THEME="light" ;;
+  esac
+done
+
+if [ "$THEME" = "light" ]; then
   export ALACRITTY_THEME="ayu_light"
   export BAT_THEME="OneHalfLight"
   export DOOM_THEME="doom-one-light"
