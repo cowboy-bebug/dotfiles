@@ -4,6 +4,10 @@
 (load! "lisp/my-abbrev")
 (load! "lisp/my-blog")
 (load! "theme")
+(let ((work-dir (expand-file-name "lisp/work" doom-user-dir)))
+  (when (file-directory-p work-dir)
+    (dolist (f (directory-files work-dir t "\\.el\\'"))
+      (load f nil 'nomessage))))
 
 ;; globals
 (global-auto-revert-mode 1)
