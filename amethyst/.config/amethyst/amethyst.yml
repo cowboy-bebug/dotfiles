@@ -75,32 +75,32 @@ throw-screen-5:
   mod: mod3
   key: UNSET
 throw-space-1:
-  mod: mod3
-  key: UNSET
+  mod: mod2
+  key: 1
 throw-space-2:
-  mod: mod3
-  key: UNSET
+  mod: mod2
+  key: 2
 throw-space-3:
-  mod: mod3
-  key: UNSET
+  mod: mod2
+  key: 3
 throw-space-4:
-  mod: mod3
-  key: UNSET
+  mod: mod2
+  key: 4
 throw-space-5:
-  mod: mod3
-  key: UNSET
+  mod: mod2
+  key: 5
 throw-space-6:
-  mod: mod3
-  key: UNSET
+  mod: mod2
+  key: 6
 throw-space-7:
-  mod: mod3
-  key: UNSET
+  mod: mod2
+  key: 7
 throw-space-8:
-  mod: mod3
-  key: UNSET
+  mod: mod2
+  key: 8
 throw-space-9:
-  mod: mod3
-  key: UNSET
+  mod: mod2
+  key: 9
 throw-space-10:
   mod: mod3
   key: UNSET
