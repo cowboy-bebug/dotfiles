@@ -4,6 +4,7 @@ layouts:
   - middle-wide
   - tall
   - fullscreen
+  - column
 
 mod1:
   - shift
