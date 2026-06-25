@@ -9,7 +9,7 @@ brew "btop"
 brew "cmake"
 brew "cocoapods"
 brew "coreutils"
-brew "d12frosted/emacs-plus/emacs-plus@30", args: ["with-memeplex-slim-icon"]
+brew "d12frosted/emacs-plus/emacs-plus@30"
 brew "direnv"
 brew "docker-buildx"
 brew "docker-compose"
