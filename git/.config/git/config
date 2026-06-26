@@ -1,8 +1,13 @@
 [alias]
 	set-personal = !git config --local user.email "cowboy-bebug@users.noreply.github.com" && \
-	                git config --local user.signingkey "4E73B55E"
+	                git config --local user.signingkey "4E73B55E" && \
+	                git config --local github.user "cowboy-bebug" && \
+	                git config --local gitlab.user "cowboy-bebug"
 	set-work = !git config --local user.email "eric-lim@idexx.com" && \
-	            git config --local user.signingkey "C2711835"
+	            git config --local user.signingkey "C2711835" && \
+	            git config --local github.user "eric-lim_idxx" && \
+	            git config --local gitlab.user "eric-lim-idexx"
+
 [commit]
 	gpgsign = true
 [core]
@@ -31,6 +36,20 @@
 	autoSetupRemote = true
 [user]
 	name = Eric Lim
+	email = cowboy-bebug@users.noreply.github.com
+	signingkey = 4E73B55E
+[github]
+	user = cowboy-bebug
+[gitlab]
+	user = cowboy-bebug
 [fetch]
 	pruneTags = true
 	prune = true
+
+# overrides the defaults
+[includeIf "gitdir:~/git/"]
+	path = ~/.config/git/work.config
+[includeIf "gitdir:~/github.com/idexx-laboratories/"]
+	path = ~/.config/git/work.config
+[includeIf "gitdir:~/gitlab.com/"]
+	path = ~/.config/git/work.config
