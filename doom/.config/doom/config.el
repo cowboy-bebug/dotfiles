@@ -268,6 +268,7 @@ Always be concise, pragmatic, and professional.")
   (add-to-list 'apheleia-mode-alist '(markdown-mode . prettier-markdown)))
 
 ;; language
+(add-to-list 'auto-mode-alist '("\\.claudeignore\\'" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.jsonc\\'" . jsonc-mode))
 (with-eval-after-load 'lsp-mode
   (setq lsp-rust-analyzer-binding-mode-hints nil
