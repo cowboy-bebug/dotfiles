@@ -6,6 +6,7 @@ export XDG_BIN_HOME="$HOME/.local/bin"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_RUNTIME_DIR="$HOME/.local/run"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 # XDG_CACHE_HOME
@@ -40,6 +41,7 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 export ANDROID_HOME=$HOME/Android/Sdk
 export CLAUDE_CODE_ENABLE_TELEMETRY=0
 export DOTNET_ROOT=$HOME/.dotnet
+export EMACS_SOCKET_NAME="$XDG_RUNTIME_DIR/emacs/server"
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_REQUIRE_TAP_TRUST=1
