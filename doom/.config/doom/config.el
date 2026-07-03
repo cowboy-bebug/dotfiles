@@ -264,8 +264,11 @@ Always be concise, pragmatic, and professional.")
           "--embedded-language-formatting=auto"))
   (setf (alist-get 'shfmt apheleia-formatters)
         '("shfmt" "-ln" "bash" "-i" "2" "-sr" "-ci"))
+  (setf (alist-get 'sqlfluff apheleia-formatters)
+        '("sqlfluff" "fix" "--rules" "CP01" "-"))
   (add-to-list 'apheleia-mode-alist '(gfm-mode . prettier-markdown))
-  (add-to-list 'apheleia-mode-alist '(markdown-mode . prettier-markdown)))
+  (add-to-list 'apheleia-mode-alist '(markdown-mode . prettier-markdown))
+  (add-to-list 'apheleia-mode-alist '(sql-mode . sqlfluff)))
 
 ;; language
 (add-to-list 'auto-mode-alist '("\\.claudeignore\\'" . conf-mode))
