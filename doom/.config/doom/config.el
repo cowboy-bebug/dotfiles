@@ -273,6 +273,7 @@ Always be concise, pragmatic, and professional.")
 ;; language
 (add-to-list 'auto-mode-alist '("\\.claudeignore\\'" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.jsonc\\'" . jsonc-mode))
+(add-to-list 'auto-mode-alist '("\\.kdl\\'" . kdl-mode))
 (with-eval-after-load 'lsp-mode
   (setq lsp-rust-analyzer-binding-mode-hints nil
         lsp-rust-analyzer-display-parameter-hints nil
