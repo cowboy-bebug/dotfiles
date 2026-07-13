@@ -274,6 +274,7 @@ Always be concise, pragmatic, and professional.")
 (add-to-list 'auto-mode-alist '("\\.claudeignore\\'" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.jsonc\\'" . jsonc-mode))
 (add-to-list 'auto-mode-alist '("\\.kdl\\'" . kdl-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
 (with-eval-after-load 'lsp-mode
   (setq lsp-rust-analyzer-binding-mode-hints nil
         lsp-rust-analyzer-display-parameter-hints nil
