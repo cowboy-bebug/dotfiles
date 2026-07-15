@@ -272,6 +272,7 @@ Always be concise, pragmatic, and professional.")
 
 ;; language
 (add-to-list 'auto-mode-alist '("\\.claudeignore\\'" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.jsonc\\'" . jsonc-mode))
 (add-to-list 'auto-mode-alist '("\\.kdl\\'" . kdl-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
