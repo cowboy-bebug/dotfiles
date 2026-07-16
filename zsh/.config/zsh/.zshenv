@@ -61,5 +61,5 @@ export PATH="$PATH:/opt/homebrew/opt/libpq/bin"
 export PATH="$PATH:$PYENV_ROOT/bin"
 
 # Other exports
-export DOCKER_HOST=unix:///Users/$USER/.docker/run/docker.sock
+export DOCKER_HOST=unix:///Users/$USER/.config/colima/default/docker.sock
 export LESSHISTFILE="-"
