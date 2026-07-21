@@ -12,6 +12,7 @@
 ;; globals
 (global-auto-revert-mode 1)
 (setq global-auto-revert-non-file-buffers t)
+(setq url-user-agent "Emacs")
 
 ;; ui
 (setq doom-font                (font-spec :family "Hack Nerd Font"  :size 14)
