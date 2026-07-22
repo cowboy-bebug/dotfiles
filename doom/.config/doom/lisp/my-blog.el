@@ -52,7 +52,8 @@
     (let* ((time     (and raw-date (org-time-string-to-time raw-date)))
            (date-str (format-time-string "%Y-%m-%dT%H:%M:%S%:z" time))
            (tags     (when filetags
-                       (seq-remove #'string-empty-p
+                       (seq-remove (lambda (tag) (or (string-empty-p tag)
+                                                      (string= tag "blog")))
                                    (split-string filetags ":" t))))
            (tags-block (if tags (format "tags: [%s]\n" (mapconcat #'identity tags ", ")) ""))
            (yaml-front (format "---\ntitle: %s\ndate: %s\n%s---\n\n"
@@ -82,14 +83,33 @@
 (defconst +my/blog-asset-directories
   (list (expand-file-name "assets" +my/denote-directory)))
 
-(defun +my/blog-copy-assets ()
-  "Copy the consolidated asset directory into content/assets directory."
-  (let* ((dest (expand-file-name "assets" +my/blog-content-dir)))
-    (make-directory dest t)
-    (dolist (srcdir +my/blog-asset-directories)
-      (when (file-directory-p srcdir)
-        (copy-directory srcdir dest nil t t)))
-    (message "Assets copied to %s" dest)))
+(defun +my/blog-referenced-assets (org-files)
+  "Return the list of assets/... paths referenced via file: links in ORG-FILES."
+  (let (assets)
+    (dolist (file org-files)
+      (with-temp-buffer
+        (insert-file-contents file)
+        (goto-char (point-min))
+        (while (re-search-forward "\\[\\[file:assets/\\([^]]+\\)\\]" nil t)
+          (push (match-string 1) assets))))
+    (delete-dups assets)))
+
+(defun +my/blog-copy-assets (org-files)
+  "Copy only the assets referenced by ORG-FILES into content/assets directory."
+  (let* ((dest (expand-file-name "assets" +my/blog-content-dir))
+         (referenced (+my/blog-referenced-assets org-files)))
+    (when (file-directory-p dest)
+      (delete-directory dest t))
+    (when referenced
+      (make-directory dest t)
+      (dolist (srcdir +my/blog-asset-directories)
+        (dolist (asset referenced)
+          (let ((src (expand-file-name asset srcdir)))
+            (when (file-exists-p src)
+              (let ((out (expand-file-name asset dest)))
+                (make-directory (file-name-directory out) t)
+                (copy-file src out t)))))))
+    (message "Copied %d asset(s) to %s" (length referenced) dest)))
 
 ;;;###autoload
 (defun +my/export-blogs ()
@@ -111,7 +131,7 @@
                       (+my/org-export-blog))))
               (kill-buffer buf)))
           (cl-incf i)))
-      (+my/blog-copy-assets)
+      (+my/blog-copy-assets files)
       (message "Blog export complete: %d files processed" (length files)))))
 
 (provide 'my-blog)
