@@ -3,6 +3,15 @@
 ;;; Code:
 
 (require 'org-element)
+(require 'ox-gfm)
+
+;; ox-gfm's paragraph/inner-template collapse each paragraph to one line
+;; and `org-trim' away the trailing newline; fall back to ox-md's versions
+;; of those two so hard-wrapped prose and trailing newlines survive, while
+;; still getting ox-gfm's fenced (```lang) code blocks.
+(org-export-define-derived-backend 'my-blog-md 'gfm
+  :translate-alist '((paragraph . org-md-paragraph)
+                      (inner-template . org-md-inner-template)))
 
 (defconst +my/blog-content-dir
   "~/github.com/cowboy-bebug/ericlim.dev/content/posts"
@@ -48,7 +57,7 @@
            (tags-block (if tags (format "tags: [%s]\n" (mapconcat #'identity tags ", ")) ""))
            (yaml-front (format "---\ntitle: %s\ndate: %s\n%s---\n\n"
                                (prin1-to-string title) date-str tags-block))
-           (body (org-export-as 'md nil nil t
+           (body (org-export-as 'my-blog-md nil nil t
                                 '(:auto-id nil :headeline-anchors nil :with-toc nil :section-numbers nil :broken-links mark))))
 
       (make-directory out-dir t)

@@ -65,4 +65,5 @@
 (package! org-modern)
 (package! org-present)
 (package! org-roam-ui)
+(package! ox-gfm)
 (package! pyvenv)
