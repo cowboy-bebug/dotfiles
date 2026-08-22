@@ -11,7 +11,7 @@
 ;; still getting ox-gfm's fenced (```lang) code blocks.
 (org-export-define-derived-backend 'my-blog-md 'gfm
   :translate-alist '((paragraph . org-md-paragraph)
-                      (inner-template . org-md-inner-template)))
+                     (inner-template . org-md-inner-template)))
 
 (defconst +my/blog-content-dir
   "~/github.com/cowboy-bebug/ericlim.dev/content/posts"
@@ -53,7 +53,7 @@
            (date-str (format-time-string "%Y-%m-%dT%H:%M:%S%:z" time))
            (tags     (when filetags
                        (seq-remove (lambda (tag) (or (string-empty-p tag)
-                                                      (string= tag "blog")))
+                                                     (string= tag "blog")))
                                    (split-string filetags ":" t))))
            (tags-block (if tags (format "tags: [%s]\n" (mapconcat #'identity tags ", ")) ""))
            (yaml-front (format "---\ntitle: %s\ndate: %s\n%s---\n\n"
