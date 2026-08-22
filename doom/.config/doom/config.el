@@ -3,6 +3,7 @@
 
 (load! "lisp/my-abbrev")
 (load! "lisp/my-blog")
+(load! "lisp/my-leetcode")
 (load! "theme")
 (let ((work-dir (expand-file-name "lisp/work" doom-user-dir)))
   (when (file-directory-p work-dir)
@@ -283,6 +284,11 @@ Always be concise, pragmatic, and professional.")
   (setq lsp-rust-analyzer-binding-mode-hints nil
         lsp-rust-analyzer-display-parameter-hints nil
         lsp-rust-analyzer-closure-capture-hints nil))
+
+;; leetcode
+(with-eval-after-load 'leetcode
+  (setq leetcode-prefer-language "python3"
+        leetcode-prefer-sql "mysql"))
 
 (with-eval-after-load 'sql
   (setq sql-mysql-program "/opt/homebrew/opt/mysql-client/bin/mysql"))

@@ -57,6 +57,7 @@
 (package! denote-silo)
 (package! ef-themes)
 (package! kdl-mode)
+(package! leetcode)
 (package! mermaid-mode)
 (package! ob-async)
 (package! ob-mermaid)
