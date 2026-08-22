@@ -95,6 +95,7 @@
 
   (setq org-babel-default-header-args (cons '(:results . "replace verbatim")
                                             (assq-delete-all :results org-babel-default-header-args))
+        org-babel-python-command "python3"
         org-babel-results-keyword "results"
         org-id-locations-file "~/.config/emacs/.local/cache/.org-id-locations"
         org-directory "~/github.com/cowboy-bebug/org"
