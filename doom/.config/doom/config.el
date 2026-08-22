@@ -56,7 +56,7 @@
 ;; markdown
 (with-eval-after-load 'markdown-mode
   (add-hook! 'markdown-mode-hook 'abbrev-mode)
-  (add-hook! 'markdown-mode-hook '+my/add-abbrev-word-constituents))
+  (add-hook! 'markdown-mode-hook 'my/add-abbrev-word-constituents))
 
 ;; org
 (with-eval-after-load 'org
@@ -65,7 +65,7 @@
   (add-hook! 'org-mode-hook 'auto-fill-mode)
   (add-hook! 'org-mode-hook 'org-fragtog-mode)
   (add-hook! 'org-mode-hook 'org-modern-mode)
-  (add-hook! 'org-mode-hook '+my/add-abbrev-word-constituents)
+  (add-hook! 'org-mode-hook 'my/add-abbrev-word-constituents)
   (add-hook! 'org-mode-hook (setq-local fill-column 80))
   (add-hook! 'org-mode-hook (visual-line-mode -1))
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
@@ -237,7 +237,7 @@ Always be concise, pragmatic, and professional.")
 
 ;; magit
 (with-eval-after-load 'magit
-  (defun +my/magit-commit-docs-action ()
+  (defun my/magit-commit-docs-action ()
     ;; TODO: extract into ./lisp/*.el
     "Commit with a timestamped message via shell script."
     (interactive)
@@ -246,7 +246,7 @@ Always be concise, pragmatic, and professional.")
     (magit-refresh))
 
   (transient-append-suffix 'magit-commit "c"
-    '("s" "Sync docs (timestamped)" +my/magit-commit-docs-action))
+    '("s" "Sync docs (timestamped)" my/magit-commit-docs-action))
 
   (setq magit-log-section-commit-count 30))
 

@@ -13,21 +13,21 @@
   :translate-alist '((paragraph . org-md-paragraph)
                      (inner-template . org-md-inner-template)))
 
-(defconst +my/blog-content-dir
+(defconst my/blog-content-dir
   "~/github.com/cowboy-bebug/ericlim.dev/content/posts"
   "Root directory for blog posts.")
 
-(defconst +my/denote-directory
+(defconst my/denote-directory
   "~/github.com/cowboy-bebug/org/notes"
   "The single folder where all Denote files reside.")
 
-(defun +my/org-get-keyword (key)
+(defun my/org-get-keyword (key)
   "Return the first value of Org KEYWORD KEY in the current buffer, or nil."
   (let ((kw-alist (org-collect-keywords (list key))))
     (car (alist-get key kw-alist nil nil #'string=))))
 
 ;;;###autoload
-(defun +my/org-export-blog ()
+(defun my/org-export-blog ()
   "Export the current Org buffer to a Markdown file."
   (interactive)
   (unless (derived-mode-p 'org-mode)
@@ -39,11 +39,11 @@
          (base       (file-name-base org-file))
          ;; Removes the ID and tags from the filename for a clean slug
          (clean-base (replace-regexp-in-string "__.*$" "" base))
-         (out-dir    (file-name-as-directory +my/blog-content-dir))
+         (out-dir    (file-name-as-directory my/blog-content-dir))
          (out-file   (expand-file-name (concat clean-base ".md") out-dir))
-         (title    (+my/org-get-keyword "TITLE"))
-         (raw-date (+my/org-get-keyword "DATE"))
-         (filetags (+my/org-get-keyword "FILETAGS")))
+         (title    (my/org-get-keyword "TITLE"))
+         (raw-date (my/org-get-keyword "DATE"))
+         (filetags (my/org-get-keyword "FILETAGS")))
 
     (unless title (user-error "Missing #+TITLE keyword"))
     (unless raw-date (user-error "Missing #+DATE keyword"))
@@ -67,23 +67,23 @@
         (insert body))
       (message "Markdown written to %s" out-file))))
 
-(defconst +my/blog-directories
-  (list +my/denote-directory))
+(defconst my/blog-directories
+  (list my/denote-directory))
 
-(defun +my/blog-collect-org-files ()
-  "Return a list of all Org files in `+my/blog-directories` that have the _blog tag."
+(defun my/blog-collect-org-files ()
+  "Return a list of all Org files in `my/blog-directories` that have the _blog tag."
   (seq-mapcat
    (lambda (dir)
      (let ((full (expand-file-name dir)))
        (when (file-directory-p full)
          ;; Updated regex: Matches filenames containing '_blog' ending in '.org'
          (directory-files full t (rx "_blog" (0+ any) ".org" eos)))))
-   +my/blog-directories))
+   my/blog-directories))
 
-(defconst +my/blog-asset-directories
-  (list (expand-file-name "assets" +my/denote-directory)))
+(defconst my/blog-asset-directories
+  (list (expand-file-name "assets" my/denote-directory)))
 
-(defun +my/blog-referenced-assets (org-files)
+(defun my/blog-referenced-assets (org-files)
   "Return the list of assets/... paths referenced via file: links in ORG-FILES."
   (let (assets)
     (dolist (file org-files)
@@ -94,15 +94,15 @@
           (push (match-string 1) assets))))
     (delete-dups assets)))
 
-(defun +my/blog-copy-assets (org-files)
+(defun my/blog-copy-assets (org-files)
   "Copy only the assets referenced by ORG-FILES into content/assets directory."
-  (let* ((dest (expand-file-name "assets" +my/blog-content-dir))
-         (referenced (+my/blog-referenced-assets org-files)))
+  (let* ((dest (expand-file-name "assets" my/blog-content-dir))
+         (referenced (my/blog-referenced-assets org-files)))
     (when (file-directory-p dest)
       (delete-directory dest t))
     (when referenced
       (make-directory dest t)
-      (dolist (srcdir +my/blog-asset-directories)
+      (dolist (srcdir my/blog-asset-directories)
         (dolist (asset referenced)
           (let ((src (expand-file-name asset srcdir)))
             (when (file-exists-p src)
@@ -112,12 +112,12 @@
     (message "Copied %d asset(s) to %s" (length referenced) dest)))
 
 ;;;###autoload
-(defun +my/export-blogs ()
+(defun my/export-blogs ()
   "Export all blog Org files to markdown."
   (interactive)
-  (let ((files (+my/blog-collect-org-files)))
+  (let ((files (my/blog-collect-org-files)))
     (if (not files)
-        (message "No files with '_blog' tag found in %s" +my/denote-directory)
+        (message "No files with '_blog' tag found in %s" my/denote-directory)
       (let ((i 1) (total (length files)))
         (dolist (file files)
           (message "[%d/%d] Exporting %s" i total file)
@@ -128,10 +128,10 @@
                     (save-restriction
                       (widen)
                       (unless (derived-mode-p 'org-mode) (org-mode))
-                      (+my/org-export-blog))))
+                      (my/org-export-blog))))
               (kill-buffer buf)))
           (cl-incf i)))
-      (+my/blog-copy-assets files)
+      (my/blog-copy-assets files)
       (message "Blog export complete: %d files processed" (length files)))))
 
 (provide 'my-blog)
