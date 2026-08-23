@@ -30,7 +30,7 @@ alias uid="npx nanoid --size 21 --alphabet 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZa
 alias ddtrace_id="python3 -c 'import secrets; print(secrets.token_hex(16))'"
 
 # browser
-export BROWSER="brave-browser"
+export BROWSER="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 
 # editor
 export VISUAL="nvim"
