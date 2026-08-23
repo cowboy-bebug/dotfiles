@@ -24,6 +24,11 @@
 (my/leetcode--defer-safely leetcode-daily)
 (my/leetcode--defer-safely leetcode-show-problem-by-slug)
 
+(defun my/leetcode-load-more ()
+  "Load more LeetCode problems into the problems buffer."
+  (interactive)
+  (aio-wait-for (leetcode--load-more)))
+
 (defun my/leetcode--code-buffers ()
   "Return the list of open `leetcode-solution-mode' buffers."
   (seq-filter (lambda (buf)

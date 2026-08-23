@@ -287,6 +287,7 @@ Always be concise, pragmatic, and professional.")
 
 ;; leetcode
 (with-eval-after-load 'leetcode
+  (map! :map leetcode--problems-mode-map :n "l" #'my/leetcode-load-more)
   (setq leetcode-prefer-language "python3"
         leetcode-prefer-sql "mysql"))
 
