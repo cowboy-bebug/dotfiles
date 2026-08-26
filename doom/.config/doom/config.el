@@ -284,6 +284,9 @@ Always be concise, pragmatic, and professional.")
   (setq lsp-rust-analyzer-binding-mode-hints nil
         lsp-rust-analyzer-display-parameter-hints nil
         lsp-rust-analyzer-closure-capture-hints nil))
+(with-eval-after-load 'treesit
+  (setq treesit-auto-install-grammar 'always)
+  (treesit-ensure-installed 'tsx))
 
 ;; leetcode
 (with-eval-after-load 'leetcode
