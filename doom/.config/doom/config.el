@@ -41,6 +41,7 @@
       (make-directory (file-name-directory personal-dictionary) t)
       (write-region "personal_ws-1.1 en 0\n" nil personal-dictionary))
     (setq ispell-dictionary "en_GB"
+          ispell-dictionary-alist '("en_GB")
           ispell-personal-dictionary personal-dictionary
           spell-fu-word-delimit-camel-case t)))
 
