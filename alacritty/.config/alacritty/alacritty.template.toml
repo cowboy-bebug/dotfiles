@@ -66,6 +66,7 @@ save_to_clipboard = true
 [window]
 decorations = "buttonless"
 opacity = 1.0
+option_as_alt = "OnlyLeft"
 
 [window.padding]
 x = 5
