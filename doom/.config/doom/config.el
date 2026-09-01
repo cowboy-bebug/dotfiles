@@ -250,7 +250,9 @@ Always be concise, pragmatic, and professional.")
   (transient-append-suffix 'magit-commit "c"
     '("s" "Sync docs (timestamped)" my/magit-commit-docs-action))
 
-  (setq magit-log-section-commit-count 30))
+  (setq magit-diff-highlight-hunk-body nil
+        magit-diff-refine-hunk nil
+        magit-log-section-commit-count 30))
 
 ;; formatter
 (with-eval-after-load 'apheleia
