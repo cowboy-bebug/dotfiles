@@ -59,7 +59,7 @@
            (yaml-front (format "---\ntitle: %s\ndate: %s\n%s---\n\n"
                                (prin1-to-string title) date-str tags-block))
            (body (org-export-as 'my-blog-md nil nil t
-                                '(:auto-id nil :headeline-anchors nil :with-toc nil :section-numbers nil :broken-links mark))))
+                                '(:auto-id nil :headeline-anchors nil :with-toc nil :section-numbers nil :md-toplevel-hlevel 2 :broken-links mark))))
 
       (make-directory out-dir t)
       (with-temp-file out-file
