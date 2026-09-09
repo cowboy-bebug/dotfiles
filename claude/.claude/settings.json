@@ -1,0 +1,89 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(git:*)",
+      "Bash(grep:*)",
+      "Bash(head:*)",
+      "Bash(jq:*)",
+      "Bash(ls:*)",
+      "Bash(rg:*)",
+      "Bash(tail:*)",
+      "Bash(tree:*)",
+      "Bash(wc:*)",
+      "Bash(which:*)"
+    ],
+    "defaultMode": "auto"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/no-comments-check.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Glass.aiff"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "code-review@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true,
+    "security-guidance@claude-plugins-official": true,
+    "sourcegraph@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true
+  },
+  "promptSuggestionEnabled": false,
+  "tui": "fullscreen",
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "skipWorkflowUsageWarning": true,
+  "theme": "auto",
+  "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": false,
+  "skipAutoPermissionPrompt": true,
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Bash(mysql:* DROP*)",
+      "Bash(mysql:* DELETE*)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean*)",
+      "Bash(git filter-branch*)",
+      "Bash(git branch -D*)"
+    ]
+  },
+  "voiceEnabled": true,
+  "modelSettings": {
+    "claude-opus-5": {
+      "effortLevel": "medium"
+    }
+  }
+}
