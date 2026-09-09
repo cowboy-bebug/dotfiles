@@ -277,6 +277,7 @@ Always be concise, pragmatic, and professional.")
   (add-to-list 'apheleia-mode-alist '(sql-mode . sqlfluff)))
 
 ;; language
+(add-to-list 'auto-mode-alist '("\\.astro\\'" . tsx-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.claudeignore\\'" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.json\\'" . json-mode))
 (add-to-list 'auto-mode-alist '("\\.jsonc\\'" . jsonc-mode))
