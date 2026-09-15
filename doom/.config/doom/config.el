@@ -274,7 +274,8 @@ Always be concise, pragmatic, and professional.")
         '("sqlfluff" "fix" "--rules" "CP01" "-"))
   (add-to-list 'apheleia-mode-alist '(gfm-mode . prettier-markdown))
   (add-to-list 'apheleia-mode-alist '(markdown-mode . prettier-markdown))
-  (add-to-list 'apheleia-mode-alist '(sql-mode . sqlfluff)))
+  (add-to-list 'apheleia-mode-alist '(sql-mode . sqlfluff))
+  (add-to-list 'apheleia-mode-alist '(terraform-mode . terraform)))
 
 ;; language
 (add-to-list 'auto-mode-alist '("\\.astro\\'" . tsx-ts-mode))
