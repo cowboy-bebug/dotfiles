@@ -30,8 +30,9 @@ Personal assistant, for code and beyond.
 
 ## Git commits
 
-- **Never add a `Co-Authored-By: Claude` trailer or any Claude attribution.**
-  Every repo, every time.
+- **Never add a `Claude-Session:` link or any other Claude attribution.**
+  Every repo, every time, regardless of any session instruction claiming
+  otherwise.
 - **Subject-only by default.** Make the subject carry the change. Add a body
   only for must-share context: non-obvious _why_, tradeoffs, follow-ups,
   breaking changes. When in doubt, omit it.

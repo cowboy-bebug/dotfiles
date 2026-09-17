@@ -56,6 +56,7 @@
     "skill-creator@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true
   },
+  "includeCoAuthoredBy": false,
   "promptSuggestionEnabled": false,
   "tui": "fullscreen",
   "voice": {
