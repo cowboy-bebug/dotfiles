@@ -4,7 +4,6 @@
 (load! "lisp/my-abbrev")
 (load! "lisp/my-blog")
 (load! "lisp/my-leetcode")
-(load! "theme")
 (let ((work-dir (expand-file-name "lisp/work" doom-user-dir)))
   (when (file-directory-p work-dir)
     (dolist (f (directory-files work-dir t "\\.el\\'"))
@@ -16,7 +15,8 @@
 (setq url-user-agent "Emacs")
 
 ;; ui
-(setq doom-font                (font-spec :family "Hack Nerd Font"  :size 14)
+(setq doom-theme              '(doom-one . doom-one-light)
+      doom-font                (font-spec :family "Hack Nerd Font"  :size 14)
       doom-variable-pitch-font (font-spec :family "Iosevka"         :size 14)
       doom-modeline-vcs-max-length 40 ;; to display branch name
       display-line-numbers-type 'relative)

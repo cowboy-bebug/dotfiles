@@ -7,20 +7,18 @@ THEME="light"
 
 for arg in "$@"; do
   case "$arg" in
-  --dark) THEME="dark" ;;
-  --light) THEME="light" ;;
+    --dark) THEME="dark" ;;
+    --light) THEME="light" ;;
   esac
 done
 
 if [ "$THEME" = "light" ]; then
   export ALACRITTY_THEME="ayu_light"
   export BAT_THEME="OneHalfLight"
-  export DOOM_THEME="doom-one-light"
   export NVIM_THEME="one_light"
 else
   export ALACRITTY_THEME="doom_one"
   export BAT_THEME="OneHalfDark"
-  export DOOM_THEME="doom-one"
   export NVIM_THEME="onedark"
 fi
 
@@ -30,16 +28,12 @@ ALACRITTY_DST="$DOTFILES_DIR/alacritty/.config/alacritty/alacritty.toml"
 BAT_SRC="$DOTFILES_DIR/bat/.config/bat/bat.template.conf"
 BAT_DST="$DOTFILES_DIR/bat/.config/bat/bat.conf"
 
-DOOM_SRC="$DOTFILES_DIR/doom/.config/doom/theme.template.el"
-DOOM_DST="$DOTFILES_DIR/doom/.config/doom/theme.el"
-
 NVIM_SRC="$DOTFILES_DIR/nvim/.config/nvim/lua/chadrc.template.lua"
 NVIM_DST="$DOTFILES_DIR/nvim/.config/nvim/lua/chadrc.lua"
 
-envsubst <"$ALACRITTY_SRC" >"$ALACRITTY_DST"
-envsubst <"$BAT_SRC" >"$BAT_DST"
-envsubst <"$DOOM_SRC" >"$DOOM_DST"
-envsubst <"$NVIM_SRC" >"$NVIM_DST"
+envsubst < "$ALACRITTY_SRC" > "$ALACRITTY_DST"
+envsubst < "$BAT_SRC" > "$BAT_DST"
+envsubst < "$NVIM_SRC" > "$NVIM_DST"
 
 cd "$DOTFILES_DIR"
 stow -Rv $(ls -d */ | grep -v "^\.git/$" | tr "/\n" " ") --adopt --no-folding --target="$HOME"
