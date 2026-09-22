@@ -128,6 +128,21 @@ git remote set-url origin git@personal.github.com:cowboy-bebug/dotfiles.git
 git set-personal
 #+end_src
 
+*** Hooks
+Claude Code rewrites ~settings.json~ every time it touches and it results in messy
+diffs so normalising the key order here:
+#+begin_src bash :tangle .git/hooks/pre-commit :tangle-mode (identity #o755) :mkdirp yes
+#!/usr/bin/env bash
+set -euo pipefail
+
+f="claude/.claude/settings.json"
+if git diff --cached --name-only | grep -qx "$f"; then
+  sorted=$(jq -S . "$f")
+  printf '%s\n' "$sorted" >"$f"
+  git add "$f"
+fi
+#+end_src
+
 ** Docker
 Add this to ~~/.config/docker/config.json~ so =docker compose=, =docker buildx=, etc.
 installed via Homebrew get discovered:

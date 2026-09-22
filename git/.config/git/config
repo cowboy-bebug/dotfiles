@@ -26,6 +26,8 @@
 	helper = !/opt/homebrew/bin/glab auth git-credential
 [diff]
 	wsErrorHighlight = all
+[diff "jsoncanon"]
+	textconv = jq -S .
 [format]
 	pretty = oneline
 [init]
