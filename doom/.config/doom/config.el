@@ -23,6 +23,14 @@
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
 (add-to-list 'default-frame-alist '(undecorated-round . t))
 
+(use-package! topspace
+  :config
+  (setq topspace-autocenter-buffers nil
+        topspace-active (lambda ()
+                          (and (topspace-default-active)
+                               (not (derived-mode-p 'vterm-mode 'term-mode)))))
+  (global-topspace-mode))
+
 ;; project sidebar
 (with-eval-after-load 'treemacs
   (map! :leader
