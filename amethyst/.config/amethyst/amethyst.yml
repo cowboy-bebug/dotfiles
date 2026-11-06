@@ -1,10 +1,10 @@
 # REF: https://github.com/ianyh/Amethyst/blob/development/.amethyst.sample.yml
 layouts:
   - two-pane
-  - middle-wide
   - tall
-  - fullscreen
+  - middle-wide
   - column
+  - fullscreen
 
 mod1:
   - shift
