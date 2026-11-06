@@ -68,4 +68,3 @@
 (package! org-roam-ui)
 (package! ox-gfm)
 (package! pyvenv)
-(package! topspace)
