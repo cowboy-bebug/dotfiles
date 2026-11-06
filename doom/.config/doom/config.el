@@ -260,7 +260,7 @@ Always be concise, pragmatic, and professional.")
   (add-hook! 'json-mode-hook (setq js-indent-level 2))
   (add-hook! 'yaml-mode-hook (setq yaml-indent-offset 2))
   (add-hook! '(typescript-ts-mode-hook tsx-ts-mode-hook) (setq typescript-indent-level 2))
-  (add-hook! 'bash-ts-mode-hook (setq sh-basic-offset 5))
+  (add-hook! 'bash-ts-mode-hook (setq sh-basic-offset 2))
   (add-hook! 'sh-mode-hook (setq sh-basic-offset 2))
   (setf (alist-get 'prettier-markdown apheleia-formatters)
         '("prettier"
