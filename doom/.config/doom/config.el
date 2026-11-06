@@ -72,11 +72,6 @@
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
   (add-hook! 'before-save-hook 'delete-trailing-whitespace)
 
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((mermaid . t)
-     (typescript . t)))
-
   (org-link-set-parameters
    "namu"
    :follow (lambda (path _)
@@ -126,9 +121,6 @@
   (setq org-journal-dir "~/github.com/cowboy-bebug/org/logs/"
         org-journal-file-format "%Y-%m-%d.org"
         org-journal-file-type 'weekly))
-
-(with-eval-after-load 'ob-mermaid
-  (setq ob-mermaid-cli-path "npx @mermaid-js/mermaid-cli"))
 
 (with-eval-after-load 'org-modern
   (setq org-modern-block-name '((t . ("▶ " "▶ "))
