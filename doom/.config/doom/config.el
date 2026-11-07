@@ -168,7 +168,7 @@
         org-roam-capture-templates
         `(("d" "default" plain "%?"
            :if-new (file+head "main/${slug}.org"
-                              "#+title: ${title}\n#+date: %u\n#+filetags: :Draft:")
+                              "#+title: ${title}\n#+date: %u")
            :unnarrowed t)
           ("m" "moc" plain "%?"
            :if-new (file+head "moc/${slug}.org"
