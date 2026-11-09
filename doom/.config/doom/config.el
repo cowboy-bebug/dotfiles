@@ -109,7 +109,8 @@
         org-tags-column 80))
 
 (with-eval-after-load 'org-agenda
-  (setq org-agenda-files '("~/github.com/cowboy-bebug/org/todo.org")
+  (setq org-agenda-files '("~/github.com/cowboy-bebug/org/todo.org"
+                           "~/github.com/cowboy-bebug/org/roam/daily")
         org-agenda-start-with-log-mode t))
 
 (with-eval-after-load 'org-habit
