@@ -180,7 +180,7 @@
         '(("d" "default" entry "* %<%I:%M %p>: %?"
            :if-new (file+head "%<%Y-%m-%d>.org"
                               "#+title: %<%Y-%m-%d>\n")))
-        org-roam-ui-follow nil
+        org-roam-ui-follow t
         org-roam-ui-open-on-start nil
         org-roam-ui-sync-theme t
         org-roam-ui-update-on-save t))
