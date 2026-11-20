@@ -72,6 +72,15 @@
   (add-hook! 'before-save-hook 'doom/delete-trailing-newlines)
   (add-hook! 'before-save-hook 'delete-trailing-whitespace)
 
+  (defconst gitlab-url "https://gitlab.com/")
+  (org-link-set-parameters
+   "gitlab"
+   :follow (lambda (path _)
+             (browse-url (concat gitlab-url path)))
+   :export (lambda (path desc backend _)
+             (when (eq backend 'md)
+               (format "[%s](%s%s)" (or desc path) gitlab-url path))))
+
   (org-link-set-parameters
    "namu"
    :follow (lambda (path _)
