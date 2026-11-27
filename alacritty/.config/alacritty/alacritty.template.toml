@@ -31,33 +31,14 @@ style = "Italic"
 family = "Hack Nerd Font"
 style = "Regular"
 
-[[keyboard.bindings]]
-chars = "\u001Bb"
-key = "Left"
-mods = "Alt"
-
-[[keyboard.bindings]]
-chars = "\u001Bf"
-key = "Right"
-mods = "Alt"
-
-[[keyboard.bindings]]
-action = "ToggleViMode"
-key = "Escape"
-mode = "~Search"
-mods = "Super"
-
-[[keyboard.bindings]]
-action = "SearchForward"
-key = "F"
-mode = "~Search"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "SearchBackward"
-key = "F"
-mode = "~Search"
-mods = "Control"
+[keyboard]
+bindings = [
+  { key = "Left", mods = "Alt", chars = "\u001Bb" },
+  { key = "Right", mods = "Alt", chars = "\u001Bf" },
+  { key = "Escape", mods = "Super", mode = "~Search", action = "ToggleViMode" },
+  { key = "F", mods = "Control|Shift", mode = "~Search", action = "SearchForward" },
+  { key = "F", mods = "Control", mode = "~Search", action = "SearchBackward" },
+]
 
 [scrolling]
 history = 10000
