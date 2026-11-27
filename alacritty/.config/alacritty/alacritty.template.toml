@@ -9,6 +9,9 @@ shape = "Underline"
 [cursor.vi_mode_style]
 shape = "Block"
 
+[debug]
+log_level = "Error"
+
 [font]
 size = 14
 
